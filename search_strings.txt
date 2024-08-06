@@ -1,0 +1,8 @@
+Google Scholar
+("Passive Acoustic Monitoring" OR "species monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR biodiversity OR "animal sound" OR "soundscape" OR "species monitoring") AND (animal OR bat* OR bird* OR cetacean* OR insect* OR mammal*) AND ("Wind Farm" OR "Wind Farms" OR "Environmental Impact Assessment") AND ("Signal Processing" OR "Acoustic Indices" OR "Bird and Bat Monitoring" OR "Machine Learning")
+
+Scopus
+( TITLE-ABS-KEY ( "passive acoustic monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR biodiversity OR "animal sound" OR "soundscape" OR "species monitoring" OR "signal processing" OR "acoustic indices" OR "bird and bat monitoring" OR "machine learning" ) AND TITLE-ABS-KEY ( animal OR bat* OR bird* OR cetacean* OR insect* OR mammal* ) AND TITLE-ABS-KEY ( "wind farm" OR "wind farms" OR "environmental impact assessment" ) ) AND PUBYEAR > 1999 AND PUBYEAR < 2025
+
+Web of Science
+TS=("Passive Acoustic Monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR "animal sound" OR "soundscape" OR "species monitoring" OR "signal processing" OR "acoustic indices" OR "bird and bat monitoring" OR "machine learning") AND TS=(animal OR bat* OR bird* OR cetacean* OR insect* OR mammal*) AND TS=("Wind Farm" OR "Wind Farms" OR "Environmental Impact Assessment")
