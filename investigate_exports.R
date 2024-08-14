@@ -1,3 +1,4 @@
+library(dplyr)
 folder <- "C:/Users/Anthony"
 cnames <- c("Year", "Title", "Abstract", "Keywords", "Language", "DOI")
 
@@ -113,17 +114,27 @@ df_sub <- df_sub %>%
 df_sub %>%
   nrow()
 
-excl_terms <- c("underwater", "soil chemistry", "energy consumption", "images", "turbine pitch")
+excl_terms <- c("underwater", "seafloor", "soil chemistry", "energy consumption", "images", "turbine pitch", 
+                "compounds", "organic", "effluent", "sediment", "toxic", "contaminant", "pollution", "saliniz", "genetic erosion", "pesticide", "insecticide", "chlorine",
+                "grounding", "maintenance support", "wind-storage", "wind storage", "energy storage", "battery", "load forecasting", "synchronous oscillation", "construction", "spatial planning",
+                "wind power curve", "frequency control", "wind speed assessment", "generator control",
+                "commentary", "politics", "wave power", "solar power", "engine construction"
+                )
 
-df_sub %>%
+df_sub2 <- df_sub %>%
   mutate(lower_key = tolower(Keywords)) %>%
   filter(!str_detect(lower_abs, paste(excl_terms, collapse = "|"))) %>%
   filter(!str_detect(lower_title, paste(excl_terms, collapse = "|"))) %>%
-  filter(!str_detect(lower_key, paste(excl_terms, collapse = "|"))) %>%
-  nrow()
+  filter(!str_detect(lower_key, paste(excl_terms, collapse = "|"))) 
 
 
-ggplot(df_sub, aes(x=Year)) +
+df_sub2 %>%
+  #nrow()
+  #filter(Year > 2007) %>%
+  count(Source)
+
+
+ggplot(df_sub2, aes(x=Year)) +
   geom_histogram(stat = "count")
 
 #write.csv(df_sub, file.path(folder, "Downloads", "tmp_df_sub.csv"))
