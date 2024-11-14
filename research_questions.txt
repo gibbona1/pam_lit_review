@@ -1,0 +1,18 @@
+This literature review aims to investigate acoustic monitoring methods, with a focus on those applied on wind farm sites. Four specific research questions were addressed:
+
+(I)    What are the strengths and weaknesses of bioacoustics methods compared with traditional (manual) species monitoring methodologies?
+(II)   What signal processing tools and methods are used to analyse bioacoustic data? What are the particular challenges of PAM at wind farm sites?
+(III)  How do the diversity, use and classification accuracy of automatic monitoring methods compare? 
+(IV)   What gaps and challenges exist and what future research is needed for passive acoustic monitoring?
+
+We conclude with recommendations to (onshore) wind farm managers for productive application to their sites.
+
+Search string:
+
+("passive pcoustic monitoring" OR "species monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR biodiversity OR "soundscape" OR "biodiversity assessment" OR "species detection") AND 
+(animal OR bat* OR bird* OR cetacean* OR insect* OR mammal*) AND 
+(acoustic OR ultrasonic OR harmonic) AND
+("signal processing" OR software OR "data analysis" OR "classification accuracy" OR "machine learning" OR "acoustic indices" OR ) AND
+("automatic monitoring" OR "automated detection" OR "manual methods" OR "traditional methods") AND 
+("strengths" OR "weaknesses" OR "advantages" OR "challenges" OR "limitations") AND
+("wind farm" OR "wind farms" OR "environmental impact assessment" OR "renewable energy site" OR "onshore" OR "offshore")
