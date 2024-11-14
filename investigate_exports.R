@@ -134,6 +134,68 @@ df_sub2 %>%
   count(Source)
 
 
+# Load necessary libraries
+library(tidyverse)
+library(text2vec)
+library(tm)
+library(cosine)
+library(SnowballC)
+
+# Expand search string
+expand_search_string <- function(search_string) {
+  terms <- strsplit(search_string, "\\|")[[1]]
+  expanded_string <- paste(terms, collapse = " ")
+  expanded_string
+}
+
+# Generate word embeddings
+generate_embeddings <- function(text, model) {
+  tokens <- word_tokenizer(text)
+  it <- itoken(tokens, progressbar = FALSE)
+  vectorizer <- vocab_vectorizer(vocab = create_vocabulary(it))
+  dtm <- create_dtm(it, vectorizer)
+  embedding <- model$transform(dtm)
+  embedding
+}
+
+# Calculate cosine similarity
+calculate_similarity <- function(vector1, vector2) {
+  cosine(vector1, vector2)
+}
+
+# Load a pre-trained model or train a simple one
+train_embedding_model <- function(text_data) {
+  tokens <- word_tokenizer(text_data)
+  it <- itoken(tokens, progressbar = FALSE)
+  model <- GloVe$new(rank = 100, x_max = 10)
+  model$fit_transform(create_dtm(it, vectorizer = vocab_vectorizer(create_vocabulary(it))))
+  model
+}
+
+# Step 1: Expand the search string
+search_string <- paste(incl_terms, collapse = "|")
+expanded_search_string <- expand_search_string(search_string)
+
+# Step 2: Train or load word embeddings model
+text_data <- c(expanded_search_string, df_sub$Abstract)
+model <- train_embedding_model(text_data)
+
+# Step 3: Generate embeddings for the search string and abstracts
+search_embedding <- generate_embeddings(expanded_search_string, model)
+abstract_embeddings <- lapply(df_sub$Abstract, generate_embeddings, model = model)
+
+# Step 4: Calculate similarity scores
+similarity_scores <- sapply(abstract_embeddings, calculate_similarity, vector2 = search_embedding)
+
+# Combine results into a dataframe
+result_df <- df_sub %>%
+  mutate(Similarity = similarity_scores)
+
+# View results
+print(result_df)
+
+
+
 ggplot(df_sub2, aes(x=Year)) +
   geom_histogram(stat = "count")
 
