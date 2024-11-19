@@ -11,8 +11,10 @@ Search string:
 
 ("passive pcoustic monitoring" OR "species monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR biodiversity OR "soundscape" OR "biodiversity assessment" OR "species detection") AND 
 (animal OR bat* OR bird* OR cetacean* OR insect* OR mammal*) AND 
-(acoustic OR ultrasonic OR harmonic) AND
-("signal processing" OR software OR "data analysis" OR "classification accuracy" OR "machine learning" OR "acoustic indices" OR ) AND
-("automatic monitoring" OR "automated detection" OR "manual methods" OR "traditional methods") AND 
-("strengths" OR "weaknesses" OR "advantages" OR "challenges" OR "limitations") AND
-("wind farm" OR "wind farms" OR "environmental impact assessment" OR "renewable energy site" OR "onshore" OR "offshore")
+(acoustic OR ultrasonic OR harmonic) AND 
+("signal processing" OR software OR "data analysis" OR "classification accuracy" OR "machine learning" OR "deep learning" OR "statistics" OR "acoustic indices") AND 
+("automatic monitoring" OR "automatic detection" OR "automated detection" OR "manual methods" OR "traditional methods" OR "traditional monitoring")
+
+Search within abstracts/bodies for the following keywords:
+
+("wind farm" OR "wind farms" OR "wind turbine" OR "environmental impact assessment" OR "renewable energy site" OR "onshore" OR "offshore")

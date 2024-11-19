@@ -1,8 +1,16 @@
 Google Scholar
-("Passive Acoustic Monitoring" OR "species monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR biodiversity OR "animal sound" OR "soundscape" OR "species monitoring") AND (animal OR bat* OR bird* OR cetacean* OR insect* OR mammal*) AND ("Wind Farm" OR "Wind Farms" OR "Environmental Impact Assessment") AND ("Signal Processing" OR "Acoustic Indices" OR "Bird and Bat Monitoring" OR "Machine Learning")
+("passive pcoustic monitoring" OR "species monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR biodiversity OR "soundscape" OR "biodiversity assessment" OR "species detection") AND 
+(animal OR bat* OR bird* OR cetacean* OR insect* OR mammal*) AND 
+(acoustic OR ultrasonic OR harmonic) AND 
+("signal processing" OR software OR "data analysis" OR "classification accuracy" OR "machine learning" OR "deep learning" OR "statistics" OR "acoustic indices") AND 
+("automatic monitoring" OR "automatic detection" OR "automated detection" OR "manual methods" OR "traditional methods" OR "traditional monitoring")
 
 Scopus
-( TITLE-ABS-KEY ( "passive acoustic monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR biodiversity OR "animal sound" OR "soundscape" OR "species monitoring" OR "signal processing" OR "acoustic indices" OR "bird and bat monitoring" OR "machine learning" ) AND TITLE-ABS-KEY ( animal OR bat* OR bird* OR cetacean* OR insect* OR mammal* ) AND TITLE-ABS-KEY ( "wind farm" OR "wind farms" OR "environmental impact assessment" ) ) AND PUBYEAR > 1999 AND PUBYEAR < 2025
+TITLE-ABS-KEY(("passive acoustic monitoring" OR "species monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR biodiversity OR "soundscape" OR "biodiversity assessment" OR "species detection") AND (animal OR bat* OR bird* OR cetacean* OR insect* OR mammal*) AND (acoustic OR ultrasonic OR harmonic) AND ("signal processing" OR software OR "data analysis" OR "classification accuracy" OR "machine learning" OR "deep learning" OR "statistics" OR "acoustic indices") AND ("automatic detection" OR "manual methods")) AND PUBYEAR > 1999 AND PUBYEAR < 2025 AND PUBYEAR > 2005 AND PUBYEAR < 2025
 
 Web of Science
-TS=("Passive Acoustic Monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR "animal sound" OR "soundscape" OR "species monitoring" OR "signal processing" OR "acoustic indices" OR "bird and bat monitoring" OR "machine learning") AND TS=(animal OR bat* OR bird* OR cetacean* OR insect* OR mammal*) AND TS=("Wind Farm" OR "Wind Farms" OR "Environmental Impact Assessment")
+TS=("passive pcoustic monitoring" OR "species monitoring" OR bioacoust* OR ecoacoust* OR vocali* OR biodiversity OR "soundscape" OR "biodiversity assessment" OR "species detection") AND 
+TS=(animal OR bat* OR bird* OR cetacean* OR insect* OR mammal*) AND 
+TS=(acoustic OR ultrasonic OR harmonic) AND 
+TS=("signal processing" OR software OR "data analysis" OR "classification accuracy" OR "machine learning" OR "deep learning" OR "statistics" OR "acoustic indices") AND 
+TS=("automatic monitoring" OR "automatic detection" OR "automated detection" OR "manual methods" OR "traditional methods" OR "traditional monitoring")
