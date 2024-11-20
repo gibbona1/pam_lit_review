@@ -18,3 +18,5 @@ Search string:
 Search within abstracts/bodies for the following keywords:
 
 ("wind farm" OR "wind farms" OR "wind turbine" OR "environmental impact assessment" OR "renewable energy site" OR "onshore" OR "offshore")
+
+generate plots of the number of publications per year, and the number of publications per journal.
