@@ -2,14 +2,15 @@ library(dplyr)
 library(readxl)
 library(ggplot2)
 library(stringr)
+library(bib2df)
 
 folder <- "C:/Users/Anthony"
-cnames <- c("Year", "Title", "Abstract", "Keywords", "Language", "DOI", "URL")
+cnames <- c("Year", "Title", "Authors", "Journal", "Abstract", "Keywords", "Language", "DOI", "URL", "Type")
 
 #Scopus
 df1 <- read.csv(file.path(folder, "Downloads", "scopus.csv")) 
 df1_sub <- df1 %>%
-  select(Year, Title, Abstract, Index.Keywords, Language.of.Original.Document, DOI, Link) %>%
+  select(Year, Title, Authors, Source.title, Abstract, Index.Keywords, Language.of.Original.Document, DOI, Link, Document.Type) %>%
   rename_with(~ cnames) %>%
   mutate(Source = "Scopus")
 
@@ -19,18 +20,19 @@ df2_sub <- df2 %>%
   mutate(Keywords = "",
          Language = "English",
          URL = ArticleURL,
+         Journal = Source,
          Source = "Google Scholar") %>%
-  select(Year, Title, Abstract, Keywords, Language, DOI, URL, Source)
+  select(Year, Title, Authors, Journal, Abstract, Keywords, Language, DOI, URL, Type, Source)
 
 #Web of Science
 df3 <- read_excel(file.path(folder, "Downloads", "savedrecs.xls"))
 df3_sub <- df3 %>% 
-  select(`Publication Year`, `Article Title`, Abstract, `Author Keywords`, Language, DOI, `DOI Link`) %>%
+  select(`Publication Year`, `Article Title`, Authors, `Source Title`, Abstract, `Author Keywords`, Language, DOI, `DOI Link`, `Document Type`) %>%
   rename_with(~ cnames) %>%
   mutate(Source = "Web of Science")
 
 
-df_all <- rbind(df1, df2, df3) %>%
+df_all <- rbind(df1_sub, df2_sub, df3_sub) %>%
   filter(Year >= 2000)
 
 ggplot(df_all, aes(x=Year)) +
@@ -66,24 +68,22 @@ df_sub %>%
   nrow()
 
 df_sub <- df_sub %>% 
-  filter(!stringr::str_detect(lower_title, paste(paste(c("a", "systematic", "comprehensive", "literature"), "review"), collapse = "|"))) %>%
-  filter(!stringr::str_detect(lower_title, "survey|perspective")) %>%
-  filter(!stringr::str_detect(lower_abs, "review|survey|perspective"))
+  filter(!str_detect(lower_title, paste(paste(c("a", "systematic", "comprehensive", "literature"), "review"), collapse = "|"))) %>%
+  filter(!str_detect(lower_title, "survey|perspective")) %>%
+  filter(!str_detect(lower_abs, "review|survey|perspective"))
 
 df_sub %>%
   nrow()
 
 # Perform the left join
 df_sub <- df_sub %>%
-  left_join(df1[, c("Title", "Document.Type")], by = "Title") %>%
-  filter(!(Document.Type %in% c("Review", "Note", "Conference review", "Letter", "Editorial"))) %>%
-  select(-Document.Type)
+  filter(!(Type %in% c("Review", "Note", "Conference review", "Letter", "Editorial")))
 
 df_sub %>%
   nrow() 
 
 df_sub <- df_sub %>%
-  left_join(df2[, c("Title", "Type", "ArticleURL", "CitesURL")], by = "Title") 
+  left_join(df2[, c("Title", "ArticleURL", "CitesURL")], by = "Title") 
   
 df_sub %>% 
   nrow()
@@ -102,9 +102,8 @@ df_sub %>%
   nrow()
 
 df_sub <- df_sub %>%
-  left_join(df3[, c("Article Title", "Document Type")], by = join_by(Title == `Article Title`)) %>%
-  filter(!str_detect(`Document Type`, "Review") | is.na(`Document Type`)) %>%
-  select(-`Document Type`)
+  left_join(df3[, "Article Title"], by = join_by(Title == `Article Title`)) %>%
+  filter(!str_detect(Type, "Review") | is.na(Type))
 
 df_sub %>% 
   nrow()
@@ -150,5 +149,34 @@ df_sub2 %>%
 ggplot(df_sub2, aes(x=Year)) +
   geom_histogram(stat = "count")
 
-write.csv(df_sub2, file.path(folder, "Downloads", "tmp_filtered_literature.csv"))
 #write.csv(df_sub2, file.path(folder, "Downloads", "filtered_literature.csv"))
+#write.csv(df_sub2, file.path(folder, "Downloads", "filtered_literature.csv"))
+
+library(bib2df)
+
+# Convert df_sub2 to a BibTeX dataframe
+bib_df <- df_sub2 %>%
+  mutate(
+    Type = str_to_lower(Type),
+    bibtype = case_when(
+      Type == "Book chapter" ~ "incollection",
+      Type == "Article" ~ "article",
+      Type == "Conference paper" ~ "inproceedings",
+      Type == "" ~ "misc",
+      Type == "HTML" ~ "misc",
+      Type == "PDF" ~ "misc",
+      Type == "BOOK" ~ "book",
+      Type == "CITATION" ~ "misc",
+      Type == "Article; Early Access" ~ "article",
+      Type == "Review" ~ "article",
+      Type == "Proceedings Paper" ~ "inproceedings",
+      Type == "Article; Data Paper" ~ "article",
+      Type == "Article; Book Chapter" ~ "incollection",
+      TRUE ~ "misc" # Default for any other unrecognized types
+    ),
+    bibkey = paste0("ref", row_number())
+  ) %>%
+  select(category=bibtype, bibtexkey=bibkey, Title, Author = Authors, Year, Journal = Source, Abstract, Keywords, DOI, URL)
+
+# Write the BibTeX dataframe to a .bib file
+df2bib(bib_df, file = file.path(folder, "Downloads", "filtered_literature.bib"))
