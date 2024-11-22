@@ -180,4 +180,4 @@ bib_df <- df_sub2 %>%
   select(category=bibtype, bibtexkey=bibkey, Title, Author = Authors, Year, Journal = Journal, Abstract, Keywords, DOI, URL)
 
 # Write the BibTeX dataframe to a .bib file
-df2bib(bib_df, file = file.path(folder, "Downloads", "filtered_literature.bib"))
+df2bib(bib_df, file = "filtered_literature.bib")
