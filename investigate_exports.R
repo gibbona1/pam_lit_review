@@ -137,6 +137,7 @@ df_sub %>%
 
 workshop_excl <- c("workshop", "conference", "symposium", "seminar", "workshop", "meeting", "congress", "forum", "exhibition", "event", "webinar", "seminar", "summit", "convention", "roundtable", "panel")
 df_sub2 <- df_sub %>% 
+  distinct(lower_title, .keep_all = TRUE) %>%
   filter(!str_detect(lower_title, paste(workshop_excl, collapse = "|"))) %>%
   filter(!str_detect(lower_abs, paste(workshop_excl, collapse = "|")))
 
