@@ -1,0 +1,32 @@
+%not in english
+DazVallejo2023
+
+%irrelevant
+Favrot08
+https://doi.org/10.25607/obp-876 (tech report)
+Booth2017 (tech report, Unpublished)
+Radig_2021 (plant monitoring, visual)
+
+%review
+Xiao_2022
+Priyadarshani2018
+Rasmussen_2024
+Zhao_2020
+
+%thesis
+best:tel-03826638
+MoscosoRosero2018
+hockman2018acoustic
+Weirathmueller2017b
+Fleischer2000
+VanCise2017
+katz15
+Barcellos2019
+Wilson2024
+Burfin2022
+ref47
+8e0e1070e82311dfa891000ea68e967b
+AubachRatcliffe2023
+soton438947
+Oliveira2022
+https://doi.org/10.7907/m4mt-2q51

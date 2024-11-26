@@ -153,8 +153,6 @@ ggplot(df_sub2, aes(x=Year)) +
 #write.csv(df_sub2, file.path(folder, "Downloads", "filtered_literature.csv"))
 #write.csv(df_sub2, file.path(folder, "Downloads", "filtered_literature.csv"))
 
-library(bib2df)
-
 # Convert df_sub2 to a BibTeX dataframe
 bib_df <- df_sub2 %>%
   mutate(
@@ -182,3 +180,25 @@ bib_df <- df_sub2 %>%
 
 # Write the BibTeX dataframe to a .bib file
 df2bib(bib_df, file = "filtered_literature.bib")
+
+
+merge_df <- bib2df("merged_literature.bib")
+merge_df %>%
+  nrow()
+
+# Read the remove_keys.txt file
+remove_keys <- readLines("remove_keys.txt")
+
+# Remove lines that are empty or start with %
+remove_keys <- remove_keys[remove_keys != "" & !grepl("^%", remove_keys)]
+
+# Remove everything after and including " ("
+remove_keys <- sub(" \\(.*$", "", remove_keys)
+
+# Print the cleaned remove_keys
+print(remove_keys)
+
+merge_df %>%
+  filter(!(BIBTEXKEY %in% remove_keys)) %>%
+  #pull(BIBTEXKEY) %>% sort()
+  df2bib(file = "final_literature.bib")
