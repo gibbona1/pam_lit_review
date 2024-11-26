@@ -31,9 +31,10 @@ df3_sub <- df3 %>%
   rename_with(~ cnames) %>%
   mutate(Source = "Web of Science")
 
-
 df_all <- rbind(df1_sub, df2_sub, df3_sub) %>%
   filter(Year >= 2000)
+
+df_all %>% count()
 
 ggplot(df_all, aes(x=Year)) +
   geom_histogram(stat = "count")
@@ -195,12 +196,15 @@ remove_keys <- readLines("remove_keys.txt") %>%
 print(remove_keys)
 
 merge_df <- merge_df %>%
-  filter(!(BIBTEXKEY %in% remove_keys))# %>%
+  filter(!(BIBTEXKEY %in% remove_keys)) #%>%
   #pull(BIBTEXKEY) %>% sort()
 
 merge_df %>%
   df2bib(file = "final_literature.bib")
 
 merge_df %>%
-  group_by(CATEGORY) %>%
+  #group_by(CATEGORY) %>%
   count()
+
+ggplot(merge_df, aes(x=YEAR)) +
+  geom_histogram(stat = "count")

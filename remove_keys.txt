@@ -6,7 +6,7 @@ Favrot08
 https://doi.org/10.25607/obp-876 (tech report)
 Booth2017 (tech report, Unpublished)
 Radig_2021 (plant monitoring, visual)
-Urazghildiiev2019
+Urazghildiiev2019 (patent)
 
 %review
 Xiao_2022
@@ -17,8 +17,11 @@ Schoeman2022 (review chapter)
 Stowell_2017 (review chapter)
 Oswald_2022 (review chapter)
 Murugaiya_2021 (review chapter)
-Schoeman2022 (review chapter)
 Farina_2017 (review chapter)
+
+%preprint
+DoNascimento2023
+Jones2020
 
 %thesis
 best:tel-03826638
@@ -37,3 +40,5 @@ AubachRatcliffe2023
 soton438947
 Oliveira2022
 https://doi.org/10.7907/m4mt-2q51
+https://doi.org/10.17192/z2023.0087
+https://doi.org/10.24377/ljmu.t.00016120
