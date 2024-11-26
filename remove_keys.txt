@@ -18,6 +18,7 @@ Stowell_2017 (review chapter)
 Oswald_2022 (review chapter)
 Murugaiya_2021 (review chapter)
 Farina_2017 (review chapter)
+van_Merri_nboer_2024
 
 %preprint
 DoNascimento2023
@@ -42,3 +43,12 @@ Oliveira2022
 https://doi.org/10.7907/m4mt-2q51
 https://doi.org/10.17192/z2023.0087
 https://doi.org/10.24377/ljmu.t.00016120
+10.1121/1.2932958
+Riera2012PatternsOS
+
+%not found
+Hutschenreiter_2023
+Copping2012
+Elie_2011
+Bartrina_2024
+Murugaiya_2022
