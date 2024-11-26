@@ -187,18 +187,20 @@ merge_df %>%
   nrow()
 
 # Read the remove_keys.txt file
-remove_keys <- readLines("remove_keys.txt")
-
-# Remove lines that are empty or start with %
-remove_keys <- remove_keys[remove_keys != "" & !grepl("^%", remove_keys)]
-
-# Remove everything after and including " ("
-remove_keys <- sub(" \\(.*$", "", remove_keys)
+remove_keys <- readLines("remove_keys.txt") %>% 
+  .[!grepl("^%", .) & . != ""] %>% 
+  sub(" \\(.*$", "", .)
 
 # Print the cleaned remove_keys
 print(remove_keys)
 
-merge_df %>%
-  filter(!(BIBTEXKEY %in% remove_keys)) %>%
+merge_df <- merge_df %>%
+  filter(!(BIBTEXKEY %in% remove_keys))# %>%
   #pull(BIBTEXKEY) %>% sort()
+
+merge_df %>%
   df2bib(file = "final_literature.bib")
+
+merge_df %>%
+  group_by(CATEGORY) %>%
+  count()

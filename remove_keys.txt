@@ -6,12 +6,18 @@ Favrot08
 https://doi.org/10.25607/obp-876 (tech report)
 Booth2017 (tech report, Unpublished)
 Radig_2021 (plant monitoring, visual)
+Urazghildiiev2019
 
 %review
 Xiao_2022
 Priyadarshani2018
 Rasmussen_2024
 Zhao_2020
+Schoeman2022 (review chapter)
+Stowell_2017 (review chapter)
+Oswald_2022 (review chapter)
+Murugaiya_2021 (review chapter)
+Schoeman2022 (review chapter)
 
 %thesis
 best:tel-03826638
