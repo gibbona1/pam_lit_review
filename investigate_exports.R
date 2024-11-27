@@ -207,4 +207,5 @@ merge_df %>%
   count()
 
 ggplot(merge_df, aes(x=YEAR)) +
-  geom_histogram(stat = "count")
+  geom_histogram(stat = "count") +
+  geom_text(stat = "count", aes(label = ..count..), vjust = -0.5)
