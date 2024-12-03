@@ -1,0 +1,3497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:Sources xmlns:b="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" xmlns="http://schemas.openxmlformats.org/officeDocument/2006/bibliography">
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Unsupervised acoustic classification of individual gibbon females and the implications for passive acoustic monitoring</b:Title>
+    <b:Year>2021</b:Year>
+    <b:Pages>328-341</b:Pages>
+    <b:JournalName>Methods in Ecology and Evolution</b:JournalName>
+    <b:Issue>2</b:Issue>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Dena J</b:First>
+            <b:Last>Clink</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Holger</b:First>
+            <b:Last>Klinck</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;besjournals.onlinelibrary.wiley.com&#x2F;doi&#x2F;abs&#x2F;10.1111&#x2F;2041-210X.13520</b:URL>
+    <b:Tag>unsupervised-acoustic-classification-of-individual-gibbon-females-and-the-implications-for-passive-acoustic-monitoring</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>TreeVibes: Modern Tools for Global Monitoring of Trees for Borers</b:Title>
+    <b:Year>2021</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2624-6511</b:StandardNumber>
+    <b:Publisher>MDPI AG</b:Publisher>
+    <b:Pages>271-285</b:Pages>
+    <b:JournalName>Smart Cities</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Iraklis</b:First>
+            <b:Last>Rigakis</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ilyas</b:First>
+            <b:Last>Potamitis</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Nicolaos-Alexandros</b:First>
+            <b:Last>Tatlas</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Stelios M</b:First>
+            <b:Last>Potirakis</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Stavros</b:First>
+            <b:Last>Ntalampiras</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.3390&#x2F;smartcities4010017</b:URL>
+    <b:Tag>treevibes:-modern-tools-for-global-monitoring-of-trees-for-borers</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Time of night and moonlight structure vertical space use by insectivorous bats in a Neotropical rainforest: an acoustic monitoring study</b:Title>
+    <b:Year>2020</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>PeerJ</b:Publisher>
+    <b:Pages>e10591</b:Pages>
+    <b:JournalName>PeerJ</b:JournalName>
+    <b:Issue>e10591</b:Issue>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Dylan G E</b:First>
+            <b:Last>Gomes</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Giulliana</b:First>
+            <b:Last>Appel</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jesse R</b:First>
+            <b:Last>Barber</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:Tag>time-of-night-and-moonlight-structure-vertical-space-use-by-insectivorous-bats-in-a-neotropical-rainforest:-an-acoustic-monitoring-study</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Time and habitat structure shape insect acoustic activity in the Amazon</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1471-2970</b:StandardNumber>
+    <b:Publisher>The Royal Society</b:Publisher>
+    <b:JournalName>Philosophical Transactions of the Royal Society B: Biological Sciences</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Leandro A</b:First>
+            <b:Last>Do Nascimento</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Cristian</b:First>
+            <b:Last>Pérez-Granados</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Janderson B Rodrigues</b:First>
+            <b:Last>Alencar</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Karen H</b:First>
+            <b:Last>Beard</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1098&#x2F;rstb.2023.0112</b:URL>
+    <b:Tag>time-and-habitat-structure-shape-insect-acoustic-activity-in-the-amazon</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>The effect of local land use on aerial insectivorous bats (Chiroptera) within the two dominating crop types in the Northern-Caribbean lowlands of Costa Rica</b:Title>
+    <b:Year>2019</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>Public Library of Science</b:Publisher>
+    <b:Pages>1-15</b:Pages>
+    <b:JournalName>PLOS ONE</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Bernal A N D Jung Kirsten</b:First>
+            <b:Last>Alpízar Priscilla AND Rodríguez-Herrera</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;doi.org&#x2F;10.1371&#x2F;journal.pone.0210364</b:URL>
+    <b:Tag>the-effect-of-local-land-use-on-aerial-insectivorous-bats-(chiroptera)-within-the-two-dominating-crop-types-in-the-northern-caribbean-lowlands-of-costa-rica</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Temporal patterns in the soundscape of the port area in an urban estuary</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>0272-7714</b:StandardNumber>
+    <b:Publisher>Elsevier BV</b:Publisher>
+    <b:JournalName>Estuarine, Coastal and Shelf Science</b:JournalName>
+    <b:Volume>297</b:Volume>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>A M</b:First>
+            <b:Last>Milanelli</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M R</b:First>
+            <b:Last>Rossi-Santos</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>P F</b:First>
+            <b:Last>Fruet</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>R</b:First>
+            <b:Last>Assumpção</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>A M</b:First>
+            <b:Last>Cavalcanti</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>L</b:First>
+            <b:Last>Dalla Rosa</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1016&#x2F;j.ecss.2023.108596</b:URL>
+    <b:Tag>temporal-patterns-in-the-soundscape-of-the-port-area-in-an-urban-estuary</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Tadarida: A Toolbox for Animal Detection on Acoustic Recordings</b:Title>
+    <b:Year>2017</b:Year>
+    <b:Month>11</b:Month>
+    <b:JournalName>Journal of Open Research Software</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Yves</b:First>
+            <b:Last>Bas</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Didier</b:First>
+            <b:Last>Bas</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jean-François</b:First>
+            <b:Last>Julien</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:Tag>tadarida:-a-toolbox-for-animal-detection-on-acoustic-recordings</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>generic</b:SourceType>
+    <b:Title>Soundbay: Deep Learning Framework for Marine Mammals and Bioacoustic Research</b:Title>
+    <b:Year>2023</b:Year>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Noam</b:First>
+            <b:Last>Bressler</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Michael</b:First>
+            <b:Last>Faran</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Amit</b:First>
+            <b:Last>Galor</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Michael Moshe</b:First>
+            <b:Last>Michelashvili</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Tomer</b:First>
+            <b:Last>Nachshon</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Noa</b:First>
+            <b:Last>Weiss</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2311.04343</b:URL>
+    <b:Tag>soundbay:-deep-learning-framework-for-marine-mammals-and-bioacoustic-research</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Sound patterns of snapping shrimp, fish, and dolphins in an estuarine soundscape of the southeastern USA</b:Title>
+    <b:Year>2019</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1616-1599</b:StandardNumber>
+    <b:Publisher>Inter-Research Science Center</b:Publisher>
+    <b:Pages>49-68</b:Pages>
+    <b:JournalName>Marine Ecology Progress Series</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>A</b:First>
+            <b:Last>Monczak</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>C</b:First>
+            <b:Last>Mueller</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M E</b:First>
+            <b:Last>Miller</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Y</b:First>
+            <b:Last>Ji</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>S A</b:First>
+            <b:Last>Borgianini</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>E W</b:First>
+            <b:Last>Montie</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.3354&#x2F;meps12813</b:URL>
+    <b:Tag>sound-patterns-of-snapping-shrimp,-fish,-and-dolphins-in-an-estuarine-soundscape-of-the-southeastern-usa</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Sensing ecosystem dynamics via audio source separation: A case study of marine soundscapes off northeastern Taiwan</b:Title>
+    <b:Year>2021</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>Public Library of Science</b:Publisher>
+    <b:Pages>1-23</b:Pages>
+    <b:JournalName>PLOS Computational Biology</b:JournalName>
+    <b:Issue>2</b:Issue>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Tomonari A N D Tsao Yu</b:First>
+            <b:Last>Lin Tzu-Hao AND Akamatsu</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;doi.org&#x2F;10.1371&#x2F;journal.pcbi.1008698</b:URL>
+    <b:Tag>sensing-ecosystem-dynamics-via-audio-source-separation:-a-case-study-of-marine-soundscapes-off-northeastern-taiwan</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Rthoptera: Standardised Insect Bioacoustics in R</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Publisher>Cold Spring Harbor Laboratory</b:Publisher>
+    <b:JournalName>bioRxiv</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Francisco</b:First>
+            <b:Last>Rivas</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Cesare</b:First>
+            <b:Last>Brizio</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Filippo M</b:First>
+            <b:Last>Buzzetti</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Bryan</b:First>
+            <b:Last>Pijanowski</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.biorxiv.org&#x2F;content&#x2F;early&#x2F;2024&#x2F;11&#x2F;08&#x2F;2024.11.04.621915</b:URL>
+    <b:Tag>rthoptera:-standardised-insect-bioacoustics-in-r</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Conference Proceedings</b:SourceType>
+    <b:Title>Real-time Detection and Classification for Targeted Marine Mammals</b:Title>
+    <b:Year>2021</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>IEEE</b:Publisher>
+    <b:Pages>1027-1031</b:Pages>
+    <b:JournalName>2021 OES China Ocean Acoustics (COA)</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Yankun</b:First>
+            <b:Last>Chen</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Weiping</b:First>
+            <b:Last>Wang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yinian</b:First>
+            <b:Last>Liang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Defu</b:First>
+            <b:Last>Zhou</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Chao</b:First>
+            <b:Last>Dong</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jie</b:First>
+            <b:Last>Li</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1109&#x2F;COA50123.2021.9519906</b:URL>
+    <b:Tag>real-time-detection-and-classification-for-targeted-marine-mammals</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Report</b:SourceType>
+    <b:Title>Prince Rupert - Aurora LNG Acoustic Monitoring Study: Chatham Sound Region</b:Title>
+    <b:Year>2016</b:Year>
+    <b:Issue>Document 01129, Version 3.0</b:Issue>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>H</b:First>
+            <b:Last>Frouin-Mouy</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>H</b:First>
+            <b:Last>Yurk</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>X</b:First>
+            <b:Last>Mouy</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>B</b:First>
+            <b:Last>Martin</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;projects.eao.gov.bc.ca&#x2F;api&#x2F;document&#x2F;58923173b637cc02bea163f0&#x2F;fetch&#x2F;Appendix_O_Acoustic_Monitoring_Final_screening.pdf</b:URL>
+    <b:Tag>prince-rupert---aurora-lng-acoustic-monitoring-study:-chatham-sound-region</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>PNW-Cnet v4: Automated species identification for passive acoustic monitoring</b:Title>
+    <b:Year>2023</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2352-7110</b:StandardNumber>
+    <b:Publisher>Elsevier BV</b:Publisher>
+    <b:JournalName>SoftwareX</b:JournalName>
+    <b:Volume>23</b:Volume>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Zachary J</b:First>
+            <b:Last>Ruff</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Damon B</b:First>
+            <b:Last>Lesmeister</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Julianna M A</b:First>
+            <b:Last>Jenkins</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Christopher M</b:First>
+            <b:Last>Sullivan</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1016&#x2F;j.softx.2023.101473</b:URL>
+    <b:Tag>pnw-cnet-v4:-automated-species-identification-for-passive-acoustic-monitoring</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Passive acoustic monitoring of animal populations with transfer learning</b:Title>
+    <b:Year>2022</b:Year>
+    <b:StandardNumber>1574-9541</b:StandardNumber>
+    <b:JournalName>Ecological Informatics</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Emmanuel</b:First>
+            <b:Last>Dufourq</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Carly</b:First>
+            <b:Last>Batist</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ruben</b:First>
+            <b:Last>Foquet</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ian</b:First>
+            <b:Last>Durbach</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S1574954122001388</b:URL>
+    <b:Tag>passive-acoustic-monitoring-of-animal-populations-with-transfer-learning</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Passive acoustic methods for tracking the 3D movements of small cetaceans around marine structures</b:Title>
+    <b:Year>2020</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>Public Library of Science</b:Publisher>
+    <b:Pages>1-16</b:Pages>
+    <b:JournalName>PLOS ONE</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Laura A N D Macaulay Jamie A N D Sparling Carol A N D Hastie Gordon</b:First>
+            <b:Last>Gillespie Douglas AND Palmer</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;doi.org&#x2F;10.1371&#x2F;journal.pone.0229058</b:URL>
+    <b:Tag>passive-acoustic-methods-for-tracking-the-3d-movements-of-small-cetaceans-around-marine-structures</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Optimizing tropical forest bird surveys using passive acoustic monitoring and high temporal resolution sampling</b:Title>
+    <b:Year>2021</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2056-3485</b:StandardNumber>
+    <b:Publisher>Wiley</b:Publisher>
+    <b:Pages>45-56</b:Pages>
+    <b:JournalName>Remote Sensing in Ecology and Conservation</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Oliver C</b:First>
+            <b:Last>Metcalf</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jos</b:First>
+            <b:Last>Barlow</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Stuart</b:First>
+            <b:Last>Marsden</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Nárgila</b:First>
+            <b:Last>de Moura</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Erika</b:First>
+            <b:Last>Berenguer</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Joice</b:First>
+            <b:Last>Ferreira</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Alexander C</b:First>
+            <b:Last>Lees</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+          <b:Person>
+            <b:First>Nathalie</b:First>
+            <b:Last>Pettorelli</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Christos</b:First>
+            <b:Last>Astaras</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1002&#x2F;rse2.227</b:URL>
+    <b:Tag>optimizing-tropical-forest-bird-surveys-using-passive-acoustic-monitoring-and-high-temporal-resolution-sampling</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Open-source machine learning BANTER acoustic classification of beaked whale echolocation pulses</b:Title>
+    <b:Year>2024</b:Year>
+    <b:StandardNumber>1574-9541</b:StandardNumber>
+    <b:JournalName>Ecological Informatics</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Shannon</b:First>
+            <b:Last>Rankin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Taiki</b:First>
+            <b:Last>Sakai</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Frederick I</b:First>
+            <b:Last>Archer</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jay</b:First>
+            <b:Last>Barlow</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Danielle</b:First>
+            <b:Last>Cholewiak</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Annamaria I</b:First>
+            <b:Last>DeAngelis</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jennifer L K</b:First>
+            <b:Last>McCullough</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Erin M</b:First>
+            <b:Last>Oleson</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Anne E</b:First>
+            <b:Last>Simonis</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Melissa S</b:First>
+            <b:Last>Soldevilla</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jennifer S</b:First>
+            <b:Last>Trickey</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S1574954124000530</b:URL>
+    <b:Tag>open-source-machine-learning-banter-acoustic-classification-of-beaked-whale-echolocation-pulses</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Open-source workflow approaches to passive acoustic monitoring of bats</b:Title>
+    <b:Year>2023</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2041-210X</b:StandardNumber>
+    <b:Publisher>Wiley</b:Publisher>
+    <b:Pages>1747-1763</b:Pages>
+    <b:JournalName>Methods in Ecology and Evolution</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Signe M M</b:First>
+            <b:Last>Brinkløv</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jamie</b:First>
+            <b:Last>Macaulay</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Christian</b:First>
+            <b:Last>Bergler</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jakob</b:First>
+            <b:Last>Tougaard</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Kristian</b:First>
+            <b:Last>Beedholm</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Morten</b:First>
+            <b:Last>Elmeros</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Peter Teglberg</b:First>
+            <b:Last>Madsen</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1111&#x2F;2041-210X.14131</b:URL>
+    <b:Tag>open-source-workflow-approaches-to-passive-acoustic-monitoring-of-bats</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>On Automatic Bioacoustic Detection of Pests: The Cases of Rhynchophorus ferrugineus and Sitophilus oryzae</b:Title>
+    <b:Year>2009</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>0022-0493</b:StandardNumber>
+    <b:Publisher>Oxford University Press (OUP)</b:Publisher>
+    <b:Pages>1681-1690</b:Pages>
+    <b:JournalName>Journal of Economic Entomology</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Ilyas</b:First>
+            <b:Last>Potamitis</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Todor</b:First>
+            <b:Last>Ganchev</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Dimitris</b:First>
+            <b:Last>Kontodimas</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1603&#x2F;029.102.0436</b:URL>
+    <b:Tag>on-automatic-bioacoustic-detection-of-pests:-the-cases-of-rhynchophorus-ferrugineus-and-sitophilus-oryzae</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Multi-year soundscape recordings and automated call detection reveals varied impact of moonlight on calling activity of neotropical forest katydids</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1471-2970</b:StandardNumber>
+    <b:Publisher>The Royal Society</b:Publisher>
+    <b:JournalName>Philosophical Transactions of the Royal Society B: Biological Sciences</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Laurel B</b:First>
+            <b:Last>Symes</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Shyam</b:First>
+            <b:Last>Madhusudhana</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sharon J</b:First>
+            <b:Last>Martinson</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Inga</b:First>
+            <b:Last>Geipel</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hannah M</b:First>
+            <b:Last>ter Hofstede</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1098&#x2F;rstb.2023.0110</b:URL>
+    <b:Tag>multi-year-soundscape-recordings-and-automated-call-detection-reveals-varied-impact-of-moonlight-on-calling-activity-of-neotropical-forest-katydids</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Multi-level LSTM framework with hybrid sonic features for human-animal conflict evasion</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1432-2315</b:StandardNumber>
+    <b:Publisher>Springer Science and Business Media LLC</b:Publisher>
+    <b:JournalName>The Visual Computer</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>R</b:First>
+            <b:Last>Varun Prakash</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>V</b:First>
+            <b:Last>Karthikeyan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>S</b:First>
+            <b:Last>Vishali</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M</b:First>
+            <b:Last>Karthika</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1007&#x2F;s00371-024-03588-9</b:URL>
+    <b:Tag>multi-level-lstm-framework-with-hybrid-sonic-features-for-human-animal-conflict-evasion</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Monitoring of a Nearshore Small Dolphin Species Using Passive Acoustic Platforms and Supervised Machine Learning Techniques</b:Title>
+    <b:Year>2020</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2296-7745</b:StandardNumber>
+    <b:Publisher>Frontiers Media SA</b:Publisher>
+    <b:JournalName>Frontiers in Marine Science</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Francesco</b:First>
+            <b:Last>Caruso</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Lijun</b:First>
+            <b:Last>Dong</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Mingli</b:First>
+            <b:Last>Lin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Mingming</b:First>
+            <b:Last>Liu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Zining</b:First>
+            <b:Last>Gong</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Wanxue</b:First>
+            <b:Last>Xu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Giuseppe</b:First>
+            <b:Last>Alonge</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Songhai</b:First>
+            <b:Last>Li</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.3389&#x2F;fmars.2020.00267</b:URL>
+    <b:Tag>monitoring-of-a-nearshore-small-dolphin-species-using-passive-acoustic-platforms-and-supervised-machine-learning-techniques</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Methods for processing and analyzing passive acoustic monitoring data: An example of song recognition in western black-crested gibbons</b:Title>
+    <b:Year>2023</b:Year>
+    <b:StandardNumber>1470-160X</b:StandardNumber>
+    <b:JournalName>Ecological Indicators</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Xiaotao</b:First>
+            <b:Last>Zhou</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Kunrong</b:First>
+            <b:Last>Hu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Zhenhua</b:First>
+            <b:Last>Guan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Chunjiang</b:First>
+            <b:Last>Yu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Shuai</b:First>
+            <b:Last>Wang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Meng</b:First>
+            <b:Last>Fan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yongke</b:First>
+            <b:Last>Sun</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yong</b:First>
+            <b:Last>Cao</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yijie</b:First>
+            <b:Last>Wang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Guangting</b:First>
+            <b:Last>Miao</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S1470160X23010506</b:URL>
+    <b:Tag>methods-for-processing-and-analyzing-passive-acoustic-monitoring-data:-an-example-of-song-recognition-in-western-black-crested-gibbons</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Minke whale acoustic behavior and multi-year seasonal and diel vocalization patterns in Massachusetts Bay, USA</b:Title>
+    <b:Year>2013</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1616-1599</b:StandardNumber>
+    <b:Publisher>Inter-Research Science Center</b:Publisher>
+    <b:Pages>279-295</b:Pages>
+    <b:JournalName>Marine Ecology Progress Series</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>D</b:First>
+            <b:Last>Risch</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>C W</b:First>
+            <b:Last>Clark</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>P J</b:First>
+            <b:Last>Dugan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M</b:First>
+            <b:Last>Popescu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>U</b:First>
+            <b:Last>Siebert</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>S M</b:First>
+            <b:Last>Van Parijs</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.3354&#x2F;meps10426</b:URL>
+    <b:Tag>minke-whale-acoustic-behavior-and-multi-year-seasonal-and-diel-vocalization-patterns-in-massachusetts-bay,-usa</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Machine learning analysis reveals relationship between pomacentrid calls and environmental cues</b:Title>
+    <b:Year>2022</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1616-1599</b:StandardNumber>
+    <b:Publisher>Inter-Research Science Center</b:Publisher>
+    <b:Pages>197-210</b:Pages>
+    <b:JournalName>Marine Ecology Progress Series</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>J E</b:First>
+            <b:Last>Munger</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>D P</b:First>
+            <b:Last>Herrera</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>S M</b:First>
+            <b:Last>Haver</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>L</b:First>
+            <b:Last>Waterhouse</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M F</b:First>
+            <b:Last>McKenna</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>R P</b:First>
+            <b:Last>Dziak</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>J</b:First>
+            <b:Last>Gedamke</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>S A</b:First>
+            <b:Last>Heppell</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>J H</b:First>
+            <b:Last>Haxel</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.3354&#x2F;meps13912</b:URL>
+    <b:Tag>machine-learning-analysis-reveals-relationship-between-pomacentrid-calls-and-environmental-cues</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Long-Term Monitoring of Dolphin Biosonar Activity in Deep Pelagic Waters of the Mediterranean Sea</b:Title>
+    <b:Year>2017</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2045-2322</b:StandardNumber>
+    <b:Publisher>Springer Science and Business Media LLC</b:Publisher>
+    <b:JournalName>Scientific Reports</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Francesco</b:First>
+            <b:Last>Caruso</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Giuseppe</b:First>
+            <b:Last>Alonge</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Giorgio</b:First>
+            <b:Last>Bellia</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Emilio</b:First>
+            <b:Last>De Domenico</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Rosario</b:First>
+            <b:Last>Grammauta</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Giuseppina</b:First>
+            <b:Last>Larosa</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Salvatore</b:First>
+            <b:Last>Mazzola</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Giorgio</b:First>
+            <b:Last>Riccobene</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Gianni</b:First>
+            <b:Last>Pavan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Elena</b:First>
+            <b:Last>Papale</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Carmelo</b:First>
+            <b:Last>Pellegrino</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sara</b:First>
+            <b:Last>Pulvirenti</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Virginia</b:First>
+            <b:Last>Sciacca</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Francesco</b:First>
+            <b:Last>Simeone</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Fabrizio</b:First>
+            <b:Last>Speziale</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Salvatore</b:First>
+            <b:Last>Viola</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Giuseppa</b:First>
+            <b:Last>Buscaino</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1038&#x2F;s41598-017-04608-6</b:URL>
+    <b:Tag>long-term-monitoring-of-dolphin-biosonar-activity-in-deep-pelagic-waters-of-the-mediterranean-sea</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Long-Range Bird Species Identification Using Directional Microphones and CNNs</b:Title>
+    <b:Year>2024</b:Year>
+    <b:StandardNumber>2504-4990</b:StandardNumber>
+    <b:Pages>2336-2354</b:Pages>
+    <b:JournalName>Machine Learning and Knowledge Extraction</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Tiago</b:First>
+            <b:Last>Garcia</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Luís</b:First>
+            <b:Last>Pina</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Magnus</b:First>
+            <b:Last>Robb</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jorge</b:First>
+            <b:Last>Maria</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Roel</b:First>
+            <b:Last>May</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ricardo</b:First>
+            <b:Last>Oliveira</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.mdpi.com&#x2F;2504-4990&#x2F;6&#x2F;4&#x2F;115</b:URL>
+    <b:Tag>long-range-bird-species-identification-using-directional-microphones-and-cnns</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Improving the workflow to crack Small, Unbalanced, Noisy, but Genuine (SUNG) datasets in bioacoustics: the case of bonobo calls</b:Title>
+    <b:Year>2022</b:Year>
+    <b:Publisher>Cold Spring Harbor Laboratory</b:Publisher>
+    <b:JournalName>bioRxiv</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Vincent</b:First>
+            <b:Last>Arnaud</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>François</b:First>
+            <b:Last>Pellegrino</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sumir</b:First>
+            <b:Last>Keenan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Xavier</b:First>
+            <b:Last>St-Gelais</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Nicolas</b:First>
+            <b:Last>Mathevon</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Florence</b:First>
+            <b:Last>Levréro</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Christophe</b:First>
+            <b:Last>Coupé</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.biorxiv.org&#x2F;content&#x2F;early&#x2F;2022&#x2F;06&#x2F;29&#x2F;2022.06.26.497684</b:URL>
+    <b:Tag>improving-the-workflow-to-crack-small,-unbalanced,-noisy,-but-genuine-(sung)-datasets-in-bioacoustics:-the-case-of-bonobo-calls</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Improving deep learning acoustic classifiers with contextual information for wildlife monitoring</b:Title>
+    <b:Year>2023</b:Year>
+    <b:StandardNumber>1574-9541</b:StandardNumber>
+    <b:JournalName>Ecological Informatics</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Lorène</b:First>
+            <b:Last>Jeantet</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Emmanuel</b:First>
+            <b:Last>Dufourq</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S1574954123002856</b:URL>
+    <b:Tag>improving-deep-learning-acoustic-classifiers-with-contextual-information-for-wildlife-monitoring</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Improve automatic detection of animal call sequences with temporal context</b:Title>
+    <b:Year>2021</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1742-5662</b:StandardNumber>
+    <b:Publisher>The Royal Society</b:Publisher>
+    <b:Pages>20210297</b:Pages>
+    <b:JournalName>Journal of The Royal Society Interface</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Shyam</b:First>
+            <b:Last>Madhusudhana</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yu</b:First>
+            <b:Last>Shiu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Holger</b:First>
+            <b:Last>Klinck</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Erica</b:First>
+            <b:Last>Fleishman</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Xiaobai</b:First>
+            <b:Last>Liu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Eva-Marie</b:First>
+            <b:Last>Nosal</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Tyler</b:First>
+            <b:Last>Helble</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Danielle</b:First>
+            <b:Last>Cholewiak</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Douglas</b:First>
+            <b:Last>Gillespie</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ana</b:First>
+            <b:Last>Širović</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Marie A</b:First>
+            <b:Last>Roch</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1098&#x2F;rsif.2021.0297</b:URL>
+    <b:Tag>improve-automatic-detection-of-animal-call-sequences-with-temporal-context</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Identification, Analysis and Characterization of Base Units of Bird Vocal Communication: The White Spectacled Bulbul (Pycnonotus xanthopygos) as a Case Study</b:Title>
+    <b:Year>2022</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1662-5153</b:StandardNumber>
+    <b:Publisher>Frontiers Media SA</b:Publisher>
+    <b:JournalName>Frontiers in Behavioral Neuroscience</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Aya</b:First>
+            <b:Last>Marck</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yoni</b:First>
+            <b:Last>Vortman</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Oren</b:First>
+            <b:Last>Kolodny</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yizhar</b:First>
+            <b:Last>Lavner</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.3389&#x2F;fnbeh.2021.812939</b:URL>
+    <b:Tag>identification,-analysis-and-characterization-of-base-units-of-bird-vocal-communication:-the-white-spectacled-bulbul-(pycnonotus-xanthopygos)-as-a-case-study</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Exploring the potential of occupancy modelling using passive acoustics in Coua gigas and Coua coquereli</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1662-2510</b:StandardNumber>
+    <b:Publisher>African Journals Online (AJOL)</b:Publisher>
+    <b:Pages>39-47</b:Pages>
+    <b:JournalName>Madagascar Conservation &amp;amp; Development</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Celine</b:First>
+            <b:Last>Jordan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Matthias</b:First>
+            <b:Last>Markolf</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.4314&#x2F;mcd.v18i1.6</b:URL>
+    <b:Tag>exploring-the-potential-of-occupancy-modelling-using-passive-acoustics-in-coua-gigas-and-coua-coquereli</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Estimating animal population density using passive acoustics</b:Title>
+    <b:Year>2012</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1469-185X</b:StandardNumber>
+    <b:Publisher>Wiley</b:Publisher>
+    <b:Pages>287-309</b:Pages>
+    <b:JournalName>Biological Reviews</b:JournalName>
+    <b:Issue>2</b:Issue>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Tiago A</b:First>
+            <b:Last>Marques</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Len</b:First>
+            <b:Last>Thomas</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Stephen W</b:First>
+            <b:Last>Martin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>David K</b:First>
+            <b:Last>Mellinger</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jessica A</b:First>
+            <b:Last>Ward</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>David J</b:First>
+            <b:Last>Moretti</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Danielle</b:First>
+            <b:Last>Harris</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Peter L</b:First>
+            <b:Last>Tyack</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1111&#x2F;brv.12001</b:URL>
+    <b:Tag>estimating-animal-population-density-using-passive-acoustics</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Emerging technologies in citizen science and potential for insect monitoring</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1471-2970</b:StandardNumber>
+    <b:Publisher>The Royal Society</b:Publisher>
+    <b:JournalName>Philosophical Transactions of the Royal Society B: Biological Sciences</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Julie Koch</b:First>
+            <b:Last>Sheard</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Tim</b:First>
+            <b:Last>Adriaens</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Diana E</b:First>
+            <b:Last>Bowler</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Andrea</b:First>
+            <b:Last>Büermann</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Corey T</b:First>
+            <b:Last>Callaghan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Elodie C M</b:First>
+            <b:Last>Camprasse</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Shawan</b:First>
+            <b:Last>Chowdhury</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Thore</b:First>
+            <b:Last>Engel</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Elizabeth A</b:First>
+            <b:Last>Finch</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Julia</b:First>
+            <b:Last>von Gönner</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Pen-Yuan</b:First>
+            <b:Last>Hsing</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Peter</b:First>
+            <b:Last>Mikula</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Rui Ying</b:First>
+            <b:Last>Rachel Oh</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Birte</b:First>
+            <b:Last>Peters</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Shyam S</b:First>
+            <b:Last>Phartyal</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Michael J O</b:First>
+            <b:Last>Pocock</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jana</b:First>
+            <b:Last>Wäldchen</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Aletta</b:First>
+            <b:Last>Bonn</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1098&#x2F;rstb.2023.0106</b:URL>
+    <b:Tag>emerging-technologies-in-citizen-science-and-potential-for-insect-monitoring</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Conference Proceedings</b:SourceType>
+    <b:Title>Efficient Bird Sound Detection on the Bela Embedded System</b:Title>
+    <b:Year>2020</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>IEEE</b:Publisher>
+    <b:Pages>746-750</b:Pages>
+    <b:JournalName>ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Alexandru-Marius</b:First>
+            <b:Last>Solomes</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Dan</b:First>
+            <b:Last>Stowell</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1109&#x2F;ICASSP40776.2020.9053533</b:URL>
+    <b:Tag>efficient-bird-sound-detection-on-the-bela-embedded-system</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Echolocation calls ofNatalus primus(Chiroptera: Natalidae): Implications for conservation monitoring of this species</b:Title>
+    <b:Year>2017</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2331-2025</b:StandardNumber>
+    <b:Publisher>Informa UK Limited</b:Publisher>
+    <b:JournalName>Cogent Biology</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Lida</b:First>
+            <b:Last>Sanchez</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Christian R</b:First>
+            <b:Last>Moreno</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Emanuel C</b:First>
+            <b:Last>Mora</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+          <b:Person>
+            <b:First>Hynek</b:First>
+            <b:Last>Burda</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1080&#x2F;23312025.2017.1355027</b:URL>
+    <b:Tag>echolocation-calls-ofnatalus-primus(chiroptera:-natalidae):-implications-for-conservation-monitoring-of-this-species</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Report</b:SourceType>
+    <b:Title>Developing technologies for Agri-environment monitoring</b:Title>
+    <b:Year>2022</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>UK Centre for Ecology &amp; Hydrology</b:Publisher>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>D B</b:First>
+            <b:Last>Roy</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>C</b:First>
+            <b:Last>Abrahams</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>T</b:First>
+            <b:Last>August</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>J</b:First>
+            <b:Last>Christelow</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>F</b:First>
+            <b:Last>Gerard</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>K</b:First>
+            <b:Last>Howell</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M</b:First>
+            <b:Last>Logie</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M</b:First>
+            <b:Last>McCracken</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>D</b:First>
+            <b:Last>Pallett</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M</b:First>
+            <b:Last>Pocock</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>D S</b:First>
+            <b:Last>Read</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>D</b:First>
+            <b:Last>Sadykova</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>J T</b:First>
+            <b:Last>Staley</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;nora.nerc.ac.uk&#x2F;id&#x2F;eprint&#x2F;533486&#x2F;</b:URL>
+    <b:City>Wallingford, UK</b:City>
+    <b:Tag>developing-technologies-for-agri-environment-monitoring</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Deep neural networks for automated detection of marine mammal species</b:Title>
+    <b:Year>2020</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2045-2322</b:StandardNumber>
+    <b:Publisher>Springer Science and Business Media LLC</b:Publisher>
+    <b:JournalName>Scientific Reports</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Yu</b:First>
+            <b:Last>Shiu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>K J</b:First>
+            <b:Last>Palmer</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Marie A</b:First>
+            <b:Last>Roch</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Erica</b:First>
+            <b:Last>Fleishman</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Xiaobai</b:First>
+            <b:Last>Liu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Eva-Marie</b:First>
+            <b:Last>Nosal</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Tyler</b:First>
+            <b:Last>Helble</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Danielle</b:First>
+            <b:Last>Cholewiak</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Douglas</b:First>
+            <b:Last>Gillespie</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Holger</b:First>
+            <b:Last>Klinck</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1038&#x2F;s41598-020-57549-y</b:URL>
+    <b:Tag>deep-neural-networks-for-automated-detection-of-marine-mammal-species</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Deep learning in marine bioacoustics: a benchmark for baleen whale detection</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2056-3485</b:StandardNumber>
+    <b:Publisher>Wiley</b:Publisher>
+    <b:Pages>642-654</b:Pages>
+    <b:JournalName>Remote Sensing in Ecology and Conservation</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Elena</b:First>
+            <b:Last>Schall</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Idil Ilgaz</b:First>
+            <b:Last>Kaya</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Elisabeth</b:First>
+            <b:Last>Debusschere</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Paul</b:First>
+            <b:Last>Devos</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Clea</b:First>
+            <b:Last>Parcerisas</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1002&#x2F;rse2.392</b:URL>
+    <b:Tag>deep-learning-in-marine-bioacoustics:-a-benchmark-for-baleen-whale-detection</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Convolutional Neural Networks for the Identification of African Lions from Individual Vocalizations</b:Title>
+    <b:Year>2022</b:Year>
+    <b:StandardNumber>2313-433X</b:StandardNumber>
+    <b:JournalName>Journal of Imaging</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Martino</b:First>
+            <b:Last>Trapanotto</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Loris</b:First>
+            <b:Last>Nanni</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sheryl</b:First>
+            <b:Last>Brahnam</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Xiang</b:First>
+            <b:Last>Guo</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.mdpi.com&#x2F;2313-433X&#x2F;8&#x2F;4&#x2F;96</b:URL>
+    <b:Tag>convolutional-neural-networks-for-the-identification-of-african-lions-from-individual-vocalizations</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Conference Proceedings</b:SourceType>
+    <b:Title>Computing biodiversity change via a soundscape monitoring network</b:Title>
+    <b:Year>2017</b:Year>
+    <b:Pages>128-133</b:Pages>
+    <b:JournalName>2017 Pacific Neighborhood Consortium Annual Conference and Joint Meetings (PNC)</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Tzu-Hao</b:First>
+            <b:Last>Lin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yu</b:First>
+            <b:Last>Tsao</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yu-Huang</b:First>
+            <b:Last>Wang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Han-Wei</b:First>
+            <b:Last>Yen</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sheng-Shan</b:First>
+            <b:Last>Lu</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;document&#x2F;8203533</b:URL>
+    <b:Tag>computing-biodiversity-change-via-a-soundscape-monitoring-network</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Classification of animal sounds in a hyperdiverse rainforest using convolutional neural networks with data augmentation</b:Title>
+    <b:Year>2022</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1470-160X</b:StandardNumber>
+    <b:Publisher>Elsevier BV</b:Publisher>
+    <b:JournalName>Ecological Indicators</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Yuren</b:First>
+            <b:Last>Sun</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Tatiana</b:First>
+            <b:Last>Midori Maeda</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Claudia</b:First>
+            <b:Last>Solís-Lemus</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Daniel</b:First>
+            <b:Last>Pimentel-Alarcón</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Zuzana</b:First>
+            <b:Last>Buřivalová</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1016&#x2F;j.ecolind.2022.109621</b:URL>
+    <b:Tag>classification-of-animal-sounds-in-a-hyperdiverse-rainforest-using-convolutional-neural-networks-with-data-augmentation</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>CDPNet: conformer-based dual path joint modeling network for bird sound recognition</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1573-7497</b:StandardNumber>
+    <b:Publisher>Springer Science and Business Media LLC</b:Publisher>
+    <b:Pages>3152-3168</b:Pages>
+    <b:JournalName>Applied Intelligence</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Huimin</b:First>
+            <b:Last>Guo</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Haifang</b:First>
+            <b:Last>Jian</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yiyu</b:First>
+            <b:Last>Wang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hongchang</b:First>
+            <b:Last>Wang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Shuaikang</b:First>
+            <b:Last>Zheng</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Qinghua</b:First>
+            <b:Last>Cheng</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yuehao</b:First>
+            <b:Last>Li</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1007&#x2F;s10489-024-05362-9</b:URL>
+    <b:Tag>cdpnet:-conformer-based-dual-path-joint-modeling-network-for-bird-sound-recognition</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Call recognition and individual identification of fish vocalizations based on automatic speech recognition: An example with the Lusitanian toadfish</b:Title>
+    <b:Year>2015</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1520-8524</b:StandardNumber>
+    <b:Publisher>Acoustical Society of America (ASA)</b:Publisher>
+    <b:Pages>3941-3950</b:Pages>
+    <b:JournalName>The Journal of the Acoustical Society of America</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Manuel</b:First>
+            <b:Last>Vieira</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Paulo J</b:First>
+            <b:Last>Fonseca</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M Clara P</b:First>
+            <b:Last>Amorim</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Carlos J C</b:First>
+            <b:Last>Teixeira</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1121&#x2F;1.4936858</b:URL>
+    <b:Tag>call-recognition-and-individual-identification-of-fish-vocalizations-based-on-automatic-speech-recognition:-an-example-with-the-lusitanian-toadfish</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Biosonar behaviour of free-ranging porpoises</b:Title>
+    <b:Year>2005</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1471-2954</b:StandardNumber>
+    <b:Publisher>The Royal Society</b:Publisher>
+    <b:Pages>797-801</b:Pages>
+    <b:JournalName>Proceedings of the Royal Society B: Biological Sciences</b:JournalName>
+    <b:Volume>272</b:Volume>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Tomonari</b:First>
+            <b:Last>Akamatsu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ding</b:First>
+            <b:Last>Wang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Kexiong</b:First>
+            <b:Last>Wang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yasuhiko</b:First>
+            <b:Last>Naito</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1098&#x2F;rspb.2004.3024</b:URL>
+    <b:Tag>biosonar-behaviour-of-free-ranging-porpoises</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Bioacoustic monitoring to determine addiction levels of primates to the human sphere: A feasibility study on Japanese macaques</b:Title>
+    <b:Year>2023</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1098-2345</b:StandardNumber>
+    <b:Publisher>Wiley</b:Publisher>
+    <b:JournalName>American Journal of Primatology</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Hiroto</b:First>
+            <b:Last>Enari</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Haruka S</b:First>
+            <b:Last>Enari</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1002&#x2F;ajp.23558</b:URL>
+    <b:Tag>bioacoustic-monitoring-to-determine-addiction-levels-of-primates-to-the-human-sphere:-a-feasibility-study-on-japanese-macaques</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Benchmarking automated detection and classification approaches for monitoring of endangered species: a case study on gibbons from Cambodia</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Publisher>Cold Spring Harbor Laboratory</b:Publisher>
+    <b:JournalName>bioRxiv</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Dena J</b:First>
+            <b:Last>Clink</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hope</b:First>
+            <b:Last>Cross-Jaya</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jinsung</b:First>
+            <b:Last>Kim</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Abdul Hamid</b:First>
+            <b:Last>Ahmad</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Moeurk</b:First>
+            <b:Last>Hong</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Roeun</b:First>
+            <b:Last>Sala</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hélène</b:First>
+            <b:Last>Birot</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Cain</b:First>
+            <b:Last>Agger</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Thinh Tien</b:First>
+            <b:Last>Vu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hoa Nguyen</b:First>
+            <b:Last>Thi</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Thanh Nguyen</b:First>
+            <b:Last>Chi</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Holger</b:First>
+            <b:Last>Klinck</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.biorxiv.org&#x2F;content&#x2F;early&#x2F;2024&#x2F;08&#x2F;22&#x2F;2024.08.17.608420</b:URL>
+    <b:Tag>benchmarking-automated-detection-and-classification-approaches-for-monitoring-of-endangered-species:-a-case-study-on-gibbons-from-cambodia</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Bat detective—Deep learning tools for bat acoustic signal detection</b:Title>
+    <b:Year>2018</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1553-7358</b:StandardNumber>
+    <b:Publisher>Public Library of Science (PLoS)</b:Publisher>
+    <b:Pages>e1005995</b:Pages>
+    <b:JournalName>PLOS Computational Biology</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Oisin</b:First>
+            <b:Last>Mac Aodha</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Rory</b:First>
+            <b:Last>Gibb</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Kate E</b:First>
+            <b:Last>Barlow</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ella</b:First>
+            <b:Last>Browning</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Michael</b:First>
+            <b:Last>Firman</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Robin</b:First>
+            <b:Last>Freeman</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Briana</b:First>
+            <b:Last>Harder</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Libby</b:First>
+            <b:Last>Kinsey</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Gary R</b:First>
+            <b:Last>Mead</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Stuart E</b:First>
+            <b:Last>Newson</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ivan</b:First>
+            <b:Last>Pandourski</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Stuart</b:First>
+            <b:Last>Parsons</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jon</b:First>
+            <b:Last>Russ</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Abigel</b:First>
+            <b:Last>Szodoray-Paradi</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Farkas</b:First>
+            <b:Last>Szodoray-Paradi</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Elena</b:First>
+            <b:Last>Tilova</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Mark</b:First>
+            <b:Last>Girolami</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Gabriel</b:First>
+            <b:Last>Brostow</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Kate E</b:First>
+            <b:Last>Jones</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+          <b:Person>
+            <b:First>Brock</b:First>
+            <b:Last>Fenton</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1371&#x2F;journal.pcbi.1005995</b:URL>
+    <b:Tag>bat-detective—deep-learning-tools-for-bat-acoustic-signal-detection</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Conference Proceedings</b:SourceType>
+    <b:Title>BAT-CNN: BirdNet Assisted Training for CNN</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Pages>1-5</b:Pages>
+    <b:JournalName>2024 International Conference on Advancements in Power, Communication and Intelligent Systems (APCI)</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Salini</b:First>
+            <b:Last>S</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Suresh</b:First>
+            <b:Last>K</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;document&#x2F;10617409</b:URL>
+    <b:Tag>bat-cnn:-birdnet-assisted-training-for-cnn</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Automatic recognition of fin and blue whale calls for real-time monitoring in the St. Lawrence</b:Title>
+    <b:Year>2009</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1520-8524</b:StandardNumber>
+    <b:Publisher>Acoustical Society of America (ASA)</b:Publisher>
+    <b:Pages>2918-2928</b:Pages>
+    <b:JournalName>The Journal of the Acoustical Society of America</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Xavier</b:First>
+            <b:Last>Mouy</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Mohammed</b:First>
+            <b:Last>Bahoura</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yvan</b:First>
+            <b:Last>Simard</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1121&#x2F;1.3257588</b:URL>
+    <b:Tag>automatic-recognition-of-fin-and-blue-whale-calls-for-real-time-monitoring-in-the-st.-lawrence</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Automatic recognition and classification of cattle chewing activity by an acoustic monitoring method with a single-axis acceleration sensor</b:Title>
+    <b:Year>2013</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>0168-1699</b:StandardNumber>
+    <b:Publisher>Elsevier BV</b:Publisher>
+    <b:Pages>54-65</b:Pages>
+    <b:JournalName>Computers and Electronics in Agriculture</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Yukinori</b:First>
+            <b:Last>Tani</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yasunari</b:First>
+            <b:Last>Yokota</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Masato</b:First>
+            <b:Last>Yayota</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Shigeru</b:First>
+            <b:Last>Ohtani</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1016&#x2F;j.compag.2013.01.001</b:URL>
+    <b:Tag>automatic-recognition-and-classification-of-cattle-chewing-activity-by-an-acoustic-monitoring-method-with-a-single-axis-acceleration-sensor</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Conference Proceedings</b:SourceType>
+    <b:Title>Automatic detection of cow&#x2F;calf vocalizations in free-stall barn</b:Title>
+    <b:Year>2020</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>IEEE</b:Publisher>
+    <b:Pages>41-45</b:Pages>
+    <b:JournalName>2020 43rd International Conference on Telecommunications and Signal Processing (TSP)</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Stavros</b:First>
+            <b:Last>Ntalampiras</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Andrea</b:First>
+            <b:Last>Pezzuolo</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Silvana</b:First>
+            <b:Last>Mattiello</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Monica</b:First>
+            <b:Last>Battini</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Marta</b:First>
+            <b:Last>Brscic</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1109&#x2F;TSP49548.2020.9163522</b:URL>
+    <b:Tag>automatic-detection-of-cow&#x2F;calf-vocalizations-in-free-stall-barn</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Conference Proceedings</b:SourceType>
+    <b:Title>Automatic detection of bird species from audio field recordings using HMM-based modelling of frequency tracks</b:Title>
+    <b:Year>2017</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>IEEE</b:Publisher>
+    <b:Pages>1779-1783</b:Pages>
+    <b:JournalName>2017 25th European Signal Processing Conference (EUSIPCO)</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Peter</b:First>
+            <b:Last>Jancovic</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Munevver</b:First>
+            <b:Last>Kokuer</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.23919&#x2F;EUSIPCO.2017.8081515</b:URL>
+    <b:Tag>automatic-detection-of-bird-species-from-audio-field-recordings-using-hmm-based-modelling-of-frequency-tracks</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Automatic bird song and syllable segmentation with an open-source deep-learning object detection method - a case study in the Collared Flycatcher (Ficedula albicollis)</b:Title>
+    <b:Year>2019</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2061-9588</b:StandardNumber>
+    <b:Publisher>Walter de Gruyter GmbH</b:Publisher>
+    <b:Pages>59-66</b:Pages>
+    <b:JournalName>Ornis Hungarica</b:JournalName>
+    <b:Volume>27</b:Volume>
+    <b:Issue>2</b:Issue>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Sándor</b:First>
+            <b:Last>Zsebők</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Máté Ferenc</b:First>
+            <b:Last>Nagy-Egri</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Gergely Gábor</b:First>
+            <b:Last>Barnaföldi</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Miklós</b:First>
+            <b:Last>Laczi</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Gergely</b:First>
+            <b:Last>Nagy</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Éva</b:First>
+            <b:Last>Vaskuti</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>László Zsolt</b:First>
+            <b:Last>Garamszegi</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.2478&#x2F;orhu-2019-0015</b:URL>
+    <b:Tag>automatic-bird-song-and-syllable-segmentation-with-an-open-source-deep-learning-object-detection-method---a-case-study-in-the-collared-flycatcher-(ficedula-albicollis)</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Automatic bat call classification using transformer networks</b:Title>
+    <b:Year>2023</b:Year>
+    <b:StandardNumber>1574-9541</b:StandardNumber>
+    <b:JournalName>Ecological Informatics</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Frank</b:First>
+            <b:Last>Fundel</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Daniel A</b:First>
+            <b:Last>Braun</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sebastian</b:First>
+            <b:Last>Gottwald</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S1574954123003175</b:URL>
+    <b:Tag>automatic-bat-call-classification-using-transformer-networks</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Automatic acoustic detection of birds through deep learning: The first Bird Audio Detection challenge</b:Title>
+    <b:Year>2018</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2041-210X</b:StandardNumber>
+    <b:Publisher>Wiley</b:Publisher>
+    <b:Pages>368-380</b:Pages>
+    <b:JournalName>Methods in Ecology and Evolution</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Dan</b:First>
+            <b:Last>Stowell</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Michael D</b:First>
+            <b:Last>Wood</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hanna</b:First>
+            <b:Last>Pamuła</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yannis</b:First>
+            <b:Last>Stylianou</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hervé</b:First>
+            <b:Last>Glotin</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+          <b:Person>
+            <b:First>David</b:First>
+            <b:Last>Orme</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1111&#x2F;2041-210X.13103</b:URL>
+    <b:Tag>automatic-acoustic-detection-of-birds-through-deep-learning:-the-first-bird-audio-detection-challenge</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Automated detection of Bornean white-bearded gibbon (Hylobates albibarbis) vocalisations using an open-source framework for deep learning</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Publisher>Cold Spring Harbor Laboratory</b:Publisher>
+    <b:JournalName>bioRxiv</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>A F</b:First>
+            <b:Last>Owens</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Kimberley J</b:First>
+            <b:Last>Hockings</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Muhammed Ali</b:First>
+            <b:Last>Imron</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Shyam</b:First>
+            <b:Last>Madhusudhana</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First></b:First>
+            <b:Last>Mariaty</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Tatang Mitra</b:First>
+            <b:Last>Setia</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Manmohan</b:First>
+            <b:Last>Sharma</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Siti</b:First>
+            <b:Last>Maimunah</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>F J F</b:First>
+            <b:Last>Van Veen</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Wendy M</b:First>
+            <b:Last>Erb</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.biorxiv.org&#x2F;content&#x2F;early&#x2F;2024&#x2F;07&#x2F;21&#x2F;2024.04.15.589517</b:URL>
+    <b:Tag>automated-detection-of-bornean-white-bearded-gibbon-(hylobates-albibarbis)-vocalisations-using-an-open-source-framework-for-deep-learning</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Automated detection of 50-kHz ultrasonic vocalizations using template matching in XBAT</b:Title>
+    <b:Year>2014</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>0165-0270</b:StandardNumber>
+    <b:Publisher>Elsevier BV</b:Publisher>
+    <b:Pages>68-75</b:Pages>
+    <b:JournalName>Journal of Neuroscience Methods</b:JournalName>
+    <b:Volume>236</b:Volume>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>David J</b:First>
+            <b:Last>Barker</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Christopher</b:First>
+            <b:Last>Herrera</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Mark O</b:First>
+            <b:Last>West</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1016&#x2F;j.jneumeth.2014.08.007</b:URL>
+    <b:Tag>automated-detection-of-50-khz-ultrasonic-vocalizations-using-template-matching-in-xbat</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Conference Proceedings</b:SourceType>
+    <b:Title>Automated detection and identification of blue and fin whale foraging calls by combining pattern recognition and machine learning techniques</b:Title>
+    <b:Year>2016</b:Year>
+    <b:Month>11</b:Month>
+    <b:Publisher>IEEE</b:Publisher>
+    <b:Pages>1-7</b:Pages>
+    <b:JournalName>OCEANS 2016 MTS&#x2F;IEEE Monterey</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Ho Chun</b:First>
+            <b:Last>Huang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>John</b:First>
+            <b:Last>Joseph</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ming Jer</b:First>
+            <b:Last>Huang</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Tetyana</b:First>
+            <b:Last>Margolina</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;doi.org&#x2F;10.1109&#x2F;OCEANS.2016.7761269</b:URL>
+    <b:Tag>automated-detection-and-identification-of-blue-and-fin-whale-foraging-calls-by-combining-pattern-recognition-and-machine-learning-techniques</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Automated detection and detection range of primate duets: a case study of the red titi monkey (Plecturocebus discolor) using passive acoustic monitoring</b:Title>
+    <b:Year>2023</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2296-701X</b:StandardNumber>
+    <b:Publisher>Frontiers Media SA</b:Publisher>
+    <b:JournalName>Frontiers in Ecology and Evolution</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Silvy M</b:First>
+            <b:Last>van Kuijk</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sun</b:First>
+            <b:Last>O&#39;Brien</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Dena J</b:First>
+            <b:Last>Clink</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>John G</b:First>
+            <b:Last>Blake</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Anthony</b:First>
+            <b:Last>Di Fiore</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.3389&#x2F;fevo.2023.1173722</b:URL>
+    <b:Tag>automated-detection-and-detection-range-of-primate-duets:-a-case-study-of-the-red-titi-monkey-(plecturocebus-discolor)-using-passive-acoustic-monitoring</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Conference Proceedings</b:SourceType>
+    <b:Title>Automated bird acoustic detection at Las Arrieras Nature Reserve in Sarapiquí, Costa Rica</b:Title>
+    <b:Year>2022</b:Year>
+    <b:Pages>1-8</b:Pages>
+    <b:JournalName>2022 IEEE 4th International Conference on BioInspired Processing (BIP)</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Roberto</b:First>
+            <b:Last>Vargas-Masís</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>David</b:First>
+            <b:Last>Segura-Sequeira</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Danny</b:First>
+            <b:Last>Alfaro-Rojas</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Daniel Rosen</b:First>
+            <b:Last>Díaz</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;document&#x2F;10032472</b:URL>
+    <b:Tag>automated-bird-acoustic-detection-at-las-arrieras-nature-reserve-in-sarapiquí,-costa-rica</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Automated bioacoustics: methods in ecology and conservation and their potential for animal welfare monitoring</b:Title>
+    <b:Year>2019</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1742-5662</b:StandardNumber>
+    <b:Publisher>The Royal Society</b:Publisher>
+    <b:Pages>20190225</b:Pages>
+    <b:JournalName>Journal of The Royal Society Interface</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Michael P</b:First>
+            <b:Last>Mcloughlin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Rebecca</b:First>
+            <b:Last>Stewart</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Alan G</b:First>
+            <b:Last>McElligott</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1098&#x2F;rsif.2019.0225</b:URL>
+    <b:Tag>automated-bioacoustics:-methods-in-ecology-and-conservation-and-their-potential-for-animal-welfare-monitoring</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>generic</b:SourceType>
+    <b:Title>Assessment of the Effects of the Offshore Wind Farm Egmond aan Zee (OWEZ) for Harbour Porpoise (comparison T0 and T1)</b:Title>
+    <b:Year>2009</b:Year>
+    <b:Month>11</b:Month>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>M</b:First>
+            <b:Last>Scheidat</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>G</b:First>
+            <b:Last>Aarts</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>A</b:First>
+            <b:Last>Bakker</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>S</b:First>
+            <b:Last>Brasseur</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>J</b:First>
+            <b:Last>Carstensen</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>P</b:First>
+            <b:Last>van Leeuwen</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M</b:First>
+            <b:Last>Leopold</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>T</b:First>
+            <b:Last>van Polanen Petel</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>P</b:First>
+            <b:Last>Reijnders</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>J</b:First>
+            <b:Last>Teilmann</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>J</b:First>
+            <b:Last>Tougaard</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>H</b:First>
+            <b:Last>Verdaat</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;tethys.pnnl.gov&#x2F;sites&#x2F;default&#x2F;files&#x2F;publications&#x2F;Assessment-of-OSW-farm.pdf</b:URL>
+    <b:Tag>assessment-of-the-effects-of-the-offshore-wind-farm-egmond-aan-zee-(owez)-for-harbour-porpoise-(comparison-t0-and-t1)</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Assessing the structure and drivers of biological sounds along a disturbance gradient</b:Title>
+    <b:Year>2021</b:Year>
+    <b:Pages>e01850</b:Pages>
+    <b:JournalName>Global Ecology and Conservation</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Johan</b:First>
+            <b:Last>Diepstraten</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jacob</b:First>
+            <b:Last>Willie</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;doi.org&#x2F;10.1016&#x2F;j.gecco.2021.e01850</b:URL>
+    <b:Tag>assessing-the-structure-and-drivers-of-biological-sounds-along-a-disturbance-gradient</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>An image processing based paradigm for the extraction of tonal sounds in cetacean communications</b:Title>
+    <b:Year>2013</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1520-8524</b:StandardNumber>
+    <b:Publisher>Acoustical Society of America (ASA)</b:Publisher>
+    <b:Pages>4435-4445</b:Pages>
+    <b:JournalName>The Journal of the Acoustical Society of America</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Arik</b:First>
+            <b:Last>Kershenbaum</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Marie A</b:First>
+            <b:Last>Roch</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1121&#x2F;1.4828821</b:URL>
+    <b:Tag>an-image-processing-based-paradigm-for-the-extraction-of-tonal-sounds-in-cetacean-communications</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>An automatic detection algorithm for extracting the representative frequency of cetacean tonal sounds</b:Title>
+    <b:Year>2013</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1520-8524</b:StandardNumber>
+    <b:Publisher>Acoustical Society of America (ASA)</b:Publisher>
+    <b:Pages>2477-2485</b:Pages>
+    <b:JournalName>The Journal of the Acoustical Society of America</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Tzu-Hao</b:First>
+            <b:Last>Lin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Lien-Siang</b:First>
+            <b:Last>Chou</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Tomonari</b:First>
+            <b:Last>Akamatsu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hsiang-Chih</b:First>
+            <b:Last>Chan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Chi-Fang</b:First>
+            <b:Last>Chen</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1121&#x2F;1.4816572</b:URL>
+    <b:Tag>an-automatic-detection-algorithm-for-extracting-the-representative-frequency-of-cetacean-tonal-sounds</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>An acoustic detection dataset of birds (Aves) in montane forests using a deep learning approach</b:Title>
+    <b:Year>2023</b:Year>
+    <b:StandardNumber>1314-2836</b:StandardNumber>
+    <b:Publisher>Pensoft Publishers</b:Publisher>
+    <b:Pages>e97811</b:Pages>
+    <b:JournalName>Biodiversity Data Journal</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Shih-Hung</b:First>
+            <b:Last>Wu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jerome Chie-Jen</b:First>
+            <b:Last>Ko</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ruey-Shing</b:First>
+            <b:Last>Lin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Wen-Ling</b:First>
+            <b:Last>Tsai</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hsueh-Wen</b:First>
+            <b:Last>Chang</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;doi.org&#x2F;10.3897&#x2F;BDJ.11.e97811</b:URL>
+    <b:Tag>an-acoustic-detection-dataset-of-birds-(aves)-in-montane-forests-using-a-deep-learning-approach</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Aggregated time-series features boost species-specific differentiation of true and false positives in passive acoustic monitoring of bird assemblages</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2056-3485</b:StandardNumber>
+    <b:Publisher>Wiley</b:Publisher>
+    <b:Pages>517-530</b:Pages>
+    <b:JournalName>Remote Sensing in Ecology and Conservation</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>David</b:First>
+            <b:Last>Singer</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jonas</b:First>
+            <b:Last>Hagge</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Johannes</b:First>
+            <b:Last>Kamp</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hermann</b:First>
+            <b:Last>Hondong</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Andreas</b:First>
+            <b:Last>Schuldt</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1002&#x2F;rse2.385</b:URL>
+    <b:Tag>aggregated-time-series-features-boost-species-specific-differentiation-of-true-and-false-positives-in-passive-acoustic-monitoring-of-bird-assemblages</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Advanced Technique for Automatic Detection and Discrimination of a Click Train With Short Interclick Intervals From the Clicks of Ganges River Dolphins (Platanista gangetica gangetica) Recorded by a Passive Acoustic Monitoring System Using Hydrophone Arrays</b:Title>
+    <b:Year>2014</b:Year>
+    <b:Month>11</b:Month>
+    <b:JournalName>Marine Technology Society Journal</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Harumi</b:First>
+            <b:Last>Sugimatsu</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Junichi</b:First>
+            <b:Last>Kojima</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Tamaki</b:First>
+            <b:Last>Ura</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>R</b:First>
+            <b:Last>Bahl</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sandeep</b:First>
+            <b:Last>Behera</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Vivek</b:First>
+            <b:Last>Sagar</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Hari</b:First>
+            <b:Last>Singh</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Rupak</b:First>
+            <b:Last>De</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;doi.org&#x2F;10.4031&#x2F;MTSJ.48.3.15</b:URL>
+    <b:Tag>advanced-technique-for-automatic-detection-and-discrimination-of-a-click-train-with-short-interclick-intervals-from-the-clicks-of-ganges-river-dolphins-(platanista-gangetica-gangetica)-recorded-by-a-passive-acoustic-monitoring-system-using-hydrophone-arrays</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Acoustic phenology of tropical resident birds differs between native forest species and parkland colonizer species</b:Title>
+    <b:Year>2024</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1600-048X</b:StandardNumber>
+    <b:Publisher>Wiley</b:Publisher>
+    <b:JournalName>Journal of Avian Biology</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Laura</b:First>
+            <b:Last>Berman</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Wei</b:First>
+            <b:Last>Xuan Tan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Ulmar</b:First>
+            <b:Last>Grafe</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Frank</b:First>
+            <b:Last>Rheindt</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1111&#x2F;jav.03298</b:URL>
+    <b:Tag>acoustic-phenology-of-tropical-resident-birds-differs-between-native-forest-species-and-parkland-colonizer-species</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Report</b:SourceType>
+    <b:Title>Acoustic Response and Detection of Marine Mammals Using an Advanced Digital Acoustic Recording Tag (Rev 3)</b:Title>
+    <b:Year>2007</b:Year>
+    <b:Month>11</b:Month>
+    <b:Issue>ADA606315</b:Issue>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First></b:First>
+            <b:Last>Woods Hole Oceanographic Institution</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;apps.dtic.mil&#x2F;sti&#x2F;pdfs&#x2F;ADA606315.pdf</b:URL>
+    <b:Tag>acoustic-response-and-detection-of-marine-mammals-using-an-advanced-digital-acoustic-recording-tag-(rev-3)</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Acoustic monitoring for conservation in tropical forests: examples from forest elephants</b:Title>
+    <b:Year>2017</b:Year>
+    <b:Pages>1292-1301</b:Pages>
+    <b:JournalName>Methods in Ecology and Evolution</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Peter H</b:First>
+            <b:Last>Wrege</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Elizabeth D</b:First>
+            <b:Last>Rowland</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sara</b:First>
+            <b:Last>Keen</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Yu</b:First>
+            <b:Last>Shiu</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;besjournals.onlinelibrary.wiley.com&#x2F;doi&#x2F;abs&#x2F;10.1111&#x2F;2041-210X.12730</b:URL>
+    <b:Tag>acoustic-monitoring-for-conservation-in-tropical-forests:-examples-from-forest-elephants</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Acoustic localization at large scales: a promising method for grey wolf monitoring</b:Title>
+    <b:Year>2018</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1742-9994</b:StandardNumber>
+    <b:Publisher>Springer Science and Business Media LLC</b:Publisher>
+    <b:JournalName>Frontiers in Zoology</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Morgane</b:First>
+            <b:Last>Papin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Julian</b:First>
+            <b:Last>Pichenot</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>François</b:First>
+            <b:Last>Guérold</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Estelle</b:First>
+            <b:Last>Germain</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1186&#x2F;s12983-018-0260-2</b:URL>
+    <b:Tag>acoustic-localization-at-large-scales:-a-promising-method-for-grey-wolf-monitoring</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>Acoustic detections of Arctic marine mammals near Ulukhaktok, Northwest Territories, Canada</b:Title>
+    <b:Year>2019</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>1480-3283</b:StandardNumber>
+    <b:Publisher>Canadian Science Publishing</b:Publisher>
+    <b:Pages>72-80</b:Pages>
+    <b:JournalName>Canadian Journal of Zoology</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>W D</b:First>
+            <b:Last>Halliday</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>M K</b:First>
+            <b:Last>Pine</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>S J</b:First>
+            <b:Last>Insley</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>R N</b:First>
+            <b:Last>Soares</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>P</b:First>
+            <b:Last>Kortsalo</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>X</b:First>
+            <b:Last>Mouy</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1139&#x2F;cjz-2018-0077</b:URL>
+    <b:Tag>acoustic-detections-of-arctic-marine-mammals-near-ulukhaktok,-northwest-territories,-canada</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>A System for Monitoring Acoustics to Supplement an Animal Welfare Plan for Bottlenose Dolphins</b:Title>
+    <b:Year>2021</b:Year>
+    <b:StandardNumber>2673-5636</b:StandardNumber>
+    <b:Pages>222-233</b:Pages>
+    <b:JournalName>Journal of Zoological and Botanical Gardens</b:JournalName>
+    <b:Volume>2</b:Volume>
+    <b:Issue>2</b:Issue>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Brittany L</b:First>
+            <b:Last>Jones</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Michael</b:First>
+            <b:Last>Oswald</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Samantha</b:First>
+            <b:Last>Tufano</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Mark</b:First>
+            <b:Last>Baird</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Jason</b:First>
+            <b:Last>Mulsow</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sam H</b:First>
+            <b:Last>Ridgway</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.mdpi.com&#x2F;2673-5636&#x2F;2&#x2F;2&#x2F;15</b:URL>
+    <b:Tag>a-system-for-monitoring-acoustics-to-supplement-an-animal-welfare-plan-for-bottlenose-dolphins</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>A hidden Markov model approach to indicate Bryde&#39;s whale acoustics</b:Title>
+    <b:Year>2018</b:Year>
+    <b:StandardNumber>1470-160X</b:StandardNumber>
+    <b:Pages>479-487</b:Pages>
+    <b:JournalName>Ecological Indicators</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>R L</b:First>
+            <b:Last>Putland</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>L</b:First>
+            <b:Last>Ranjard</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>R</b:First>
+            <b:Last>Constantine</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>C A</b:First>
+            <b:Last>Radford</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S1470160X17305939</b:URL>
+    <b:Tag>a-hidden-markov-model-approach-to-indicate-bryde&#39;s-whale-acoustics</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>A Fish and Dolphin Biophony in the Boat Noise-Dominated Soundscape of the Cres-Lošinj Archipelago (Croatia)</b:Title>
+    <b:Year>2022</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2077-1312</b:StandardNumber>
+    <b:Publisher>MDPI AG</b:Publisher>
+    <b:JournalName>Journal of Marine Science and Engineering</b:JournalName>
+    <b:Issue>2</b:Issue>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Marta</b:First>
+            <b:Last>Picciulin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Marta</b:First>
+            <b:Last>Bolgan</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Nikolina</b:First>
+            <b:Last>Rako-Gospić</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Antonio</b:First>
+            <b:Last>Petrizzo</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Marko</b:First>
+            <b:Last>Radulović</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Raffaela</b:First>
+            <b:Last>Falkner</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.3390&#x2F;jmse10020300</b:URL>
+    <b:Tag>a-fish-and-dolphin-biophony-in-the-boat-noise-dominated-soundscape-of-the-cres-lošinj-archipelago-(croatia)</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Book</b:SourceType>
+    <b:Title>2020 State of the Science Report, Chapter 10: Environmental Monitoring Technologies and Techniques for Detecting Interactions of Marine Animals with Turbines</b:Title>
+    <b:Year>2020</b:Year>
+    <b:Month>11</b:Month>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Daniel</b:First>
+            <b:Last>Hasselman</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>David</b:First>
+            <b:Last>Barclay</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Robert</b:First>
+            <b:Last>Cavagnaro</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Craig</b:First>
+            <b:Last>Chandler</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Emma</b:First>
+            <b:Last>Cotter</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Douglas</b:First>
+            <b:Last>Gillespie</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Gordon</b:First>
+            <b:Last>Hastie</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>John</b:First>
+            <b:Last>Horne</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>James</b:First>
+            <b:Last>Joslin</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Caitlin</b:First>
+            <b:Last>Long</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Louise</b:First>
+            <b:Last>McGarry</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Robert</b:First>
+            <b:Last>Mueller</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Carol</b:First>
+            <b:Last>Sparling</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Benjamin</b:First>
+            <b:Last>Williamson</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.2172&#x2F;1633202</b:URL>
+    <b:Tag>2020-state-of-the-science-report,-chapter-10:-environmental-monitoring-technologies-and-techniques-for-detecting-interactions-of-marine-animals-with-turbines</b:Tag>
+  </b:Source>
+  <b:Source>
+    <b:SourceType>Journal Article</b:SourceType>
+    <b:Title>soundClass: An automatic sound classification tool for biodiversity monitoring using machine learning</b:Title>
+    <b:Year>2022</b:Year>
+    <b:Month>11</b:Month>
+    <b:StandardNumber>2041-210X</b:StandardNumber>
+    <b:Publisher>Wiley</b:Publisher>
+    <b:Pages>2356-2362</b:Pages>
+    <b:JournalName>Methods in Ecology and Evolution</b:JournalName>
+    <b:Author>
+      <b:Author>
+        <b:NameList>
+          <b:Person>
+            <b:First>Bruno</b:First>
+            <b:Last>Silva</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Frederico</b:First>
+            <b:Last>Mestre</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Sílvia</b:First>
+            <b:Last>Barreiro</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>Pedro J</b:First>
+            <b:Last>Alves</b:Last>
+          </b:Person>
+          <b:Person>
+            <b:First>José M</b:First>
+            <b:Last>Herrera</b:Last>
+          </b:Person>
+        </b:NameList>
+      </b:Author>
+      <b:Editor>
+        <b:NameList>
+        </b:NameList>
+      </b:Editor>
+    </b:Author>
+    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1111&#x2F;2041-210X.13964</b:URL>
+    <b:Tag>soundclass:-an-automatic-sound-classification-tool-for-biodiversity-monitoring-using-machine-learning</b:Tag>
+  </b:Source>
+</b:Sources>
