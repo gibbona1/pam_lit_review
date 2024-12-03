@@ -5,20 +5,18 @@ Journal of publication
 %Data collection 
 Monitoring year [2000-2024]
 Study sites [habitat type, elevation, latitude, longitude]
+Dataset size [number of recordings, number of species, hours/GB of data]
 
 %Research area 
-Research topics [Activity patterns, Behavior, Community Ecology, Conservation Biology, Ecoacoustics Investigations of soundscape patterns and dynamics
-Habitat use, Signal processing, Species assessment, Species distribution/Occupancy, Survey technique, Urban Ecology]
+Taxa [Bats, Birds, Primates, Fish, Farm Animal, Marine Mammal, other mammals, Anurans, Invertebrates, Soundscapes]
 
-Taxa [Bats, Birds, Farm Animal, Marine Mammal, other mammals, Anurans, Invertebrates, Soundscapes]
-
-Recording system [Automated/scheduled recorder, Nonprogrammable recorder, None]
-
-Recording period [Continuous, Dawn Recordings, Morning, Afternoon, Dusk, Night]
-
+%Analysis/ML methods (put together)
 Acoustic analysis [Manual, Semiautomated, Automated, Acoustic indices]
-
 Automation type [Signals/Statistics/Other, Machine Learning, Deep Learning]
+Support Vector Machine [SVM, SVR, etc]
+Clustering [K-means, DBSCAN, Agglomerative, etc]
+CNN [BirdNET, Resnet, VGG, Inception, etc]
+Dimensionality Reduction [PCA, QDA, t-SNE, UMAP, etc]
 
 Preprocessing [Spectrogram, mel scale, High-pass filter, Low-pass filter, Band-pass filter, Noise reduction, etc]
 
@@ -26,15 +24,11 @@ Analysis tools [Kaleidoscope, Audacity, Raven Pro, SonicVisualiser, etc]
 
 Programming language [R, Python, Matlab, etc]
 
+Code availability [Yes, No]
 Data availability [Yes, No]
 
-%ML methods
-Support Vector Machine [SVM, SVR, etc]
-Clustering [K-means, DBSCAN, Agglomerative, etc]
-CNN [BirdNET, Resnet, VGG, Inception, etc]
-Dimensionality Reduction [PCA, QDA, t-SNE, UMAP, etc]
 Reported Classification Accuracy [0-100%], maybe by taxa/model type, by decade, by recorder type
-
+evaluation method [training acc, test acc, cross validation, NA]
 
 %future research/gaps
 Future research directions and discussion points
