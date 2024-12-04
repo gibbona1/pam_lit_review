@@ -2740,40 +2740,6 @@
     <b:Tag>automated-bird-acoustic-detection-at-las-arrieras-nature-reserve-in-sarapiquí,-costa-rica</b:Tag>
   </b:Source>
   <b:Source>
-    <b:SourceType>Journal Article</b:SourceType>
-    <b:Title>Automated bioacoustics: methods in ecology and conservation and their potential for animal welfare monitoring</b:Title>
-    <b:Year>2019</b:Year>
-    <b:Month>11</b:Month>
-    <b:StandardNumber>1742-5662</b:StandardNumber>
-    <b:Publisher>The Royal Society</b:Publisher>
-    <b:Pages>20190225</b:Pages>
-    <b:JournalName>Journal of The Royal Society Interface</b:JournalName>
-    <b:Author>
-      <b:Author>
-        <b:NameList>
-          <b:Person>
-            <b:First>Michael P</b:First>
-            <b:Last>Mcloughlin</b:Last>
-          </b:Person>
-          <b:Person>
-            <b:First>Rebecca</b:First>
-            <b:Last>Stewart</b:Last>
-          </b:Person>
-          <b:Person>
-            <b:First>Alan G</b:First>
-            <b:Last>McElligott</b:Last>
-          </b:Person>
-        </b:NameList>
-      </b:Author>
-      <b:Editor>
-        <b:NameList>
-        </b:NameList>
-      </b:Editor>
-    </b:Author>
-    <b:URL>http:&#x2F;&#x2F;dx.doi.org&#x2F;10.1098&#x2F;rsif.2019.0225</b:URL>
-    <b:Tag>automated-bioacoustics:-methods-in-ecology-and-conservation-and-their-potential-for-animal-welfare-monitoring</b:Tag>
-  </b:Source>
-  <b:Source>
     <b:SourceType>generic</b:SourceType>
     <b:Title>Assessment of the Effects of the Offshore Wind Farm Egmond aan Zee (OWEZ) for Harbour Porpoise (comparison T0 and T1)</b:Title>
     <b:Year>2009</b:Year>
