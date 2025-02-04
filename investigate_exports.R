@@ -182,7 +182,7 @@ bib_df <- df_sub2 |>
 # Write the BibTeX dataframe to a .bib file
 df2bib(bib_df, file = "filtered_literature.bib")
 
-
+#possibly import to Mendeley? How did I get merged_literature.bib?
 merge_df <- bib2df("merged_literature.bib")
 merge_df |>
   nrow()
