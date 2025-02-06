@@ -1,0 +1,99 @@
+---
+title: "Passive Acoustic Monitoring Lit Review"
+output: html_notebook
+---
+
+##Dataset size by year
+
+```{r}
+library(ggplot2)
+library(maps)
+
+df <- read.csv("tagged_literature.csv")
+df$Year <- as.factor(df$Year)
+
+ggplot(df, aes(Year, Dataset_hours)) + geom_boxplot() + scale_y_log10()
+```
+```{r}
+# Sample data
+#coords <- c("-0.356251N,12.940863E;-0.078775N,15.127076E", "-0.078775N,15.1270777E")
+
+# Function to convert coordinates to numeric values
+convert_to_numeric <- function(coord_string) {
+  # Split the string by comma
+  parts <- strsplit(coord_string, ",")[[1]]
+  #remove leading or trailing space
+  
+  # Extract latitude and longitude, handle direction
+  lat <- as.numeric(gsub("[A-Z]", "", parts[1]))
+  lon <- as.numeric(gsub("[A-Z]", "", parts[2]))
+  
+  # Check direction for latitude
+  if (grepl("S", parts[1])) {
+    lat <- -lat
+  }
+  
+  # Check direction for longitude
+  if (grepl("W", parts[2])) {
+    lon <- -lon
+  }
+  
+  return(c(lat, lon))
+}
+
+process_all_coords <- function(coords_string) {
+  all_coords <- do.call(rbind, lapply(coords_string, function(x) {
+    # Split by semicolon if present
+    
+    coord_list <- strsplit(x, ";")[[1]]
+    
+    if(is.null(coord_list) || length(coord_list) == 0)
+      return(NA)
+    
+    #print(coord_list)
+    # Convert each coordinate pair to numeric
+    numeric_coords <- t(sapply(coord_list, convert_to_numeric))
+    
+    return(numeric_coords)
+  }))
+  
+  return(all_coords)
+}
+
+# Convert all coordinates
+latlong_df <- as.data.frame(process_all_coords(df$latlong))
+colnames(latlong_df) <- c("lat", "long")
+
+latlong_df <- na.omit(latlong_df)
+```
+
+
+```{r}
+# Create the world map
+world <- map_data("world")
+
+# Plotting
+ggplot() +
+  # Add world map
+  geom_polygon(data = world, aes(x = long, y = lat, group = group), fill = "lightgray", color = "white") +
+  # Add points for different tags
+  geom_point(data = latlong_df, aes(x = long, y = lat, shape = "1"), size = 3) +
+  # Set coordinate system to map projection
+  coord_fixed(ratio = 1) +
+  # Add labels and title
+  labs(title = "Global Distribution of Species",
+       x = "Longitude",
+       y = "Latitude") +
+  # Adjust legend
+  #scale_shape_manual(values = c(1, 2, 3, 4, 5), 
+  #                   name = "Species",
+  #                   breaks = c("Bats", "Non-flying mammals", "Birds", "Anurans", "Invertebrates"),
+  #                   labels = c("Bats", "Non-flying mammals", "Birds", "Anurans", "Invertebrates")) +
+  # Theme settings
+  theme_minimal() +
+  theme(panel.grid.major = element_line(color = "grey80"),
+        panel.grid.minor = element_blank(),
+        axis.text.x = element_text(angle = 0, hjust = 0.5),
+        legend.position = "right")
+```
+
