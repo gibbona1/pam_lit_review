@@ -8,11 +8,15 @@ output: html_notebook
 ```{r}
 library(ggplot2)
 library(maps)
+library(dplyr)
 
 df <- read.csv("tagged_literature.csv")
 df$Year <- as.factor(df$Year)
 
-ggplot(df, aes(Year, Dataset_hours)) + geom_boxplot() + scale_y_log10()
+ggplot(df, aes(Year, Dataset_GB)) + 
+  geom_point() + 
+  scale_y_log10() +
+  geom_smooth(method = "lm")
 ```
 ```{r}
 # Sample data
@@ -95,5 +99,36 @@ ggplot() +
         panel.grid.minor = element_blank(),
         axis.text.x = element_text(angle = 0, hjust = 0.5),
         legend.position = "right")
+```
+```{r}
+# Convert 'NA' to R's NA
+df$Prog..language[df$Prog..language == "NA"] <- NA
+
+# Split languages where there are multiple
+df <- df %>%
+  mutate(ProgLanguage = strsplit(as.character(Prog..language), ", ")) %>%
+  tidyr::unnest(ProgLanguage)
+
+# Count occurrences per year
+count_data <- df %>%
+  group_by(Year, ProgLanguage) %>%
+  summarise(Count = n(), .groups = 'drop') %>%
+  na.omit()
+
+# Calculate percentages
+total_count_per_year <- count_data %>%
+  group_by(Year) %>%
+  summarise(Total = sum(Count), .groups = 'drop')
+
+count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
+  mutate(Percentage = (Count / Total) * 100)
+```
+
+```{r}
+ggplot(count_data, aes(x = factor(Year), y = Count, fill = ProgLanguage)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Programming Language Usage by Year", x = "Year", y = "Count", fill = "Language") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
