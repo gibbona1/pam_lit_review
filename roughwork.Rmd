@@ -11,13 +11,17 @@ library(maps)
 library(dplyr)
 
 df <- read.csv("tagged_literature.csv")
-df$Year <- as.factor(df$Year)
+#df$Year <- as.factor(df$Year)
 
-ggplot(df, aes(Year, Dataset_GB)) + 
+df |>
+  tidyr::drop_na(Dataset_GB) |> 
+  filter(Year >= 2008) |>
+  ggplot(aes(Year, Dataset_GB)) + 
   geom_point() + 
   scale_y_log10() +
-  geom_smooth(method = "lm")
+  geom_smooth(color = "dodgerblue", se=FALSE)
 ```
+
 ```{r}
 # Sample data
 #coords <- c("-0.356251N,12.940863E;-0.078775N,15.127076E", "-0.078775N,15.1270777E")
