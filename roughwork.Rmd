@@ -15,7 +15,7 @@ df <- read.csv("tagged_literature.csv")
 
 df |>
   tidyr::drop_na(Dataset_GB) |> 
-  filter(Year >= 2008) |>
+  #filter(Year >= 2008) |>
   ggplot(aes(Year, Dataset_GB)) + 
   geom_point() + 
   scale_y_log10() +
