@@ -19,7 +19,7 @@ df |>
   ggplot(aes(Year, Dataset_GB)) + 
   geom_point() + 
   scale_y_log10() +
-  geom_smooth(color = "dodgerblue", se=FALSE)
+  geom_smooth(method="lm", color = "dodgerblue")
 ```
 
 ```{r}
@@ -158,5 +158,121 @@ ggplot(count_data, aes(x = factor(Year), y = Count, fill = Taxa)) +
   labs(title = "Programming Language Usage by Year", x = "Year", y = "Count", fill = "Taxa") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+df_analysis <- df %>%
+  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) %>%
+  tidyr::unnest(Analysis.Methods)
+
+# Count occurrences per year
+count_analysis <- df_analysis %>%
+  group_by(Year, Analysis.Methods) %>%
+  summarise(Count = n(), .groups = 'drop') %>%
+  na.omit()
+
+# Calculate percentages
+total_count_per_year <- count_analysis %>%
+  group_by(Year) %>%
+  summarise(Total = sum(Count), .groups = 'drop')
+
+count_analysis <- left_join(count_analysis, total_count_per_year, by = "Year") %>%
+  mutate(Percentage = (Count / Total) * 100)
+
+ggplot(count_analysis, aes(x = factor(Year), y = Count, fill = Analysis.Methods)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Analysis Methods Usage by Year", x = "Year", y = "Count", fill = "Analysis Methods") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+df_tools <- df %>%
+  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) %>%
+  tidyr::unnest(Automation.Tools)
+
+# Count occurrences per year
+count_tools <- df_tools %>%
+  group_by(Year, Automation.Tools) %>%
+  summarise(Count = n(), .groups = 'drop') %>%
+  na.omit()
+
+# Calculate percentages
+total_count_per_year <- count_tools %>%
+  group_by(Year) %>%
+  summarise(Total = sum(Count), .groups = 'drop')
+
+count_tools <- left_join(count_tools, total_count_per_year, by = "Year") %>%
+  mutate(Percentage = (Count / Total) * 100)
+
+ggplot(count_tools, aes(x = factor(Year), y = Count, fill = Automation.Tools)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Automation Tools Usage by Year", x = "Year", y = "Count", fill = "Automation Tools") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+df_code_available <- df %>%
+  mutate(Code.availability = strsplit(as.character(Code.availability), ", ")) %>%
+  tidyr::unnest(Code.availability)
+
+# Count occurrences per year
+count_code_available <- df_code_available %>%
+  group_by(Year, Code.availability) %>%
+  summarise(Count = n(), .groups = 'drop') %>%
+  na.omit()
+
+# Calculate percentages
+total_count_per_year <- count_code_available %>%
+  group_by(Year) %>%
+  summarise(Total = sum(Count), .groups = 'drop')
+
+count_code_available <- left_join(count_code_available, total_count_per_year, by = "Year") %>%
+  mutate(Percentage = (Count / Total) * 100)
+
+ggplot(count_code_available, aes(x = factor(Year), y = Count, fill = Code.availability)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Code Availability Usage by Year", x = "Year", y = "Count", fill = "Code Available") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+df_data_available <- df %>%
+  mutate(Data.Availability = strsplit(as.character(Data.Availability), ", ")) %>%
+  tidyr::unnest(Data.Availability)
+
+# Count occurrences per year
+count_data_available <- df_data_available %>%
+  group_by(Year, Data.Availability) %>%
+  summarise(Count = n(), .groups = 'drop') %>%
+  na.omit()
+
+# Calculate percentages
+total_count_per_year <- count_data_available %>%
+  group_by(Year) %>%
+  summarise(Total = sum(Count), .groups = 'drop')
+
+count_data_available <- left_join(count_data_available, total_count_per_year, by = "Year") %>%
+  mutate(Percentage = (Count / Total) * 100)
+
+ggplot(count_data_available, aes(x = factor(Year), y = Count, fill = Data.Availability)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Data Availability Usage by Year", x = "Year", y = "Count", fill = "Data Available") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+df <- read.csv("tagged_literature.csv")
+df %>%
+  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) %>%
+  tidyr::unnest(Automation.Tools) |>
+  pull(Automation.Tools) |> sort() |> unique()
+```
+```{r}
+df <- read.csv("tagged_literature.csv")
+df %>%
+  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) %>%
+  tidyr::unnest(Analysis.Methods) |>
+  pull(Analysis.Methods) |> sort() |> unique()
 ```
 
