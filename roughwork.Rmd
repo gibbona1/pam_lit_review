@@ -9,7 +9,9 @@ output: html_notebook
 library(ggplot2)
 library(maps)
 library(dplyr)
+```
 
+```{r}
 df <- read.csv("tagged_literature.csv")
 #df$Year <- as.factor(df$Year)
 
@@ -46,33 +48,20 @@ convert_to_numeric <- function(coord_string) {
     lon <- -lon
   }
   
-  return(c(lat, lon))
+  return(paste0(c(lat, lon), collapse = ","))
 }
 
-process_all_coords <- function(coords_string) {
-  all_coords <- do.call(rbind, lapply(coords_string, function(x) {
-    # Split by semicolon if present
-    
-    coord_list <- strsplit(x, ";")[[1]]
-    
-    if(is.null(coord_list) || length(coord_list) == 0)
-      return(NA)
-    
-    #print(coord_list)
-    # Convert each coordinate pair to numeric
-    numeric_coords <- t(sapply(coord_list, convert_to_numeric))
-    
-    return(numeric_coords)
-  }))
-  
-  return(all_coords)
-}
-
-# Convert all coordinates
-latlong_df <- as.data.frame(process_all_coords(df$latlong))
-colnames(latlong_df) <- c("lat", "long")
-
-latlong_df <- na.omit(latlong_df)
+latlong_df <- df |>
+  select(latlong, Ecosystem) |>
+  mutate(latlong = strsplit(latlong, ";")) |>
+  tidyr::unnest(latlong) |>
+  mutate(Ecosystem = strsplit(Ecosystem, ", ")) |>
+  tidyr::unnest(Ecosystem) |>
+  mutate(latlong = sapply(latlong, convert_to_numeric),
+         lat = sapply(strsplit(latlong, ","), function(x) as.numeric(x[1])),
+         long = sapply(strsplit(latlong, ","), function(x) as.numeric(x[2]))
+)
+latlong_df
 ```
 
 
@@ -85,7 +74,7 @@ ggplot() +
   # Add world map
   geom_polygon(data = world, aes(x = long, y = lat, group = group), fill = "lightgray", color = "white") +
   # Add points for different tags
-  geom_point(data = latlong_df, aes(x = long, y = lat, shape = "1"), size = 3) +
+  geom_point(data = latlong_df, aes(x = long, y = lat, colour=Ecosystem), size = 3) +
   # Set coordinate system to map projection
   coord_fixed(ratio = 1) +
   # Add labels and title
@@ -203,7 +192,9 @@ total_count_per_year <- count_tools %>%
 count_tools <- left_join(count_tools, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
-ggplot(count_tools, aes(x = factor(Year), y = Count, fill = Automation.Tools)) +
+count_tools |>
+  filter(Count > 1) |>
+  ggplot(aes(x = factor(Year), y = Count, fill = Automation.Tools)) +
   geom_bar(stat = "identity") +
   labs(title = "Automation Tools Usage by Year", x = "Year", y = "Count", fill = "Automation Tools") +
   theme_minimal() +
