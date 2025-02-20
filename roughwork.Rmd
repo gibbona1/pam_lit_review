@@ -74,7 +74,7 @@ ggplot() +
   # Add world map
   geom_polygon(data = world, aes(x = long, y = lat, group = group), fill = "lightgray", color = "white") +
   # Add points for different tags
-  geom_point(data = latlong_df, aes(x = long, y = lat, colour=Ecosystem), size = 3) +
+  geom_jitter(data = latlong_df, aes(x = long, y = lat, colour=Ecosystem), size = 3) +
   # Set coordinate system to map projection
   coord_fixed(ratio = 1) +
   # Add labels and title
@@ -144,7 +144,7 @@ count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
 
 ggplot(count_data, aes(x = factor(Year), y = Count, fill = Taxa)) +
   geom_bar(stat = "identity") +
-  labs(title = "Programming Language Usage by Year", x = "Year", y = "Count", fill = "Taxa") +
+  labs(title = "Taxa by Year", x = "Year", y = "Count", fill = "Taxa") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
@@ -153,8 +153,27 @@ df_analysis <- df %>%
   mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) %>%
   tidyr::unnest(Analysis.Methods)
 
+# Step 1: Calculate counts per Analysis.Methods across all years
+total_method_counts <- df_analysis %>%
+  group_by(Analysis.Methods) %>%
+  summarise(Total_Count = n(), .groups = 'drop') %>%
+  na.omit()
+
+# Step 2: Identify methods with count > 1
+methods_to_keep <- total_method_counts %>%
+  filter(Total_Count > 1) %>%
+  pull(Analysis.Methods)
+
+# Step 3: Filter original data to keep only methods with count > 1
+df_filtered <- df_analysis %>%
+  mutate(Analysis.Methods = ifelse(Analysis.Methods %in% methods_to_keep, 
+                                  Analysis.Methods, 
+                                  "Other Methods"))
+  #filter(Analysis.Methods %in% methods_to_keep)
+
+
 # Count occurrences per year
-count_analysis <- df_analysis %>%
+count_analysis <- df_filtered %>%
   group_by(Year, Analysis.Methods) %>%
   summarise(Count = n(), .groups = 'drop') %>%
   na.omit()
@@ -178,8 +197,26 @@ df_tools <- df %>%
   mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) %>%
   tidyr::unnest(Automation.Tools)
 
+# Step 1: Calculate counts per Analysis.Methods across all years
+total_tool_counts <- df_tools %>%
+  group_by(Automation.Tools) %>%
+  summarise(Total_Count = n(), .groups = 'drop') %>%
+  na.omit()
+
+# Step 2: Identify methods with count > 1
+methods_to_keep <- total_tool_counts %>%
+  filter(Total_Count > 1) %>%
+  pull(Automation.Tools)
+
+# Step 3: Filter original data to keep only methods with count > 1
+df_filtered <- df_analysis %>%
+  mutate(Automation.Tools = ifelse(Automation.Tools %in% methods_to_keep, 
+                                  Automation.Tools, 
+                                  "Other Tools"))
+  #filter(Automation.Tools %in% methods_to_keep)
+
 # Count occurrences per year
-count_tools <- df_tools %>%
+count_tools <- df_filtered %>%
   group_by(Year, Automation.Tools) %>%
   summarise(Count = n(), .groups = 'drop') %>%
   na.omit()
@@ -193,7 +230,7 @@ count_tools <- left_join(count_tools, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
 count_tools |>
-  filter(Count > 1) |>
+  #filter(Count > 1) |>
   ggplot(aes(x = factor(Year), y = Count, fill = Automation.Tools)) +
   geom_bar(stat = "identity") +
   labs(title = "Automation Tools Usage by Year", x = "Year", y = "Count", fill = "Automation Tools") +
