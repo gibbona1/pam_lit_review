@@ -15,13 +15,15 @@ library(dplyr)
 df <- read.csv("tagged_literature.csv")
 #df$Year <- as.factor(df$Year)
 
-df |>
+p <- df |>
   tidyr::drop_na(Dataset_GB) |> 
   #filter(Year >= 2008) |>
   ggplot(aes(Year, Dataset_GB)) + 
   geom_point() + 
   scale_y_log10() +
   geom_smooth(method="lm", color = "dodgerblue")
+p
+ggsave("images/data_trend.png", p, width = 297, height = 210, units = "mm")
 ```
 
 ```{r}
@@ -70,7 +72,7 @@ latlong_df
 world <- map_data("world")
 
 # Plotting
-ggplot() +
+p <- ggplot() +
   # Add world map
   geom_polygon(data = world, aes(x = long, y = lat, group = group), fill = "lightgray", color = "white") +
   # Add points for different tags
@@ -92,6 +94,8 @@ ggplot() +
         panel.grid.minor = element_blank(),
         axis.text.x = element_text(angle = 0, hjust = 0.5),
         legend.position = "right")
+p
+ggsave("images/ecosystem_map.png", p, width = 297, height = 210, units = "mm")
 ```
 ```{r}
 # Convert 'NA' to R's NA
@@ -111,22 +115,27 @@ total_count_per_year <- count_data %>%
 count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
-ggplot(count_data, aes(x = factor(Year), y = Count, fill = Analysis)) +
+p <- ggplot(count_data, aes(x = factor(Year), y = Count, fill = Analysis)) +
   geom_bar(stat = "identity") +
   labs(title = "Analysis by Year", x = "Year", y = "Count", fill = "Analysis") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+p
+ggsave("images/analysis_year.png", p, width = 297, height = 210, units = "mm")
 ```
 ```{r}
-df |>
+p <- df |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
   tidyr::drop_na(Reported_value) |>
   ggplot(aes(x = Analysis, y = Reported_value)) +
   geom_boxplot()
+p
+ggsave("images/analysis_reportedvalue.png", p, width = 297, height = 210, units = "mm")
 ```
 
 ```{r}
-df |>
+p <- df |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
   tidyr::drop_na(Reported_value) |>
   mutate(Decade = case_when(
@@ -137,10 +146,12 @@ df |>
   )) |>
   ggplot(aes(x = Decade, y = Reported_value)) +
   geom_boxplot()
+p
+ggsave("images/decade_reportedvalue.png", p, width = 297, height = 210, units = "mm")
 ```
 
 ```{r}
-df |>
+p <- df |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
   tidyr::drop_na(Reported_value) |>
   mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
@@ -148,6 +159,8 @@ df |>
   ggplot(aes(y = Reported_value)) +
   geom_boxplot() +
   facet_wrap(~Taxa)
+p
+ggsave("images/taxa_reportedvalue.png", p, width = 297, height = 210, units = "mm")
 ```
 
 
@@ -174,11 +187,13 @@ total_count_per_year <- count_data %>%
 count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
-ggplot(count_data, aes(x = factor(Year), y = Count, fill = ProgLanguage)) +
+p <- ggplot(count_data, aes(x = factor(Year), y = Count, fill = ProgLanguage)) +
   geom_bar(stat = "identity") +
   labs(title = "Programming Language Usage by Year", x = "Year", y = "Count", fill = "Language") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p
+ggsave("images/programminglanguage_year.png", p, width = 297, height = 210, units = "mm")
 ```
 
 ```{r}
@@ -200,11 +215,13 @@ total_count_per_year <- count_data %>%
 count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
-ggplot(count_data, aes(x = factor(Year), y = Count, fill = Taxa)) +
+p <- ggplot(count_data, aes(x = factor(Year), y = Count, fill = Taxa)) +
   geom_bar(stat = "identity") +
   labs(title = "Taxa by Year", x = "Year", y = "Count", fill = "Taxa") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p
+ggsave("images/taxa_year.png", p, width = 297, height = 210, units = "mm")
 ```
 ```{r}
 df_analysis <- df %>%
@@ -244,11 +261,13 @@ total_count_per_year <- count_analysis %>%
 count_analysis <- left_join(count_analysis, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
-ggplot(count_analysis, aes(x = factor(Year), y = Count, fill = Analysis.Methods)) +
+p <- ggplot(count_analysis, aes(x = factor(Year), y = Count, fill = Analysis.Methods)) +
   geom_bar(stat = "identity") +
   labs(title = "Analysis Methods Usage by Year", x = "Year", y = "Count", fill = "Analysis Methods") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p
+ggsave("images/analysismethods_year.png", p, width = 297, height = 210, units = "mm")
 ```
 ```{r}
 df_tools <- df %>%
@@ -287,13 +306,15 @@ total_count_per_year <- count_tools %>%
 count_tools <- left_join(count_tools, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
-count_tools |>
+p <- count_tools |>
   #filter(Count > 1) |>
   ggplot(aes(x = factor(Year), y = Count, fill = Automation.Tools)) +
   geom_bar(stat = "identity") +
   labs(title = "Automation Tools Usage by Year", x = "Year", y = "Count", fill = "Automation Tools") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p
+ggsave("images/automationtools_year.png", p, width = 297, height = 210, units = "mm")
 ```
 
 ```{r}
@@ -315,11 +336,13 @@ total_count_per_year <- count_code_available %>%
 count_code_available <- left_join(count_code_available, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
-ggplot(count_code_available, aes(x = factor(Year), y = Count, fill = Code.availability)) +
+p <- ggplot(count_code_available, aes(x = factor(Year), y = Count, fill = Code.availability)) +
   geom_bar(stat = "identity") +
   labs(title = "Code Availability Usage by Year", x = "Year", y = "Count", fill = "Code Available") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p
+ggsave("images/codeavailable_year.png", p, width = 297, height = 210, units = "mm")
 ```
 
 ```{r}
@@ -341,25 +364,27 @@ total_count_per_year <- count_data_available %>%
 count_data_available <- left_join(count_data_available, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
-ggplot(count_data_available, aes(x = factor(Year), y = Count, fill = Data.Availability)) +
+p <- ggplot(count_data_available, aes(x = factor(Year), y = Count, fill = Data.Availability)) +
   geom_bar(stat = "identity") +
   labs(title = "Data Availability Usage by Year", x = "Year", y = "Count", fill = "Data Available") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p
+ggsave("images/dataavailable_year.png", p, width = 297, height = 210, units = "mm")
 ```
 ```{r}
-df <- read.csv("tagged_literature.csv")
-df %>%
-  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) %>%
-  tidyr::unnest(Automation.Tools) |>
-  pull(Automation.Tools) |> sort() |> unique()
+#df <- read.csv("tagged_literature.csv")
+#df %>%
+#  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) %>%
+#  tidyr::unnest(Automation.Tools) |>
+#  pull(Automation.Tools) |> sort() |> unique()
 ```
 ```{r}
-df <- read.csv("tagged_literature.csv")
-df %>%
-  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) %>%
-  tidyr::unnest(Analysis.Methods) |>
-  pull(Analysis.Methods) |> sort() |> unique()
+#df <- read.csv("tagged_literature.csv")
+#df %>%
+#  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) %>%
+#  tidyr::unnest(Analysis.Methods) |>
+#  pull(Analysis.Methods) |> sort() |> unique()
 ```
 ```{r}
 df_eval <- df %>%
@@ -399,10 +424,13 @@ total_count_per_year <- count_eval %>%
 count_eval <- left_join(count_eval, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
-ggplot(count_eval, aes(x = factor(Year), y = Count, fill = Evaluation.Method)) +
+p <- ggplot(count_eval, aes(x = factor(Year), y = Count, fill = Evaluation.Method)) +
   geom_bar(stat = "identity") +
   labs(title = "Evaluation Methods Usage by Year", x = "Year", y = "Count", fill = "Eval Methods") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+p
+ggsave("images/evaluationmethod_year.png", p, width = 297, height = 210, units = "mm")
 ```
 
