@@ -98,22 +98,41 @@ p
 ggsave("images/ecosystem_map.png", p, width = 297, height = 210, units = "mm")
 ```
 ```{r}
+include_missing_zero <- function(df, col){
+  missing_years <- 2005:2024  # This creates c(2025, 2024)
+  
+  new_rows <- expand.grid(
+    Year = missing_years,  # All missing years
+    Analysis = df |> pull({{ col }}) |> unique(),  # Specified analyses
+    Count = 0  # Zero counts for each
+  )
+
+  df <- df %>%
+    bind_rows(new_rows) %>%
+    distinct() 
+  return(df)
+}
+```
+
+```{r}
 # Convert 'NA' to R's NA
 df$Analysis[df$Analysis == "NA"] <- NA
 
 # Count occurrences per year
 count_data <- df %>%
-  group_by(Year, Analysis) %>%
+  group_by(Year, Analysis, .drop=FALSE) %>%
   summarise(Count = n(), .groups = 'drop') %>%
   na.omit()
 
 # Calculate percentages
 total_count_per_year <- count_data %>%
-  group_by(Year) %>%
+  group_by(Year, .drop=FALSE) %>%
   summarise(Total = sum(Count), .groups = 'drop')
 
 count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
+
+count_data <- include_missing_zero(count_data, "Analysis")
 
 p <- ggplot(count_data, aes(x = factor(Year), y = Count, fill = Analysis)) +
   geom_bar(stat = "identity") +
@@ -187,6 +206,8 @@ total_count_per_year <- count_data %>%
 count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
+count_data <- include_missing_zero(count_data, "ProgLanguage")
+
 p <- ggplot(count_data, aes(x = factor(Year), y = Count, fill = ProgLanguage)) +
   geom_bar(stat = "identity") +
   labs(title = "Programming Language Usage by Year", x = "Year", y = "Count", fill = "Language") +
@@ -214,6 +235,8 @@ total_count_per_year <- count_data %>%
 
 count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
+
+count_data <- include_missing_zero(count_data, "Taxa")
 
 p <- ggplot(count_data, aes(x = factor(Year), y = Count, fill = Taxa)) +
   geom_bar(stat = "identity") +
@@ -261,6 +284,9 @@ total_count_per_year <- count_analysis %>%
 count_analysis <- left_join(count_analysis, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
+count_analysis <- include_missing_zero(count_analysis, "Analysis.Methods")
+
+
 p <- ggplot(count_analysis, aes(x = factor(Year), y = Count, fill = Analysis.Methods)) +
   geom_bar(stat = "identity") +
   labs(title = "Analysis Methods Usage by Year", x = "Year", y = "Count", fill = "Analysis Methods") +
@@ -306,6 +332,8 @@ total_count_per_year <- count_tools %>%
 count_tools <- left_join(count_tools, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
+count_tools <- include_missing_zero(count_tools, "Automation.Tools")
+
 p <- count_tools |>
   #filter(Count > 1) |>
   ggplot(aes(x = factor(Year), y = Count, fill = Automation.Tools)) +
@@ -336,6 +364,8 @@ total_count_per_year <- count_code_available %>%
 count_code_available <- left_join(count_code_available, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
 
+count_code_available <- include_missing_zero(count_code_available, "Code.availability")
+
 p <- ggplot(count_code_available, aes(x = factor(Year), y = Count, fill = Code.availability)) +
   geom_bar(stat = "identity") +
   labs(title = "Code Availability Usage by Year", x = "Year", y = "Count", fill = "Code Available") +
@@ -363,6 +393,9 @@ total_count_per_year <- count_data_available %>%
 
 count_data_available <- left_join(count_data_available, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
+
+count_data_available <- include_missing_zero(count_data_available, "Data.Availability")
+
 
 p <- ggplot(count_data_available, aes(x = factor(Year), y = Count, fill = Data.Availability)) +
   geom_bar(stat = "identity") +
@@ -423,6 +456,8 @@ total_count_per_year <- count_eval %>%
 
 count_eval <- left_join(count_eval, total_count_per_year, by = "Year") %>%
   mutate(Percentage = (Count / Total) * 100)
+
+count_eval <- include_missing_zero(count_eval, "Evaluation.Method")
 
 p <- ggplot(count_eval, aes(x = factor(Year), y = Count, fill = Evaluation.Method)) +
   geom_bar(stat = "identity") +
