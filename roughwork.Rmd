@@ -120,6 +120,7 @@ ggplot(count_data, aes(x = factor(Year), y = Count, fill = Analysis)) +
 ```{r}
 df |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
+  tidyr::drop_na(Reported_value) |>
   ggplot(aes(x = Analysis, y = Reported_value)) +
   geom_boxplot()
 ```
@@ -127,6 +128,7 @@ df |>
 ```{r}
 df |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
+  tidyr::drop_na(Reported_value) |>
   mutate(Decade = case_when(
     Year >= 2000 & Year < 2010 ~ "2000s",
     Year >= 2010 & Year < 2020 ~ "2010s",
@@ -135,6 +137,17 @@ df |>
   )) |>
   ggplot(aes(x = Decade, y = Reported_value)) +
   geom_boxplot()
+```
+
+```{r}
+df |>
+  mutate(Reported_value = as.numeric(Reported_value)) |>
+  tidyr::drop_na(Reported_value) |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa) |>
+  ggplot(aes(y = Reported_value)) +
+  geom_boxplot() +
+  facet_wrap(~Taxa)
 ```
 
 
