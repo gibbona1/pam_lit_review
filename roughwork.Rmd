@@ -97,20 +97,63 @@ p <- ggplot() +
 p
 ggsave("images/ecosystem_map.png", p, width = 297, height = 210, units = "mm")
 ```
+
 ```{r}
 include_missing_zero <- function(df, col){
   missing_years <- 2005:2024  # This creates c(2025, 2024)
-  
-  new_rows <- expand.grid(
-    Year = missing_years,  # All missing years
-    Analysis = df |> pull({{ col }}) |> unique(),  # Specified analyses
-    Count = 0  # Zero counts for each
-  )
 
-  df <- df %>%
-    bind_rows(new_rows) %>%
+  new_rows <- expand.grid(
+    Year  = missing_years,  
+    a     = df |> pull({{col}}) |> unique(), 
+    Count = 0
+  )
+  
+  colnames(new_rows)[2] <- col
+
+  df <- df |>
+    bind_rows(new_rows) |>
     distinct() 
   return(df)
+}
+
+keep_gt1 <- function(df, col){
+  total_counts <- df |>
+    group_by(.data[[col]]) |>
+    summarise(Total_Count = n(), .groups = 'drop') |>
+    na.omit()
+
+  # Step 2: Identify methods with count > 1
+  methods_to_keep <- total_counts |>
+    filter(Total_Count > 1) |>
+    pull({{ col }})
+    
+  #browser()
+  # Step 3: Filter original data to keep only methods with count > 1
+  df[,col] <- ifelse(df[[col]] %in% methods_to_keep, df[[col]], "Other Methods")
+    #filter(Analysis.Methods %in% methods_to_keep)
+  return(df)
+}
+
+barplot_counts <- function(df, col, col_title=col){
+  count_data <- df |>
+    group_by(Year, .data[[col]], .drop=FALSE) |>
+    summarise(Count = n(), .groups = 'drop') |>
+    na.omit()
+  
+  total_count_per_year <- count_data |>
+    group_by(Year, .drop=FALSE) |>
+    summarise(Total = sum(Count), .groups = 'drop')
+  
+  count_data <- left_join(count_data, total_count_per_year, by = "Year") |>
+    mutate(Percentage = (Count / Total) * 100) |>
+    include_missing_zero(col)
+
+  p <- count_data |> 
+    ggplot(aes(x = factor(Year), y = Count, fill = .data[[col]])) +
+    geom_bar(stat = "identity") +
+    labs(title = paste(col_title, "by Year"), x = "Year", y = "Count", fill = col_title) +
+    theme_minimal()
+  return(p)
 }
 ```
 
@@ -118,28 +161,7 @@ include_missing_zero <- function(df, col){
 # Convert 'NA' to R's NA
 df$Analysis[df$Analysis == "NA"] <- NA
 
-# Count occurrences per year
-count_data <- df %>%
-  group_by(Year, Analysis, .drop=FALSE) %>%
-  summarise(Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Calculate percentages
-total_count_per_year <- count_data %>%
-  group_by(Year, .drop=FALSE) %>%
-  summarise(Total = sum(Count), .groups = 'drop')
-
-count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
-  mutate(Percentage = (Count / Total) * 100)
-
-count_data <- include_missing_zero(count_data, "Analysis")
-
-p <- ggplot(count_data, aes(x = factor(Year), y = Count, fill = Analysis)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Analysis by Year", x = "Year", y = "Count", fill = "Analysis") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
+p <- barplot_counts(df, "Analysis")
 p
 ggsave("images/analysis_year.png", p, width = 297, height = 210, units = "mm")
 ```
@@ -188,283 +210,88 @@ ggsave("images/taxa_reportedvalue.png", p, width = 297, height = 210, units = "m
 df$Prog..language[df$Prog..language == "NA"] <- NA
 
 # Split languages where there are multiple
-df_lang <- df %>%
-  mutate(ProgLanguage = strsplit(as.character(Prog..language), ", ")) %>%
+df_lang <- df |>
+  mutate(ProgLanguage = strsplit(as.character(Prog..language), ", ")) |>
   tidyr::unnest(ProgLanguage)
 
-# Count occurrences per year
-count_data <- df_lang %>%
-  group_by(Year, ProgLanguage) %>%
-  summarise(Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Calculate percentages
-total_count_per_year <- count_data %>%
-  group_by(Year) %>%
-  summarise(Total = sum(Count), .groups = 'drop')
-
-count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
-  mutate(Percentage = (Count / Total) * 100)
-
-count_data <- include_missing_zero(count_data, "ProgLanguage")
-
-p <- ggplot(count_data, aes(x = factor(Year), y = Count, fill = ProgLanguage)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Programming Language Usage by Year", x = "Year", y = "Count", fill = "Language") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p <- barplot_counts(df_lang, "ProgLanguage", "Programming Language")
 p
 ggsave("images/programminglanguage_year.png", p, width = 297, height = 210, units = "mm")
 ```
 
 ```{r}
-df_taxa <- df %>%
-  mutate(Taxa = strsplit(as.character(Taxa), ", ")) %>%
+df_taxa <- df |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
   tidyr::unnest(Taxa)
 
-# Count occurrences per year
-count_data <- df_taxa %>%
-  group_by(Year, Taxa) %>%
-  summarise(Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Calculate percentages
-total_count_per_year <- count_data %>%
-  group_by(Year) %>%
-  summarise(Total = sum(Count), .groups = 'drop')
-
-count_data <- left_join(count_data, total_count_per_year, by = "Year") %>%
-  mutate(Percentage = (Count / Total) * 100)
-
-count_data <- include_missing_zero(count_data, "Taxa")
-
-p <- ggplot(count_data, aes(x = factor(Year), y = Count, fill = Taxa)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Taxa by Year", x = "Year", y = "Count", fill = "Taxa") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p <- barplot_counts(df_taxa, "Taxa")
 p
 ggsave("images/taxa_year.png", p, width = 297, height = 210, units = "mm")
 ```
 ```{r}
-df_analysis <- df %>%
-  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) %>%
+df_analysis <- df |>
+  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
   tidyr::unnest(Analysis.Methods)
 
-# Step 1: Calculate counts per Analysis.Methods across all years
-total_method_counts <- df_analysis %>%
-  group_by(Analysis.Methods) %>%
-  summarise(Total_Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Step 2: Identify methods with count > 1
-methods_to_keep <- total_method_counts %>%
-  filter(Total_Count > 1) %>%
-  pull(Analysis.Methods)
-
-# Step 3: Filter original data to keep only methods with count > 1
-df_filtered <- df_analysis %>%
-  mutate(Analysis.Methods = ifelse(Analysis.Methods %in% methods_to_keep, 
-                                  Analysis.Methods, 
-                                  "Other Methods"))
+df_analysis <- keep_gt1(df_analysis, "Analysis.Methods")
   #filter(Analysis.Methods %in% methods_to_keep)
-
-
-# Count occurrences per year
-count_analysis <- df_filtered %>%
-  group_by(Year, Analysis.Methods) %>%
-  summarise(Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Calculate percentages
-total_count_per_year <- count_analysis %>%
-  group_by(Year) %>%
-  summarise(Total = sum(Count), .groups = 'drop')
-
-count_analysis <- left_join(count_analysis, total_count_per_year, by = "Year") %>%
-  mutate(Percentage = (Count / Total) * 100)
-
-count_analysis <- include_missing_zero(count_analysis, "Analysis.Methods")
-
-
-p <- ggplot(count_analysis, aes(x = factor(Year), y = Count, fill = Analysis.Methods)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Analysis Methods Usage by Year", x = "Year", y = "Count", fill = "Analysis Methods") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p <- barplot_counts(df_analysis, "Analysis.Methods")
 p
 ggsave("images/analysismethods_year.png", p, width = 297, height = 210, units = "mm")
 ```
 ```{r}
-df_tools <- df %>%
-  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) %>%
+df_tools <- df |>
+  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
   tidyr::unnest(Automation.Tools)
 
-# Step 1: Calculate counts per Analysis.Methods across all years
-total_tool_counts <- df_tools %>%
-  group_by(Automation.Tools) %>%
-  summarise(Total_Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Step 2: Identify methods with count > 1
-methods_to_keep <- total_tool_counts %>%
-  filter(Total_Count > 1) %>%
-  pull(Automation.Tools)
-
-# Step 3: Filter original data to keep only methods with count > 1
-df_filtered <- df_analysis %>%
-  mutate(Automation.Tools = ifelse(Automation.Tools %in% methods_to_keep, 
-                                  Automation.Tools, 
-                                  "Other Tools"))
-  #filter(Automation.Tools %in% methods_to_keep)
-
-# Count occurrences per year
-count_tools <- df_filtered %>%
-  group_by(Year, Automation.Tools) %>%
-  summarise(Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Calculate percentages
-total_count_per_year <- count_tools %>%
-  group_by(Year) %>%
-  summarise(Total = sum(Count), .groups = 'drop')
-
-count_tools <- left_join(count_tools, total_count_per_year, by = "Year") %>%
-  mutate(Percentage = (Count / Total) * 100)
-
-count_tools <- include_missing_zero(count_tools, "Automation.Tools")
-
-p <- count_tools |>
-  #filter(Count > 1) |>
-  ggplot(aes(x = factor(Year), y = Count, fill = Automation.Tools)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Automation Tools Usage by Year", x = "Year", y = "Count", fill = "Automation Tools") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+df_tools <- keep_gt1(df_tools, "Automation.Tools")
+  #filter(Analysis.Methods %in% methods_to_keep)
+p <- barplot_counts(df_tools, "Automation.Tools")
 p
 ggsave("images/automationtools_year.png", p, width = 297, height = 210, units = "mm")
 ```
 
 ```{r}
-df_code_available <- df %>%
-  mutate(Code.availability = strsplit(as.character(Code.availability), ", ")) %>%
+df_code_available <- df |>
+  mutate(Code.availability = strsplit(as.character(Code.availability), ", ")) |>
   tidyr::unnest(Code.availability)
 
-# Count occurrences per year
-count_code_available <- df_code_available %>%
-  group_by(Year, Code.availability) %>%
-  summarise(Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Calculate percentages
-total_count_per_year <- count_code_available %>%
-  group_by(Year) %>%
-  summarise(Total = sum(Count), .groups = 'drop')
-
-count_code_available <- left_join(count_code_available, total_count_per_year, by = "Year") %>%
-  mutate(Percentage = (Count / Total) * 100)
-
-count_code_available <- include_missing_zero(count_code_available, "Code.availability")
-
-p <- ggplot(count_code_available, aes(x = factor(Year), y = Count, fill = Code.availability)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Code Availability Usage by Year", x = "Year", y = "Count", fill = "Code Available") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p <- barplot_counts(df_code_available, "Code.availability")
 p
 ggsave("images/codeavailable_year.png", p, width = 297, height = 210, units = "mm")
 ```
 
 ```{r}
-df_data_available <- df %>%
-  mutate(Data.Availability = strsplit(as.character(Data.Availability), ", ")) %>%
+df_data_available <- df |>
+  mutate(Data.Availability = strsplit(as.character(Data.Availability), ", ")) |>
   tidyr::unnest(Data.Availability)
 
-# Count occurrences per year
-count_data_available <- df_data_available %>%
-  group_by(Year, Data.Availability) %>%
-  summarise(Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Calculate percentages
-total_count_per_year <- count_data_available %>%
-  group_by(Year) %>%
-  summarise(Total = sum(Count), .groups = 'drop')
-
-count_data_available <- left_join(count_data_available, total_count_per_year, by = "Year") %>%
-  mutate(Percentage = (Count / Total) * 100)
-
-count_data_available <- include_missing_zero(count_data_available, "Data.Availability")
-
-
-p <- ggplot(count_data_available, aes(x = factor(Year), y = Count, fill = Data.Availability)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Data Availability Usage by Year", x = "Year", y = "Count", fill = "Data Available") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+p <- barplot_counts(df_data_available, "Data.Availability")
 p
 ggsave("images/dataavailable_year.png", p, width = 297, height = 210, units = "mm")
 ```
 ```{r}
 #df <- read.csv("tagged_literature.csv")
-#df %>%
-#  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) %>%
+#df |>
+#  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
 #  tidyr::unnest(Automation.Tools) |>
 #  pull(Automation.Tools) |> sort() |> unique()
 ```
 ```{r}
 #df <- read.csv("tagged_literature.csv")
-#df %>%
-#  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) %>%
+#df |>
+#  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
 #  tidyr::unnest(Analysis.Methods) |>
 #  pull(Analysis.Methods) |> sort() |> unique()
 ```
 ```{r}
-df_eval <- df %>%
-  mutate(Evaluation.Method = strsplit(as.character(Evaluation.Method), ", ")) %>%
+df_eval <- df |>
+  mutate(Evaluation.Method = strsplit(as.character(Evaluation.Method), ", ")) |>
   tidyr::unnest(Evaluation.Method)
 
-# Step 1: Calculate counts per Analysis.Methods across all years
-total_eval_counts <- df_eval %>%
-  group_by(Evaluation.Method) %>%
-  summarise(Total_Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Step 2: Identify methods with count > 1
-methods_to_keep <- total_eval_counts %>%
-  filter(Total_Count > 1) %>%
-  pull(Evaluation.Method)
-
-# Step 3: Filter original data to keep only methods with count > 1
-df_filtered <- df_eval %>%
-  mutate(Evaluation.Method = ifelse(Evaluation.Method %in% methods_to_keep, 
-                                  Evaluation.Method, 
-                                  "Other Methods"))
+df_eval <- keep_gt1(df_eval, "Evaluation.Method")
   #filter(Analysis.Methods %in% methods_to_keep)
-
-
-# Count occurrences per year
-count_eval <- df_filtered %>%
-  group_by(Year, Evaluation.Method) %>%
-  summarise(Count = n(), .groups = 'drop') %>%
-  na.omit()
-
-# Calculate percentages
-total_count_per_year <- count_eval %>%
-  group_by(Year) %>%
-  summarise(Total = sum(Count), .groups = 'drop')
-
-count_eval <- left_join(count_eval, total_count_per_year, by = "Year") %>%
-  mutate(Percentage = (Count / Total) * 100)
-
-count_eval <- include_missing_zero(count_eval, "Evaluation.Method")
-
-p <- ggplot(count_eval, aes(x = factor(Year), y = Count, fill = Evaluation.Method)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Evaluation Methods Usage by Year", x = "Year", y = "Count", fill = "Eval Methods") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
+p <- barplot_counts(df_eval, "Evaluation.Method")
 p
 ggsave("images/evaluationmethod_year.png", p, width = 297, height = 210, units = "mm")
 ```
