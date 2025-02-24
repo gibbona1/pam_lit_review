@@ -83,11 +83,6 @@ p <- ggplot() +
   labs(title = "Global Distribution of Species",
        x = "Longitude",
        y = "Latitude") +
-  # Adjust legend
-  #scale_shape_manual(values = c(1, 2, 3, 4, 5), 
-  #                   name = "Species",
-  #                   breaks = c("Bats", "Non-flying mammals", "Birds", "Anurans", "Invertebrates"),
-  #                   labels = c("Bats", "Non-flying mammals", "Birds", "Anurans", "Invertebrates")) +
   # Theme settings
   theme_minimal() +
   theme(panel.grid.major = element_line(color = "grey80"),
@@ -122,15 +117,11 @@ keep_gt1 <- function(df, col){
     summarise(Total_Count = n(), .groups = 'drop') |>
     na.omit()
 
-  # Step 2: Identify methods with count > 1
   methods_to_keep <- total_counts |>
     filter(Total_Count > 1) |>
     pull({{ col }})
     
-  #browser()
-  # Step 3: Filter original data to keep only methods with count > 1
   df[,col] <- ifelse(df[[col]] %in% methods_to_keep, df[[col]], "Other Methods")
-    #filter(Analysis.Methods %in% methods_to_keep)
   return(df)
 }
 
