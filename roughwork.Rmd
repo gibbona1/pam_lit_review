@@ -286,4 +286,22 @@ p <- barplot_counts(df_eval, "Evaluation.Method")
 p
 ggsave("images/evaluationmethod_year.png", p, width = 297, height = 210, units = "mm")
 ```
+```{r}
+#df <- read.csv("tagged_literature.csv")
+#df |>
+#  mutate(Preprocessing = strsplit(as.character(Preprocessing), ", ")) |>
+#  tidyr::unnest(Preprocessing) |>
+#  pull(Preprocessing) |> sort() |> unique()
+```
+```{r}
+df_pre <- df |>
+  mutate(Preprocessing = strsplit(as.character(Preprocessing), ", ")) |>
+  tidyr::unnest(Preprocessing)
+
+df_pre <- keep_gt1(df_pre, "Preprocessing")
+  #filter(Analysis.Methods %in% methods_to_keep)
+p <- barplot_counts(df_pre, "Preprocessing")
+p
+ggsave("images/preprocessing_year.png", p, width = 297, height = 210, units = "mm")
+```
 
