@@ -136,7 +136,7 @@ keep_gt1 <- function(df, col){
   return(df)
 }
 
-barplot_counts <- function(df, col, col_title=col){
+barplot_counts <- function(df, col, col_title=col, prop=FALSE){
   count_data <- df |>
     group_by(Year, .data[[col]], .drop=FALSE) |>
     summarise(Count = n(), .groups = 'drop') |>
@@ -149,12 +149,20 @@ barplot_counts <- function(df, col, col_title=col){
   count_data <- left_join(count_data, total_count_per_year, by = "Year") |>
     mutate(Percentage = (Count / Total) * 100) |>
     include_missing_zero(col)
-
-  p <- count_data |> 
-    ggplot(aes(x = factor(Year), y = Count, fill = .data[[col]])) +
-    geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
-    labs(x = "Year", y = "Count", fill = col_title) +
-    scale_y_continuous(expand=c(0,0))+
+  
+  if(prop){
+    p <- count_data |> 
+      ggplot(aes(x = factor(Year), y = Percentage, fill = .data[[col]], label=floor(Percentage))) +
+      geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
+      geom_text(size = 3, position = position_stack(vjust = 0.5))+
+      labs(x = "Year", y = "Percentage", fill = col_title)
+  } else {
+    p <- count_data |> 
+      ggplot(aes(x = factor(Year), y = Count, fill = .data[[col]])) +
+      geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
+      labs(x = "Year", y = "Count", fill = col_title)
+  }
+  p <- p + scale_y_continuous(expand=c(0,0))+
     theme_minimal() +
     guides(fill = guide_legend(override.aes = list(colour = "black")))+
     theme(panel.grid.major.x = element_blank(),
@@ -175,6 +183,7 @@ ggsave("images/analysis_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 p <- df |>
+  filter(Reported_value != "") |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
   tidyr::drop_na(Reported_value) |>
   ggplot(aes(x = Analysis, y = Reported_value)) +
@@ -185,6 +194,7 @@ ggsave("images/analysis_reportedvalue.png", p, width = 240, height = 100, units 
 
 ```{r}
 p <- df |>
+  filter(Reported_value != "") |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
   tidyr::drop_na(Reported_value) |>
   mutate(Decade = case_when(
@@ -201,6 +211,7 @@ ggsave("images/decade_reportedvalue.png", p, width = 240, height = 100, units = 
 
 ```{r}
 p <- df |>
+  filter(Reported_value != "") |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
   tidyr::drop_na(Reported_value) |>
   mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
@@ -320,6 +331,9 @@ df_pre <- keep_gt1(df_pre, "Preprocessing")
 p <- barplot_counts(df_pre, "Preprocessing")
 p
 ggsave("images/preprocessing_year.png", p, width = 240, height = 100, units = "mm")
+p <- barplot_counts(df_pre, "Preprocessing", prop=TRUE)
+p
+ggsave("images/preprocessing_prop_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 count_data <- df_lang |>
