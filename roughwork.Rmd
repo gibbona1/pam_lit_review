@@ -81,11 +81,7 @@ latlong_df <- df |>
          lat = sapply(strsplit(latlong, ","), function(x) as.numeric(x[1])),
          long = sapply(strsplit(latlong, ","), function(x) as.numeric(x[2]))
 )
-latlong_df
-```
 
-
-```{r}
 # Create the world map
 world <- map_data("world")
 
@@ -163,7 +159,16 @@ keep_gt1 <- function(df, col){
   return(df)
 }
 
-barplot_counts <- function(df, col, col_title=col, prop=FALSE, year=TRUE){
+barplot_counts <- function(df, col, col_title=col, prop=FALSE, year=TRUE, decade=FALSE){
+  if(decade){
+    df <- df |>
+      mutate(Year = case_when(
+        Year >= 2000 & Year < 2010 ~ "2000s",
+        Year >= 2010 & Year < 2020 ~ "2010s",
+        Year >= 2020 & Year < 2030 ~ "2020s",
+        TRUE ~ NA_character_  # Handle years outside these ranges
+      ))
+  }
   count_data <- df |>
     group_by(Year, .data[[col]], .drop=FALSE) |>
     summarise(Count = n(), .groups = 'drop') |>
@@ -174,8 +179,12 @@ barplot_counts <- function(df, col, col_title=col, prop=FALSE, year=TRUE){
     summarise(Total = sum(Count), .groups = 'drop')
   
   count_data <- left_join(count_data, total_count_per_year, by = "Year") |>
-    mutate(Percentage = (Count / Total) * 100) |>
+    mutate(Percentage = (Count / Total) * 100) 
+  
+  if(!decade){
+    count_data <- count_data |>
     include_missing_zero(col)
+  }
   
   if(!year){
     df <- df[df[,col] != "Other Methods",]
@@ -376,6 +385,9 @@ ggsave("images/preprocessing_year.png", p, width = 240, height = 100, units = "m
 p <- barplot_counts(df_pre, "Preprocessing", prop=TRUE)
 p
 ggsave("images/preprocessing_prop_year.png", p, width = 240, height = 100, units = "mm")
+p <- barplot_counts(df_pre, "Preprocessing", prop=TRUE, decade=TRUE)
+p
+ggsave("images/preprocessing_prop_decade.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 count_data <- df_lang |>
