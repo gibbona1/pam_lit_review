@@ -21,7 +21,10 @@ p <- df |>
   ggplot(aes(Year, Dataset_GB)) + 
   geom_point() + 
   scale_y_log10() +
-  geom_smooth(method="lm", color = "dodgerblue")
+  geom_smooth(method="lm", color = "dodgerblue") +
+  labs(y="Dataset Size (GB)") +
+  theme_minimal() +
+  theme(axis.line = element_line())
 p
 ggsave("images/data_trend.png", p, width = 240, height = 100, units = "mm")
 ```
