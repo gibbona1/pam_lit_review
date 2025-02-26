@@ -27,7 +27,21 @@ p <- df |>
   theme_minimal() +
   theme(axis.line = element_line())
 p
-ggsave("images/data_trend.png", p, width = 240, height = 100, units = "mm")
+ggsave("images/data_trend.png", p, width = 12, height = 120, units = "mm")
+
+p <- df |>
+  tidyr::drop_na(Dataset_hours) |> 
+  #filter(Year >= 2008) |>
+  ggplot(aes(Year, Dataset_hours)) + 
+  geom_point() + 
+  scale_y_log10() +
+  geom_smooth(method="lm", color = "dodgerblue") +
+  scale_x_continuous(expand = c(0.01,0.01)) +
+  labs(y="Dataset Size (hours)") +
+  theme_minimal() +
+  theme(axis.line = element_line())
+p
+ggsave("images/hours_trend.png", p, width = 120, height = 120, units = "mm")
 ```
 
 ```{r}
