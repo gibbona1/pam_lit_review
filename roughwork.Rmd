@@ -23,7 +23,7 @@ p <- df |>
   scale_y_log10() +
   geom_smooth(method="lm", color = "dodgerblue")
 p
-ggsave("images/data_trend.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/data_trend.png", p, width = 240, height = 100, units = "mm")
 ```
 
 ```{r}
@@ -90,7 +90,7 @@ p <- ggplot() +
         axis.text.x = element_text(angle = 0, hjust = 0.5),
         legend.position = "right")
 p
-ggsave("images/ecosystem_map.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/ecosystem_map.png", p, width = 240, height = 100, units = "mm")
 ```
 
 ```{r}
@@ -141,9 +141,15 @@ barplot_counts <- function(df, col, col_title=col){
 
   p <- count_data |> 
     ggplot(aes(x = factor(Year), y = Count, fill = .data[[col]])) +
-    geom_bar(stat = "identity") +
-    labs(title = paste(col_title, "by Year"), x = "Year", y = "Count", fill = col_title) +
-    theme_minimal()
+    geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
+    labs(x = "Year", y = "Count", fill = col_title) +
+    scale_y_continuous(expand=c(0,0))+
+    theme_minimal() +
+    guides(fill = guide_legend(override.aes = list(colour = "black")))+
+    theme(panel.grid.major.x = element_blank(),
+          panel.grid.major.y = element_line(colour = "grey80"),
+          axis.line.x = element_line(colour="black"),
+          axis.ticks.x=element_line())
   return(p)
 }
 ```
@@ -154,7 +160,7 @@ df$Analysis[df$Analysis == "NA"] <- NA
 
 p <- barplot_counts(df, "Analysis")
 p
-ggsave("images/analysis_year.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/analysis_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 p <- df |>
@@ -163,7 +169,7 @@ p <- df |>
   ggplot(aes(x = Analysis, y = Reported_value)) +
   geom_boxplot()
 p
-ggsave("images/analysis_reportedvalue.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/analysis_reportedvalue.png", p, width = 240, height = 100, units = "mm")
 ```
 
 ```{r}
@@ -179,7 +185,7 @@ p <- df |>
   ggplot(aes(x = Decade, y = Reported_value)) +
   geom_boxplot()
 p
-ggsave("images/decade_reportedvalue.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/decade_reportedvalue.png", p, width = 240, height = 100, units = "mm")
 ```
 
 ```{r}
@@ -192,7 +198,7 @@ p <- df |>
   geom_boxplot() +
   facet_wrap(~Taxa)
 p
-ggsave("images/taxa_reportedvalue.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/taxa_reportedvalue.png", p, width = 240, height = 100, units = "mm")
 ```
 
 
@@ -207,7 +213,7 @@ df_lang <- df |>
 
 p <- barplot_counts(df_lang, "ProgLanguage", "Programming Language")
 p
-ggsave("images/programminglanguage_year.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/programminglanguage_year.png", p, width = 240, height = 100, units = "mm")
 ```
 
 ```{r}
@@ -217,7 +223,7 @@ df_taxa <- df |>
 
 p <- barplot_counts(df_taxa, "Taxa")
 p
-ggsave("images/taxa_year.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/taxa_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 df_analysis <- df |>
@@ -228,7 +234,7 @@ df_analysis <- keep_gt1(df_analysis, "Analysis.Methods")
   #filter(Analysis.Methods %in% methods_to_keep)
 p <- barplot_counts(df_analysis, "Analysis.Methods")
 p
-ggsave("images/analysismethods_year.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/analysismethods_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 df_tools <- df |>
@@ -239,7 +245,7 @@ df_tools <- keep_gt1(df_tools, "Automation.Tools")
   #filter(Analysis.Methods %in% methods_to_keep)
 p <- barplot_counts(df_tools, "Automation.Tools")
 p
-ggsave("images/automationtools_year.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/automationtools_year.png", p, width = 240, height = 100, units = "mm")
 ```
 
 ```{r}
@@ -249,7 +255,7 @@ df_code_available <- df |>
 
 p <- barplot_counts(df_code_available, "Code.availability")
 p
-ggsave("images/codeavailable_year.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/codeavailable_year.png", p, width = 240, height = 100, units = "mm")
 ```
 
 ```{r}
@@ -259,7 +265,7 @@ df_data_available <- df |>
 
 p <- barplot_counts(df_data_available, "Data.Availability")
 p
-ggsave("images/dataavailable_year.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/dataavailable_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 #df <- read.csv("tagged_literature.csv")
@@ -284,7 +290,7 @@ df_eval <- keep_gt1(df_eval, "Evaluation.Method")
   #filter(Analysis.Methods %in% methods_to_keep)
 p <- barplot_counts(df_eval, "Evaluation.Method")
 p
-ggsave("images/evaluationmethod_year.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/evaluationmethod_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 #df <- read.csv("tagged_literature.csv")
@@ -302,6 +308,33 @@ df_pre <- keep_gt1(df_pre, "Preprocessing")
   #filter(Analysis.Methods %in% methods_to_keep)
 p <- barplot_counts(df_pre, "Preprocessing")
 p
-ggsave("images/preprocessing_year.png", p, width = 297, height = 210, units = "mm")
+ggsave("images/preprocessing_year.png", p, width = 240, height = 100, units = "mm")
+```
+```{r}
+count_data <- df_lang |>
+    group_by(Year, ProgLanguage, .drop=FALSE) |>
+    summarise(Count = n(), .groups = 'drop') |>
+    na.omit()
+  
+total_count_per_year <- count_data |>
+  group_by(Year, .drop=FALSE) |>
+  summarise(Total = sum(Count), .groups = 'drop')
+
+count_data <- left_join(count_data, total_count_per_year, by = "Year") |>
+  mutate(Percentage = (Count / Total) * 100) |>
+  include_missing_zero('ProgLanguage')
+
+count_data |> 
+  ggplot(aes(x = factor(Year), y = Count, fill = ProgLanguage)) +
+  geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
+  labs(x = "Year", y = "Count", fill = 'Language') +
+  scale_y_continuous(expand=c(0,0))+
+  theme_minimal() +
+  guides(fill = guide_legend(override.aes = list(colour = "black")))+
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(colour = "grey80"),
+        axis.line.x = element_line(colour="black"),
+        #panel.grid = element_line(colour="lightgrey"),
+        axis.ticks.x=element_line())
 ```
 
