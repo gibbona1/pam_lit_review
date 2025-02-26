@@ -89,13 +89,25 @@ latlong_df
 # Create the world map
 world <- map_data("world")
 
+ecosystem_colors <- c(
+  "Tropical Forest" = "#228B22",
+  "Marine Aquatic" = "#1E90FF",
+  "Various" = "#808080",
+  "Tropical Rainforest" = "#006400",
+  "Freshwater" = "#87CEEB",
+  "Temperate Forest" = "#6B8E23",
+  "Farm" = "#FFD700",
+  "Cave" = "#8B4513",
+  "Urban" = "#FF4500"
+)
+
 # Plotting
 p <- ggplot() +
   # Add world map with light grey fill and dark grey borders
   geom_polygon(data = world, aes(x = long, y = lat, group = group), 
                fill = "grey90", color = "grey50") +
   # Add jittered points for different tags
-  geom_jitter(data = latlong_df, aes(x = long, y = lat, colour = Ecosystem), size = 3) +
+  geom_jitter(data = latlong_df, aes(x = long, y = lat, fill = Ecosystem), colour="black", size = 2, shape=21) +
   # Set coordinate system to map projection
   coord_fixed(ratio = 1, xlim = c(-180, 180), ylim = c(-90, 90), expand = FALSE) +
   # Custom breaks and labels for x (longitude) and y (latitude)
@@ -103,6 +115,7 @@ p <- ggplot() +
                      labels = c("180°W", "120°W", "60°W", "0°", "60°E", "120°E", "180°E")) +
   scale_y_continuous(breaks = seq(-90, 90, by = 30),
                      labels = c("90°S", "60°S", "30°S", "0°", "30°N", "60°N", "90°N")) +
+  scale_fill_manual(values = ecosystem_colors) +
   # Theme settings
   labs(x="",y="")+
   theme_minimal() +
@@ -281,7 +294,7 @@ df_tools <- keep_gt1(df_tools, "Automation.Tools")
   #filter(Analysis.Methods %in% methods_to_keep)
 p <- barplot_counts(df_tools, "Automation.Tools", "Automation Tools")
 p
-ggsave("images/automationtools_year.png", p, width = 240, height = 100, units = "mm")
+ggsave("images/automationtools_year.png", p, width = 240, height = 120, units = "mm")
 ```
 
 ```{r}
