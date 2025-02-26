@@ -182,7 +182,8 @@ barplot_counts <- function(df, col, col_title=col, prop=FALSE, year=TRUE){
     p <- df |>
       ggplot(aes(y = reorder(.data[[col]], .data[[col]], FUN = length, decreasing = FALSE))) +
       geom_bar(stat = "count", fill = "dodgerblue") +  # Fill bars with dodgerblue
-      labs(x = "Count", y = col_title)
+      labs(x = "Count", y = col_title) +
+      scale_x_continuous(expand = c(0,0))
   } else {
     if(prop){
       p <- count_data |> 
