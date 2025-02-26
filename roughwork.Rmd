@@ -387,7 +387,7 @@ p
 ggsave("images/preprocessing_prop_year.png", p, width = 240, height = 100, units = "mm")
 p <- barplot_counts(df_pre, "Preprocessing", prop=TRUE, decade=TRUE)
 p
-ggsave("images/preprocessing_prop_decade.png", p, width = 240, height = 100, units = "mm")
+ggsave("images/preprocessing_prop_decade.png", p, width = 240, height = 150, units = "mm")
 ```
 ```{r}
 count_data <- df_lang |>
