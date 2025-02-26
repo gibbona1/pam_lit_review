@@ -22,6 +22,7 @@ p <- df |>
   geom_point() + 
   scale_y_log10() +
   geom_smooth(method="lm", color = "dodgerblue") +
+  scale_x_continuous(expand = c(0.01,0.01)) +
   labs(y="Dataset Size (GB)") +
   theme_minimal() +
   theme(axis.line = element_line())
@@ -76,22 +77,29 @@ world <- map_data("world")
 
 # Plotting
 p <- ggplot() +
-  # Add world map
-  geom_polygon(data = world, aes(x = long, y = lat, group = group), fill = "lightgray", color = "white") +
-  # Add points for different tags
-  geom_jitter(data = latlong_df, aes(x = long, y = lat, colour=Ecosystem), size = 3) +
+  # Add world map with light grey fill and dark grey borders
+  geom_polygon(data = world, aes(x = long, y = lat, group = group), 
+               fill = "grey90", color = "grey50") +
+  # Add jittered points for different tags
+  geom_jitter(data = latlong_df, aes(x = long, y = lat, colour = Ecosystem), size = 3) +
   # Set coordinate system to map projection
-  coord_fixed(ratio = 1) +
-  # Add labels and title
-  labs(title = "Global Distribution of Species",
-       x = "Longitude",
-       y = "Latitude") +
+  coord_fixed(ratio = 1, xlim = c(-180, 180), ylim = c(-90, 90), expand = FALSE) +
+  # Custom breaks and labels for x (longitude) and y (latitude)
+  scale_x_continuous(breaks = seq(-180, 180, by = 60),
+                     labels = c("180°W", "120°W", "60°W", "0°", "60°E", "120°E", "180°E")) +
+  scale_y_continuous(breaks = seq(-90, 90, by = 30),
+                     labels = c("90°S", "60°S", "30°S", "0°", "30°N", "60°N", "90°N")) +
   # Theme settings
+  labs(x="",y="")+
   theme_minimal() +
-  theme(panel.grid.major = element_line(color = "grey80"),
-        panel.grid.minor = element_blank(),
-        axis.text.x = element_text(angle = 0, hjust = 0.5),
-        legend.position = "right")
+  theme(
+    axis.ticks = element_line(),
+    panel.grid.major = element_line(color = "grey80"),    # Light grey grid lines
+    panel.grid.minor = element_blank(),                   # No minor grid lines
+    panel.border = element_rect(color = "black", fill = NA),  # Black panel border
+    axis.text.x = element_text(angle = 0, hjust = 0.5),   # Horizontal x-axis text
+    legend.position = "right"                             # Legend on right
+  )
 p
 ggsave("images/ecosystem_map.png", p, width = 240, height = 100, units = "mm")
 ```
