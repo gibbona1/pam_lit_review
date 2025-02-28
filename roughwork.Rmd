@@ -315,7 +315,11 @@ df_tools <- df |>
   tidyr::unnest(Automation.Tools)
 
 df_tools <- keep_gt1(df_tools, "Automation.Tools")
-  #filter(Analysis.Methods %in% methods_to_keep)
+```
+
+
+```{r}
+#filter(Analysis.Methods %in% methods_to_keep)
 p <- barplot_counts(df_tools, "Automation.Tools", "Automation Tools")
 p
 ggsave("images/automationtools_year.png", p, width = 240, height = 120, units = "mm")
@@ -418,5 +422,73 @@ count_data |>
         axis.line.x = element_line(colour="black"),
         #panel.grid = element_line(colour="lightgrey"),
         axis.ticks.x=element_line())
+```
+```{r}
+df_tools <- df |>
+  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
+  tidyr::unnest(Automation.Tools) |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa)
+
+df_tools <- keep_gt1(df_tools, "Automation.Tools")
+p <- df_tools |>
+  filter(Automation.Tools != "Other Methods") |>
+      ggplot(aes(y = reorder(Automation.Tools, Automation.Tools, FUN = length, decreasing = FALSE), fill = Taxa)) +
+      geom_bar(stat = "count") +  # Fill bars with dodgerblue
+      labs(x = "Count", y = "Automation Tools") +
+      scale_x_continuous(expand = c(0,0))
+p
+ggsave("images/automationtools_taxa.png", p, width = 240, height = 120, units = "mm")
+```
+```{r}
+df_analysis <- df |>
+  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
+  tidyr::unnest(Analysis.Methods) |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa)
+
+df_analysis <- keep_gt1(df_analysis, "Analysis.Methods")
+p <- df_analysis |>
+  filter(Automation.Tools != "Other Methods") |>
+      ggplot(aes(y = reorder(Analysis.Methods, Analysis.Methods, FUN = length, decreasing = FALSE), fill = Taxa)) +
+      geom_bar(stat = "count") +  # Fill bars with dodgerblue
+      labs(x = "Count", y = "Analysis Methods") +
+      scale_x_continuous(expand = c(0,0))
+p
+ggsave("images/analysismethods_taxa.png", p, width = 240, height = 120, units = "mm")
+```
+
+```{r}
+#x axis-year, y-axcis, manual.automatic.semiautomatic
+
+# Assuming your dataframe is called 'df'
+# First, preprocess the Monitoring.year column
+df |>
+  select(Monitoring.year) |>
+  # Separate comma-separated values into rows
+  tidyr::separate_rows(Monitoring.year, sep = ",") |>
+  # Clean up any whitespace
+  mutate(Monitoring.year = trimws(Monitoring.year))# |>
+  # Create a new column that expands hyphenated years
+  mutate(Expanded_Years = map(Monitoring.year, function(x) {
+    if (stringr::str_detect(x, "-")) {
+      range <- stringr::str_split(x, "-")[[1]] |> as.numeric()
+      return(as.numeric(seq(range[1], range[2])))
+    } else {
+      return(c(as.numeric(x)))
+    }
+  })) |>
+  # Unnest the list column into individual rows
+  tidyr::unnest(Expanded_Years) + # Create the boxplot
+  ggplot(aes(x = Analysis, y = Expanded_Years)) +
+  geom_boxplot() +
+  # Customize the plot
+  labs(title = "Analysis Distribution by Year",
+       x = "Analysis",
+       y = "Year") +
+  # Rotate x-axis labels if needed
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  # Ensure proper spacing
+  theme_minimal()
 ```
 
