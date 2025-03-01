@@ -15,17 +15,64 @@ library(dplyr)
 df <- read.csv("tagged_literature.csv")
 #df$Year <- as.factor(df$Year)
 
+log10_minor_break = function (...){
+  function(x) {
+    minx         = floor(min(log10(x), na.rm=T))-1;
+    maxx         = ceiling(max(log10(x), na.rm=T))+1;
+    n_major      = maxx-minx+1;
+    major_breaks = seq(minx, maxx, by=1)
+    minor_breaks = 
+      rep(log10(seq(1, 9, by=4)), times = n_major)+
+      rep(major_breaks, each = 9)
+    return(10^(minor_breaks))
+  }
+}
+
+log_breaks = function(maj, radix=10) {
+  function(x) {
+    minx         = floor(min(logb(x,radix), na.rm=T)) - 1
+    maxx         = ceiling(max(logb(x,radix), na.rm=T)) + 1
+    n_major      = maxx - minx + 1
+    major_breaks = seq(minx, maxx, by=1)
+    if (maj) {
+      breaks = major_breaks
+    } else {
+      steps = logb(1:(radix-1),radix)
+      breaks = rep(steps, times=n_major) +
+               rep(major_breaks, each=radix-1)
+    }
+    radix^breaks
+  }
+}
+scale_x_log_eng = function(..., radix=10) {
+  scale_x_continuous(...,
+                     trans=scales::log_trans(radix),
+                     breaks=scales::log_breaks(TRUE, radix),
+                     minor_breaks=scales::log_breaks(FALSE, radix))
+}
+scale_y_log_eng = function(..., radix=10) {
+  scale_y_continuous(...,
+                     trans=scales::log_trans(radix),
+                     breaks=scales::log_breaks(TRUE, radix),
+                     minor_breaks=scales::log_breaks(FALSE, radix))
+}
+
 p <- df |>
   tidyr::drop_na(Dataset_GB) |> 
   #filter(Year >= 2008) |>
   ggplot(aes(Year, Dataset_GB)) + 
   geom_point() + 
-  scale_y_log10() +
+  scale_y_log10(
+    breaks = scales::trans_breaks("log10", function(x) 10^x),
+    labels = scales::trans_format("log10", scales::math_format(10^.x))
+  ) +
+  annotation_logticks(side="l")+
   geom_smooth(method="lm", color = "dodgerblue") +
   scale_x_continuous(expand = c(0.01,0.01)) +
   labs(y="Dataset Size (GB)") +
   theme_minimal() +
-  theme(axis.line = element_line())
+  theme(axis.line = element_line(),
+        axis.ticks.x = element_line())
 p
 ggsave("images/data_trend.png", p, width = 120, height = 120, units = "mm")
 
@@ -34,12 +81,17 @@ p <- df |>
   #filter(Year >= 2008) |>
   ggplot(aes(Year, Dataset_hours)) + 
   geom_point() + 
-  scale_y_log10() +
+  scale_y_log10(
+    breaks = scales::trans_breaks("log10", function(x) 10^x),
+    labels = scales::trans_format("log10", scales::math_format(10^.x))
+  ) +
+  annotation_logticks(side="l")+
   geom_smooth(method="lm", color = "dodgerblue") +
   scale_x_continuous(expand = c(0.01,0.01)) +
   labs(y="Dataset Size (hours)") +
   theme_minimal() +
-  theme(axis.line = element_line())
+  theme(axis.line = element_line(),
+        axis.ticks.x = element_line())
 p
 ggsave("images/hours_trend.png", p, width = 120, height = 120, units = "mm")
 ```
@@ -463,32 +515,56 @@ ggsave("images/analysismethods_taxa.png", p, width = 240, height = 120, units = 
 
 # Assuming your dataframe is called 'df'
 # First, preprocess the Monitoring.year column
-df |>
-  select(Monitoring.year) |>
+df_expandyear <- df |>
+  filter(!is.na(Monitoring.year)) |>
+  #select(Monitoring.year) |>
   # Separate comma-separated values into rows
   tidyr::separate_rows(Monitoring.year, sep = ",") |>
   # Clean up any whitespace
-  mutate(Monitoring.year = trimws(Monitoring.year))# |>
+  mutate(Monitoring.year = trimws(Monitoring.year)) |>
   # Create a new column that expands hyphenated years
-  mutate(Expanded_Years = map(Monitoring.year, function(x) {
+  mutate(Expanded_Years = purrr::map(Monitoring.year, function(x) {
     if (stringr::str_detect(x, "-")) {
       range <- stringr::str_split(x, "-")[[1]] |> as.numeric()
-      return(as.numeric(seq(range[1], range[2])))
+      return(seq(range[1], range[2]))
     } else {
-      return(c(as.numeric(x)))
+      return(as.numeric(x))
     }
   })) |>
   # Unnest the list column into individual rows
-  tidyr::unnest(Expanded_Years) + # Create the boxplot
-  ggplot(aes(x = Analysis, y = Expanded_Years)) +
-  geom_boxplot() +
+  tidyr::unnest(Expanded_Years) # Create the boxplot
+  
+df |>
+  ggplot(aes(x=Year, fill=Analysis)) +
+  geom_bar(stat="count", colour="black") +
+  #ggplot(aes(x = Analysis, y = Expanded_Years)) +
+  #geom_boxplot() +
   # Customize the plot
-  labs(title = "Analysis Distribution by Year",
-       x = "Analysis",
-       y = "Year") +
+  #make breaks pretty
+  scale_y_continuous(expand = c(0,0), breaks = pretty) +
+  scale_x_continuous(expand = c(0,0), breaks = pretty) +
+  labs(title = "Analysis Type by Year",
+       x = "Monitoring Year",
+       y = "Count") +
   # Rotate x-axis labels if needed
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(colour = "grey80"),
+        axis.line.x = element_line(colour="black"),
+        axis.ticks.x=element_line())
   # Ensure proper spacing
   theme_minimal()
+```
+
+```{r}
+#correlation plot between monitoring year and publication year
+ggplot(df_expandyear, aes(x=Expanded_Years, y=Year, colour=Title)) +
+  geom_point() +
+  geom_smooth(method="lm", color = "dodgerblue") +
+  labs(title = "Correlation between Monitoring Year and Publication Year",
+       x = "Monitoring Year",
+       y = "Publication Year") +
+  theme_minimal() + 
+  #hide legend
+  theme(legend.position="none")
 ```
 
