@@ -155,7 +155,7 @@ p <- ggplot() +
   geom_polygon(data = world, aes(x = long, y = lat, group = group), 
                fill = "grey90", color = "grey50") +
   # Add jittered points for different tags
-  geom_jitter(data = latlong_df, aes(x = long, y = lat, fill = Ecosystem), colour="black", size = 2, shape=21) +
+  geom_jitter(data = latlong_df, aes(x = long, y = lat, fill = Ecosystem), colour="black", size = 2.5, shape=21) +
   # Set coordinate system to map projection
   coord_fixed(ratio = 1, xlim = c(-180, 180), ylim = c(-60, 90), expand = FALSE) +
   # Custom breaks and labels for x (longitude) and y (latitude)
@@ -171,7 +171,7 @@ p <- ggplot() +
     axis.ticks = element_line(),
     panel.grid.major = element_line(color = "grey80"),    # Light grey grid lines
     panel.grid.minor = element_blank(),                   # No minor grid lines
-    panel.border = element_rect(color = "black", fill = NA),  # Black panel border
+    panel.border = element_rect(color = "black", fill = NA, linewidth=1.5),  # Black panel border
     axis.text.x = element_text(angle = 0, hjust = 0.5),   # Horizontal x-axis text
     legend.position = "right"                             # Legend on right
   )
