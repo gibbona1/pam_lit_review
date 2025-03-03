@@ -379,10 +379,7 @@ df_tools <- df |>
   tidyr::unnest(Automation.Tools)
 
 df_tools <- keep_gt1(df_tools, "Automation.Tools")
-```
 
-
-```{r}
 #filter(Analysis.Methods %in% methods_to_keep)
 p <- barplot_counts(df_tools, "Automation.Tools", "Automation Tools")
 p
@@ -498,7 +495,7 @@ df_tools <- keep_gt1(df_tools, "Automation.Tools")
 p <- df_tools |>
   filter(Automation.Tools != "Other Methods") |>
       ggplot(aes(y = reorder(Automation.Tools, Automation.Tools, FUN = length, decreasing = FALSE), fill = Taxa)) +
-      geom_bar(stat = "count") +  # Fill bars with dodgerblue
+      geom_bar(stat = "count", colour="black") +  # Fill bars with dodgerblue
       labs(x = "Count", y = "Automation Tools") +
       scale_x_continuous(expand = c(0,0)) +
   theme_minimal() +
@@ -515,9 +512,9 @@ df_analysis <- df |>
 
 df_analysis <- keep_gt1(df_analysis, "Analysis.Methods")
 p <- df_analysis |>
-  filter(Automation.Tools != "Other Methods") |>
+  filter(Analysis.Methods != "Other Methods") |>
       ggplot(aes(y = reorder(Analysis.Methods, Analysis.Methods, FUN = length, decreasing = FALSE), fill = Taxa)) +
-      geom_bar(stat = "count") +  # Fill bars with dodgerblue
+      geom_bar(stat = "count", colour="black") +  # Fill bars with dodgerblue
       labs(x = "Count", y = "Analysis Methods") +
       scale_x_continuous(expand = c(0,0)) +
   theme_minimal() +
