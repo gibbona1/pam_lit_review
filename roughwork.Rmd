@@ -445,8 +445,8 @@ df_pre <- df |>
   mutate(Preprocessing = strsplit(as.character(Preprocessing), ", ")) |>
   tidyr::unnest(Preprocessing)
 
-df_pre <- keep_gt1(df_pre, "Preprocessing")
-  #filter(Analysis.Methods %in% methods_to_keep)
+df_pre <- keep_gt1(df_pre, "Preprocessing") |>
+  filter(Preprocessing != "Other Methods")
 p <- barplot_counts(df_pre, "Preprocessing")
 p
 ggsave("images/preprocessing_year.png", p, width = 240, height = 100, units = "mm")
@@ -580,5 +580,15 @@ ggplot(df_expandyear, aes(x=Expanded_Years, y=Year, colour=Title)) +
   theme_minimal() + 
   #hide legend
   theme(legend.position="none")
+```
+```{r}
+# install.packages("devtools")
+#devtools::install_github("davidsjoberg/ggsankey")
+#library(ggsankey)
+```
+
+```{r}
+# Create data frame with flows between stages
+# Create the data frame for ggsankey
 ```
 
