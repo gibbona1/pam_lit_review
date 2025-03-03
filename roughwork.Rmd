@@ -180,6 +180,15 @@ ggsave("images/ecosystem_map.png", p, width = 240, height = 90, units = "mm")
 ```
 
 ```{r}
+bar_theme_x <- theme(panel.grid.major.x = element_blank(),
+                   panel.grid.major.y = element_line(colour = "grey80"),
+                   axis.line.x = element_line(colour="black"),
+                   axis.ticks.x=element_line())
+bar_theme_y <- theme(panel.grid.major.y = element_blank(),
+                   panel.grid.major.x = element_line(colour = "grey80"),
+                   axis.line.y = element_line(colour="black"),
+                   axis.ticks.y=element_line())
+
 include_missing_zero <- function(df, col){
   missing_years <- 2005:2024  # This creates c(2025, 2024)
 
@@ -265,10 +274,7 @@ barplot_counts <- function(df, col, col_title=col, prop=FALSE, year=TRUE, decade
     #scale_fill_viridis_d()+
     theme_minimal() +
     guides(fill = guide_legend(override.aes = list(colour = "black")))+
-    theme(panel.grid.major.x = element_blank(),
-          panel.grid.major.y = element_line(colour = "grey80"),
-          axis.line.x = element_line(colour="black"),
-          axis.ticks.x=element_line())
+    bar_theme_x
   return(p)
 }
 ```
@@ -283,18 +289,20 @@ ggsave("images/analysis_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 p <- df |>
-  filter(Reported_value != "") |>
+  filter((Reported_value != "") & (!is.na(Reported_value))) |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
   tidyr::drop_na(Reported_value) |>
   ggplot(aes(x = Analysis, y = Reported_value)) +
-  geom_boxplot()
+  geom_boxplot() +
+  theme_minimal() +
+  bar_theme_x
 p
 ggsave("images/analysis_reportedvalue.png", p, width = 240, height = 100, units = "mm")
 ```
 
 ```{r}
 p <- df |>
-  filter(Reported_value != "") |>
+  filter((Reported_value != "") & (!is.na(Reported_value))) |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
   tidyr::drop_na(Reported_value) |>
   mutate(Decade = case_when(
@@ -304,20 +312,24 @@ p <- df |>
     TRUE ~ NA_character_  # Handle years outside these ranges
   )) |>
   ggplot(aes(x = Decade, y = Reported_value)) +
-  geom_boxplot()
+  geom_boxplot() +
+  theme_minimal() +
+  bar_theme_x
 p
 ggsave("images/decade_reportedvalue.png", p, width = 240, height = 100, units = "mm")
 ```
 
 ```{r}
 p <- df |>
-  filter(Reported_value != "") |>
+  filter((Reported_value != "") & (!is.na(Reported_value))) |>
   mutate(Reported_value = as.numeric(Reported_value)) |>
   tidyr::drop_na(Reported_value) |>
   mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
   tidyr::unnest(Taxa) |>
   ggplot(aes(y = Reported_value)) +
   geom_boxplot() +
+  theme_minimal() +
+  bar_theme_x +
   facet_wrap(~Taxa)
 p
 ggsave("images/taxa_reportedvalue.png", p, width = 240, height = 100, units = "mm")
@@ -488,7 +500,9 @@ p <- df_tools |>
       ggplot(aes(y = reorder(Automation.Tools, Automation.Tools, FUN = length, decreasing = FALSE), fill = Taxa)) +
       geom_bar(stat = "count") +  # Fill bars with dodgerblue
       labs(x = "Count", y = "Automation Tools") +
-      scale_x_continuous(expand = c(0,0))
+      scale_x_continuous(expand = c(0,0)) +
+  theme_minimal() +
+  bar_theme_y
 p
 ggsave("images/automationtools_taxa.png", p, width = 240, height = 120, units = "mm")
 ```
@@ -505,7 +519,9 @@ p <- df_analysis |>
       ggplot(aes(y = reorder(Analysis.Methods, Analysis.Methods, FUN = length, decreasing = FALSE), fill = Taxa)) +
       geom_bar(stat = "count") +  # Fill bars with dodgerblue
       labs(x = "Count", y = "Analysis Methods") +
-      scale_x_continuous(expand = c(0,0))
+      scale_x_continuous(expand = c(0,0)) +
+  theme_minimal() +
+  bar_theme_y
 p
 ggsave("images/analysismethods_taxa.png", p, width = 240, height = 120, units = "mm")
 ```
@@ -552,7 +568,8 @@ df |>
         axis.line.x = element_line(colour="black"),
         axis.ticks.x=element_line())
   # Ensure proper spacing
-  theme_minimal()
+  theme_minimal() +
+  bar_theme_x
 ```
 
 ```{r}
