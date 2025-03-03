@@ -58,9 +58,9 @@ scale_y_log_eng = function(..., radix=10) {
 }
 
 p <- df |>
-  tidyr::drop_na(Dataset_GB) |> 
+  tidyr::drop_na(Dataset.GB) |> 
   #filter(Year >= 2008) |>
-  ggplot(aes(Year, Dataset_GB)) + 
+  ggplot(aes(Year, Dataset.GB)) + 
   geom_point() + 
   scale_y_log10(
     breaks = scales::trans_breaks("log10", function(x) 10^x),
@@ -77,9 +77,9 @@ p
 ggsave("images/data_trend.png", p, width = 120, height = 120, units = "mm")
 
 p <- df |>
-  tidyr::drop_na(Dataset_hours) |> 
+  tidyr::drop_na(Dataset.Hours) |> 
   #filter(Year >= 2008) |>
-  ggplot(aes(Year, Dataset_hours)) + 
+  ggplot(aes(Year, Dataset.Hours)) + 
   geom_point() + 
   scale_y_log10(
     breaks = scales::trans_breaks("log10", function(x) 10^x),
@@ -123,15 +123,15 @@ convert_to_numeric <- function(coord_string) {
   return(paste0(c(lat, lon), collapse = ","))
 }
 
-latlong_df <- df |>
-  select(latlong, Ecosystem) |>
-  mutate(latlong = strsplit(latlong, ";")) |>
-  tidyr::unnest(latlong) |>
+Latlong_df <- df |>
+  select(Latlong, Ecosystem) |>
+  mutate(Latlong = strsplit(Latlong, ";")) |>
+  tidyr::unnest(Latlong) |>
   mutate(Ecosystem = strsplit(Ecosystem, ", ")) |>
   tidyr::unnest(Ecosystem) |>
-  mutate(latlong = sapply(latlong, convert_to_numeric),
-         lat = sapply(strsplit(latlong, ","), function(x) as.numeric(x[1])),
-         long = sapply(strsplit(latlong, ","), function(x) as.numeric(x[2]))
+  mutate(Latlong = sapply(Latlong, convert_to_numeric),
+         lat = sapply(strsplit(Latlong, ","), function(x) as.numeric(x[1])),
+         long = sapply(strsplit(Latlong, ","), function(x) as.numeric(x[2]))
 )
 
 # Create the world map
@@ -155,7 +155,7 @@ p <- ggplot() +
   geom_polygon(data = world, aes(x = long, y = lat, group = group), 
                fill = "grey90", color = "grey50") +
   # Add jittered points for different tags
-  geom_jitter(data = latlong_df, aes(x = long, y = lat, fill = Ecosystem), colour="black", size = 2.5, shape=21) +
+  geom_jitter(data = Latlong_df, aes(x = long, y = lat, fill = Ecosystem), colour="black", size = 2.5, shape=21) +
   # Set coordinate system to map projection
   coord_fixed(ratio = 1, xlim = c(-180, 180), ylim = c(-60, 90), expand = FALSE) +
   # Custom breaks and labels for x (longitude) and y (latitude)
@@ -289,10 +289,10 @@ ggsave("images/analysis_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
 p <- df |>
-  filter((Reported_value != "") & (!is.na(Reported_value))) |>
-  mutate(Reported_value = as.numeric(Reported_value)) |>
-  tidyr::drop_na(Reported_value) |>
-  ggplot(aes(x = Analysis, y = Reported_value)) +
+  filter((Reported.Value != "") & (!is.na(Reported.Value))) |>
+  mutate(Reported.Value = as.numeric(Reported.Value)) |>
+  tidyr::drop_na(Reported.Value) |>
+  ggplot(aes(x = Analysis, y = Reported.Value)) +
   geom_boxplot() +
   theme_minimal() +
   bar_theme_x
@@ -302,16 +302,16 @@ ggsave("images/analysis_reportedvalue.png", p, width = 240, height = 100, units 
 
 ```{r}
 p <- df |>
-  filter((Reported_value != "") & (!is.na(Reported_value))) |>
-  mutate(Reported_value = as.numeric(Reported_value)) |>
-  tidyr::drop_na(Reported_value) |>
+  filter((Reported.Value != "") & (!is.na(Reported.Value))) |>
+  mutate(Reported.Value = as.numeric(Reported.Value)) |>
+  tidyr::drop_na(Reported.Value) |>
   mutate(Decade = case_when(
     Year >= 2000 & Year < 2010 ~ "2000s",
     Year >= 2010 & Year < 2020 ~ "2010s",
     Year >= 2020 & Year < 2030 ~ "2020s",
     TRUE ~ NA_character_  # Handle years outside these ranges
   )) |>
-  ggplot(aes(x = Decade, y = Reported_value)) +
+  ggplot(aes(x = Decade, y = Reported.Value)) +
   geom_boxplot() +
   theme_minimal() +
   bar_theme_x
@@ -321,12 +321,12 @@ ggsave("images/decade_reportedvalue.png", p, width = 240, height = 100, units = 
 
 ```{r}
 p <- df |>
-  filter((Reported_value != "") & (!is.na(Reported_value))) |>
-  mutate(Reported_value = as.numeric(Reported_value)) |>
-  tidyr::drop_na(Reported_value) |>
+  filter((Reported.Value != "") & (!is.na(Reported.Value))) |>
+  mutate(Reported.Value = as.numeric(Reported.Value)) |>
+  tidyr::drop_na(Reported.Value) |>
   mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
   tidyr::unnest(Taxa) |>
-  ggplot(aes(y = Reported_value)) +
+  ggplot(aes(y = Reported.Value)) +
   geom_boxplot() +
   theme_minimal() +
   bar_theme_x +
@@ -338,11 +338,11 @@ ggsave("images/taxa_reportedvalue.png", p, width = 240, height = 100, units = "m
 
 ```{r}
 # Convert 'NA' to R's NA
-df$Prog..language[df$Prog..language == "NA"] <- NA
+df$Programming.Language[df$Programming.Language == "NA"] <- NA
 
 # Split languages where there are multiple
 df_lang <- df |>
-  mutate(ProgLanguage = strsplit(as.character(Prog..language), ", ")) |>
+  mutate(ProgLanguage = strsplit(as.character(Programming.Language), ", ")) |>
   tidyr::unnest(ProgLanguage)
 
 p <- barplot_counts(df_lang, "ProgLanguage", "Programming\nLanguage")
@@ -391,10 +391,10 @@ ggsave("images/automationtools_total.png", p, width = 240, height = 120, units =
 
 ```{r}
 df_code_available <- df |>
-  mutate(Code.availability = strsplit(as.character(Code.availability), ", ")) |>
-  tidyr::unnest(Code.availability)
+  mutate(Code.Availability = strsplit(as.character(Code.Availability), ", ")) |>
+  tidyr::unnest(Code.Availability)
 
-p <- barplot_counts(df_code_available, "Code.availability", "Code\nAvailability")
+p <- barplot_counts(df_code_available, "Code.Availability", "Code\nAvailability")
 p
 ggsave("images/codeavailable_year.png", p, width = 240, height = 100, units = "mm")
 ```
@@ -527,16 +527,16 @@ ggsave("images/analysismethods_taxa.png", p, width = 240, height = 120, units = 
 #x axis-year, y-axcis, manual.automatic.semiautomatic
 
 # Assuming your dataframe is called 'df'
-# First, preprocess the Monitoring.year column
+# First, preprocess the Monitoring.Year column
 df_expandyear <- df |>
-  filter(!is.na(Monitoring.year)) |>
-  #select(Monitoring.year) |>
+  filter(!is.na(Monitoring.Year)) |>
+  #select(Monitoring.Year) |>
   # Separate comma-separated values into rows
-  tidyr::separate_rows(Monitoring.year, sep = ",") |>
+  tidyr::separate_rows(Monitoring.Year, sep = ",") |>
   # Clean up any whitespace
-  mutate(Monitoring.year = trimws(Monitoring.year)) |>
+  mutate(Monitoring.Year = trimws(Monitoring.Year)) |>
   # Create a new column that expands hyphenated years
-  mutate(Expanded_Years = purrr::map(Monitoring.year, function(x) {
+  mutate(Expanded_Years = purrr::map(Monitoring.Year, function(x) {
     if (stringr::str_detect(x, "-")) {
       range <- stringr::str_split(x, "-")[[1]] |> as.numeric()
       return(seq(range[1], range[2]))
@@ -563,7 +563,7 @@ df |>
   theme(panel.grid.major.x = element_blank(),
         panel.grid.major.y = element_line(colour = "grey80"),
         axis.line.x = element_line(colour="black"),
-        axis.ticks.x=element_line())
+        axis.ticks.x=element_line())+
   # Ensure proper spacing
   theme_minimal() +
   bar_theme_x
