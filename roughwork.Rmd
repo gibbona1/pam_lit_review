@@ -445,8 +445,7 @@ df_pre <- df |>
   mutate(Preprocessing = strsplit(as.character(Preprocessing), ", ")) |>
   tidyr::unnest(Preprocessing)
 
-df_pre <- keep_gt1(df_pre, "Preprocessing") |>
-  filter(Preprocessing != "Other Methods")
+df_pre <- keep_gt1(df_pre, "Preprocessing")
 p <- barplot_counts(df_pre, "Preprocessing")
 p
 ggsave("images/preprocessing_year.png", p, width = 240, height = 100, units = "mm")
