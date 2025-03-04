@@ -63,18 +63,19 @@ p <- df |>
   ggplot(aes(Year, Dataset.GB)) + 
   geom_point() + 
   scale_y_log10(
+    limits = c(1e-4, 1e5),
     breaks = scales::trans_breaks("log10", function(x) 10^x),
     labels = scales::trans_format("log10", scales::math_format(10^.x))
   ) +
   annotation_logticks(side="l")+
   geom_smooth(method="lm", color = "dodgerblue") +
-  scale_x_continuous(expand = c(0.01,0.01)) +
+  scale_x_continuous(limits=c(2004.5, 2024), expand = c(0.01,0.01)) +
   labs(y="Dataset Size (GB)") +
   theme_minimal() +
   theme(axis.line = element_line(),
         axis.ticks.x = element_line())
 p
-ggsave("images/data_trend.png", p, width = 120, height = 120, units = "mm")
+ggsave("images/data_trend.png", p, width = 110, height = 110, units = "mm")
 
 p <- df |>
   tidyr::drop_na(Dataset.Hours) |> 
@@ -82,18 +83,19 @@ p <- df |>
   ggplot(aes(Year, Dataset.Hours)) + 
   geom_point() + 
   scale_y_log10(
+    limits = c(1e-4, 1e5),
     breaks = scales::trans_breaks("log10", function(x) 10^x),
     labels = scales::trans_format("log10", scales::math_format(10^.x))
   ) +
   annotation_logticks(side="l")+
   geom_smooth(method="lm", color = "dodgerblue") +
-  scale_x_continuous(expand = c(0.01,0.01)) +
+  scale_x_continuous(limits=c(2004.5, 2024), expand = c(0.01,0.01)) +
   labs(y="Dataset Size (hours)") +
   theme_minimal() +
   theme(axis.line = element_line(),
         axis.ticks.x = element_line())
 p
-ggsave("images/hours_trend.png", p, width = 120, height = 120, units = "mm")
+ggsave("images/hours_trend.png", p, width = 110, height = 110, units = "mm")
 ```
 
 ```{r}
