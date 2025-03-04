@@ -536,12 +536,12 @@ df_analysis <- df |>
   mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
   tidyr::unnest(Analysis.Methods) |>
   keep_gt1("Analysis.Methods") |>
-  filter(Analysis.Methods != "Other Methods") |>
+  #filter(Analysis.Methods != "Other Methods") |>
   # Unnest Automation.Tools (assuming it exists in df)
   mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
   tidyr::unnest(Automation.Tools) |>
   keep_gt1("Automation.Tools") |>
-  filter(Automation.Tools != "Other Methods") |>
+  #filter(Automation.Tools != "Other Methods") |>
   # Unnest Taxa
   mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
   tidyr::unnest(Taxa) |>
