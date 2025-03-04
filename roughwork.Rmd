@@ -138,11 +138,11 @@ Latlong_df <- df |>
 world <- map_data("world")
 
 ecosystem_colors <- c(
-  "Tropical Forest" = "#228B22",
-  "Marine Aquatic" = "#1E90FF",
-  "Various" = "#808080",
+  "Tropical Forest" = "#32CD32",
+  "Marine Aquatic" = "#00B7EB",
+  "Various" = "#a0a0a0",
   "Tropical Rainforest" = "#006400",
-  "Freshwater" = "#87CEEB",
+  "Freshwater" = "#66EEEB",
   "Temperate Forest" = "#6B8E23",
   "Farm" = "#FFD700",
   "Cave" = "#8B4513",
@@ -240,7 +240,8 @@ barplot_counts <- function(df, col, col_title=col, prop=FALSE, year=TRUE, decade
     summarise(Total = sum(Count), .groups = 'drop')
   
   count_data <- left_join(count_data, total_count_per_year, by = "Year") |>
-    mutate(Percentage = (Count / Total) * 100) 
+    mutate(Percentage = (Count / Total) * 100) |>
+    arrange(Year, .data[[col]])
   
   if(!decade){
     count_data <- count_data |>
@@ -259,14 +260,21 @@ barplot_counts <- function(df, col, col_title=col, prop=FALSE, year=TRUE, decade
       p <- count_data |> 
         ggplot(aes(x = factor(Year), y = Percentage, fill = .data[[col]], label=Count)) +
         geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
-        geom_text(size = 3, position = position_stack(vjust = 0.5))+
-        labs(x = "Year", y = "Percentage", fill = col_title) +
-        scale_y_continuous(expand=c(0,0))
+        geom_label(
+          aes(group = .data[[col]]),
+          size = 3,
+          position = position_stack(vjust = 0.5), 
+          fill = "white",                # Optional: black background for contrast
+          hjust = ifelse((count_data$Count <= 3) & count_data[[col]] %in% c("Log Magnitude", "Mel", "Data Augmentation", "Downsampling"), (1:nrow(count_data) - 1) %% 2, 0.5)
+        ) +
+        labs(x = ifelse(decade, "Decade", "Year"), y = "Percentage", fill = col_title) +
+        scale_y_continuous(limits=c(0,102), expand=c(0,0)) #+ 
+        #guides(fill = guide_legend(override.aes = list(colour = NA)))
     } else {
       p <- count_data |> 
         ggplot(aes(x = factor(Year), y = Count, fill = .data[[col]])) +
         geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
-        labs(x = "Year", y = "Count", fill = col_title) +
+        labs(x = ifelse(decade, "Decade", "Year"), y = "Count", fill = col_title) +
         scale_y_continuous(expand=c(0,0))
     }
   }
@@ -454,7 +462,7 @@ p
 ggsave("images/preprocessing_prop_year.png", p, width = 240, height = 100, units = "mm")
 p <- barplot_counts(df_pre, "Preprocessing", prop=TRUE, decade=TRUE)
 p
-ggsave("images/preprocessing_prop_decade.png", p, width = 240, height = 150, units = "mm")
+ggsave("images/preprocessing_prop_decade.png", p, width = 200, height = 80, units = "mm")
 ```
 ```{r}
 count_data <- df_lang |>
@@ -520,6 +528,41 @@ p <- df_analysis |>
   bar_theme_y
 p
 ggsave("images/analysismethods_taxa.png", p, width = 240, height = 120, units = "mm")
+```
+```{r}
+df_analysis <- df |>
+  # Unnest Analysis.Methods
+  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
+  tidyr::unnest(Analysis.Methods) |>
+  # Unnest Automation.Tools (assuming it exists in df)
+  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
+  tidyr::unnest(Automation.Tools) |>
+  # Unnest Taxa
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa) |>
+  # Pivot to long format for faceting
+  tidyr::pivot_longer(
+    cols = c("Analysis.Methods", "Automation.Tools"),
+    names_to = "Category",
+    values_to = "Method.Tool"
+  ) |>
+  # Filter out "Other Methods" equivalents
+  filter(Method.Tool != "Other Methods") |>
+  keep_gt1("Method.Tool")
+
+# Plot with facet_grid
+p <- df_analysis |>
+  ggplot(aes(y = reorder(Method.Tool, Method.Tool, FUN = length, decreasing = FALSE), fill = Taxa)) +
+  geom_bar(stat = "count", colour = "black") +
+  labs(x = "Count", y = NULL) +  # Remove y-axis label since facets will label it
+  scale_x_continuous(expand = c(0, 0)) +
+  facet_wrap(~Category, scales = "free_y", ncol = 2) +  # Facet by Category
+  theme_minimal() +
+  bar_theme_y  # Assuming this is a custom theme defined elsewhere
+
+# Display and save
+p
+ggsave("images/analysismethods_automation_taxa.png", p, width = 330, height = 150, units = "mm")
 ```
 
 ```{r}
