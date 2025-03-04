@@ -530,13 +530,18 @@ p
 ggsave("images/analysismethods_taxa.png", p, width = 240, height = 120, units = "mm")
 ```
 ```{r}
+df <- read.csv("tagged_literature.csv")
 df_analysis <- df |>
   # Unnest Analysis.Methods
   mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
   tidyr::unnest(Analysis.Methods) |>
+  keep_gt1("Analysis.Methods") |>
+  filter(Analysis.Methods != "Other Methods") |>
   # Unnest Automation.Tools (assuming it exists in df)
   mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
   tidyr::unnest(Automation.Tools) |>
+  keep_gt1("Automation.Tools") |>
+  filter(Automation.Tools != "Other Methods") |>
   # Unnest Taxa
   mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
   tidyr::unnest(Taxa) |>
@@ -546,9 +551,8 @@ df_analysis <- df |>
     names_to = "Category",
     values_to = "Method.Tool"
   ) |>
-  # Filter out "Other Methods" equivalents
-  filter(Method.Tool != "Other Methods") |>
-  keep_gt1("Method.Tool")
+  mutate(Category = stringr::str_replace(Category, "\\.", " "))
+  # Filter out "Other Methods" equivalent
 
 # Plot with facet_grid
 p <- df_analysis |>
@@ -562,7 +566,8 @@ p <- df_analysis |>
 
 # Display and save
 p
-ggsave("images/analysismethods_automation_taxa.png", p, width = 330, height = 150, units = "mm")
+ggsave("images/analysismethods_automation_taxa.png", p, width = 300, height = 130, units = "mm")
+#df_analysis |> filter(Category == "Analysis.Methods") |> pull(Method.Tool) |> unique() |> sort()
 ```
 
 ```{r}
