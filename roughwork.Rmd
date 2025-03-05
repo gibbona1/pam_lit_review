@@ -355,6 +355,12 @@ df_lang <- df |>
   mutate(ProgLanguage = strsplit(as.character(Programming.Language), ", ")) |>
   tidyr::unnest(ProgLanguage)
 
+df_lang |> 
+  filter(Year >= 2020) |>
+  group_by(ProgLanguage) |> 
+  summarise(Count = n(), .groups = 'drop') |> 
+  arrange(desc(Count))
+
 p <- barplot_counts(df_lang, "ProgLanguage", "Programming\nLanguage")
 p
 ggsave("images/programminglanguage_year.png", p, width = 240, height = 100, units = "mm")
