@@ -10,11 +10,12 @@ library(ggplot2)
 library(maps)
 library(dplyr)
 ```
-
 ```{r}
 df <- read.csv("tagged_literature.csv")
 #df$Year <- as.factor(df$Year)
+```
 
+```{r}
 log10_minor_break = function (...){
   function(x) {
     minx         = floor(min(log10(x), na.rm=T))-1;
@@ -425,14 +426,12 @@ p
 ggsave("images/dataavailable_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
-#df <- read.csv("tagged_literature.csv")
 #df |>
 #  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
 #  tidyr::unnest(Automation.Tools) |>
 #  pull(Automation.Tools) |> sort() |> unique()
 ```
 ```{r}
-#df <- read.csv("tagged_literature.csv")
 #df |>
 #  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
 #  tidyr::unnest(Analysis.Methods) |>
@@ -450,7 +449,6 @@ p
 ggsave("images/evaluationmethod_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
-#df <- read.csv("tagged_literature.csv")
 #df |>
 #  mutate(Preprocessing = strsplit(as.character(Preprocessing), ", ")) |>
 #  tidyr::unnest(Preprocessing) |>
@@ -538,7 +536,6 @@ p
 ggsave("images/analysismethods_taxa.png", p, width = 240, height = 120, units = "mm")
 ```
 ```{r}
-df <- read.csv("tagged_literature.csv")
 df_analysis <- df |>
   # Unnest Analysis.Methods
   mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
@@ -645,5 +642,12 @@ ggplot(df_expandyear, aes(x=Expanded_Years, y=Year, colour=Title)) +
 ```{r}
 # Create data frame with flows between stages
 # Create the data frame for ggsankey
+```
+```{r}
+df |>
+  mutate(Gaps = strsplit(as.character(Gaps), ", |; ")) |>
+  tidyr::unnest(Gaps) |>
+  mutate(Gaps = trimws(Gaps)) |>
+  pull(Gaps) |> sort() |> unique()
 ```
 
