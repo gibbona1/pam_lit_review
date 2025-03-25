@@ -76,7 +76,7 @@ p <- df |>
   theme(axis.line = element_line(),
         axis.ticks.x = element_line())
 p
-ggsave("images/data_trend.png", p, width = 110, height = 110, units = "mm")
+ggsave("images/data_trend.png", p, width = 220, height = 110, units = "mm")
 
 p <- df |>
   tidyr::drop_na(Dataset.Hours) |> 
@@ -96,7 +96,7 @@ p <- df |>
   theme(axis.line = element_line(),
         axis.ticks.x = element_line())
 p
-ggsave("images/hours_trend.png", p, width = 110, height = 110, units = "mm")
+ggsave("images/hours_trend.png", p, width = 220, height = 110, units = "mm")
 ```
 
 ```{r}
