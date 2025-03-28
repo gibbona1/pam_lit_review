@@ -98,6 +98,10 @@ p <- df |>
 p
 ggsave("images/hours_trend.png", p, width = 220, height = 110, units = "mm")
 ```
+```{r}
+fit <- lm(log(Dataset.GB)~Year, data=df)
+confint(fit, level = 0.95)
+```
 
 ```{r}
 # Sample data
@@ -372,8 +376,26 @@ df_taxa <- df |>
   mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
   tidyr::unnest(Taxa)
 
+spectral_15 <- c(
+  "#9E0142",  # Deep red
+  "#D53E4F",  # Bright red
+  "#F46D43",  # Red-orange
+  "#FDAE61",  # Orange
+  "#FEE08B",  # Light orange-yellow
+  "#FFFFBF",  # Pale yellow (midpoint)
+  "#E6F598",  # Light yellow-green
+  "#ABDFA1",  # Greenish
+  "#66C2A5",  # Teal
+  "#3288BD",  # Light blue
+  "#5E4FA2",  # Blue-purple
+  "#404788",  # Darker blue-purple
+  "#2D2D66",  # Deep blue
+  "#1A1A4C",  # Very deep blue
+  "#0D0833"   # Near-black blue
+)
+
 p <- barplot_counts(df_taxa, "Taxa")
-p
+p <- p + scale_fill_manual(values = spectral_15)
 ggsave("images/taxa_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
@@ -467,7 +489,7 @@ p <- barplot_counts(df_pre, "Preprocessing", prop=TRUE)
 p
 ggsave("images/preprocessing_prop_year.png", p, width = 240, height = 100, units = "mm")
 p <- barplot_counts(df_pre, "Preprocessing", prop=TRUE, decade=TRUE)
-p
+p <- p + scale_fill_brewer(palette = "Spectral")
 ggsave("images/preprocessing_prop_decade.png", p, width = 200, height = 80, units = "mm")
 ```
 ```{r}
@@ -570,7 +592,7 @@ p <- df_analysis |>
   bar_theme_y  # Assuming this is a custom theme defined elsewhere
 
 # Display and save
-p
+p <- p + scale_fill_manual(values=spectral_15)
 ggsave("images/analysismethods_automation_taxa.png", p, width = 300, height = 130, units = "mm")
 #df_analysis |> filter(Category == "Analysis.Methods") |> pull(Method.Tool) |> unique() |> sort()
 ```
