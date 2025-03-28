@@ -76,7 +76,7 @@ p <- df |>
   theme(axis.line = element_line(),
         axis.ticks.x = element_line())
 p
-ggsave("images/data_trend.png", p, width = 220, height = 110, units = "mm")
+ggsave("images/data_trend.png", p, width = 150, height = 80, units = "mm")
 
 p <- df |>
   tidyr::drop_na(Dataset.Hours) |> 
@@ -213,14 +213,14 @@ include_missing_zero <- function(df, col){
   return(df)
 }
 
-keep_gt1 <- function(df, col){
+keep_gt1 <- function(df, col, gt_n=1){
   total_counts <- df |>
     group_by(.data[[col]]) |>
     summarise(Total_Count = n(), .groups = 'drop') |>
     na.omit()
 
   methods_to_keep <- total_counts |>
-    filter(Total_Count > 1) |>
+    filter(Total_Count > gt_n) |>
     pull({{ col }})
     
   df[,col] <- ifelse(df[[col]] %in% methods_to_keep, df[[col]], "Other Methods")
@@ -299,8 +299,7 @@ barplot_counts <- function(df, col, col_title=col, prop=FALSE, year=TRUE, decade
 df$Analysis[df$Analysis == "NA"] <- NA
 
 p <- barplot_counts(df, "Analysis")
-p
-ggsave("images/analysis_year.png", p, width = 240, height = 100, units = "mm")
+ggsave("images/analysis_year.png", p, width = 220, height = 80, units = "mm")
 ```
 ```{r}
 p <- df |>
@@ -467,7 +466,7 @@ df_eval <- df |>
 df_eval <- keep_gt1(df_eval, "Evaluation.Method")
   #filter(Analysis.Methods %in% methods_to_keep)
 p <- barplot_counts(df_eval, "Evaluation.Method", "Evaluation Method")
-p <- p + scale_fill_manual(values=spectral_15[c(1:10,12,14)])
+p <- p + scale_fill_brewer(palette = "Spectral")
 ggsave("images/evaluationmethod_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
@@ -567,7 +566,7 @@ df_analysis <- df |>
   # Unnest Automation.Tools (assuming it exists in df)
   mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
   tidyr::unnest(Automation.Tools) |>
-  keep_gt1("Automation.Tools") |>
+  keep_gt1("Automation.Tools", gt_n=2) |>
   #filter(Automation.Tools != "Other Methods") |>
   # Unnest Taxa
   mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
