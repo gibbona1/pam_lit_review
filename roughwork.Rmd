@@ -597,6 +597,26 @@ ggsave("images/analysismethods_automation_taxa.png", p, width = 300, height = 13
 ```
 
 ```{r}
+df_analysis <- df |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa) |>
+  mutate(Analysis = strsplit(as.character(Analysis), ", ")) |>
+  tidyr::unnest(Analysis)
+
+df_analysis <- keep_gt1(df_analysis, "Taxa")
+p <- df_analysis |>
+  filter(Taxa != "Other Methods") |>
+      ggplot(aes(y = reorder(Taxa, Taxa, FUN = length, decreasing = FALSE), fill = Analysis)) +
+      geom_bar(stat = "count", colour="black") +  # Fill bars with dodgerblue
+      labs(x = "Count", y = "Taxa") +
+      scale_x_continuous(expand = c(0,0)) +
+  theme_minimal() +
+  bar_theme_y
+p
+ggsave("images/analysis_taxa.png", p, width = 240, height = 120, units = "mm")
+```
+
+```{r}
 #x axis-year, y-axcis, manual.automatic.semiautomatic
 
 # Assuming your dataframe is called 'df'
@@ -658,6 +678,48 @@ ggplot(df_expandyear, aes(x=Expanded_Years, y=Year, colour=Title)) +
 # install.packages("devtools")
 #devtools::install_github("davidsjoberg/ggsankey")
 #library(ggsankey)
+```
+
+```{r}
+df |>
+  tidyr::separate_rows(Taxa, sep = ",") |>
+  ggplot(aes(x = Taxa, y = Reported.Value)) +
+  geom_point(size = 3) +  # Scatter plot; adjust geom as needed (e.g., geom_bar)
+  facet_wrap(~ Reported.Metric, scales = "free") +  # Facet by Taxa, free scales for flexibility
+  labs(x = "Reported Metric", y = "Reported Value", title = "Reported Metrics by Taxa") +
+  theme_minimal() +  # Clean theme
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels for readability
+```
+```{r}
+df %>%
+  group_by(Reported.Metric) %>%
+  summarise(
+    Mean_Value = mean(Reported.Value, na.rm = TRUE),
+    N = n()
+  ) %>%
+  mutate(
+    Formatted = sprintf("%s (%.3f%%, n=%d)", Reported.Metric, Mean_Value, N)
+  ) %>%
+  pull(Formatted) %>%
+  paste(collapse = ", ")
+```
+```{r}
+df$Dataset.Hours %>% median(na.rm = TRUE)
+calc_year_length <- function(year_str) {
+  if (is.na(year_str)) {
+    return(NA)
+  } else if (grepl("–|-", year_str)) {  # Check for range with en-dash or hyphen
+    years <- strsplit(year_str, "–|-")[[1]]  # Split on either – or -
+    start <- as.numeric(years[1])
+    end <- as.numeric(years[2])
+    return(end - start + 1)  # Inclusive range
+  } else {
+    return(1)  # Single year
+  }
+}
+
+# Apply function to vector
+sapply(df$Monitoring.Year, calc_year_length) |> mean(na.rm = TRUE)
 ```
 
 ```{r}
