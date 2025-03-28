@@ -467,7 +467,7 @@ df_eval <- df |>
 df_eval <- keep_gt1(df_eval, "Evaluation.Method")
   #filter(Analysis.Methods %in% methods_to_keep)
 p <- barplot_counts(df_eval, "Evaluation.Method", "Evaluation Method")
-p
+p <- p + scale_fill_manual(values=spectral_15[c(1:10,12,14)])
 ggsave("images/evaluationmethod_year.png", p, width = 240, height = 100, units = "mm")
 ```
 ```{r}
