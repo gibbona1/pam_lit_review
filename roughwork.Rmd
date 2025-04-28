@@ -1,0 +1,757 @@
+---
+title: "Passive Acoustic Monitoring Lit Review"
+output: html_notebook
+---
+
+##Dataset size by year
+
+```{r}
+library(ggplot2)
+library(maps)
+library(dplyr)
+```
+```{r}
+df <- read.csv("data/tagged_literature.csv")
+#df$Year <- as.factor(df$Year)
+```
+
+```{r}
+log10_minor_break = function (...){
+  function(x) {
+    minx         = floor(min(log10(x), na.rm=T))-1;
+    maxx         = ceiling(max(log10(x), na.rm=T))+1;
+    n_major      = maxx-minx+1;
+    major_breaks = seq(minx, maxx, by=1)
+    minor_breaks = 
+      rep(log10(seq(1, 9, by=4)), times = n_major)+
+      rep(major_breaks, each = 9)
+    return(10^(minor_breaks))
+  }
+}
+
+log_breaks = function(maj, radix=10) {
+  function(x) {
+    minx         = floor(min(logb(x,radix), na.rm=T)) - 1
+    maxx         = ceiling(max(logb(x,radix), na.rm=T)) + 1
+    n_major      = maxx - minx + 1
+    major_breaks = seq(minx, maxx, by=1)
+    if (maj) {
+      breaks = major_breaks
+    } else {
+      steps = logb(1:(radix-1),radix)
+      breaks = rep(steps, times=n_major) +
+               rep(major_breaks, each=radix-1)
+    }
+    radix^breaks
+  }
+}
+scale_x_log_eng = function(..., radix=10) {
+  scale_x_continuous(...,
+                     trans=scales::log_trans(radix),
+                     breaks=scales::log_breaks(TRUE, radix),
+                     minor_breaks=scales::log_breaks(FALSE, radix))
+}
+scale_y_log_eng = function(..., radix=10) {
+  scale_y_continuous(...,
+                     trans=scales::log_trans(radix),
+                     breaks=scales::log_breaks(TRUE, radix),
+                     minor_breaks=scales::log_breaks(FALSE, radix))
+}
+
+p <- df |>
+  tidyr::drop_na(Dataset.GB) |> 
+  #filter(Year >= 2008) |>
+  ggplot(aes(Year, Dataset.GB)) + 
+  geom_point() + 
+  scale_y_log10(
+    limits = c(1e-4, 1e6),
+    breaks = scales::trans_breaks("log10", function(x) 10^x),
+    labels = scales::trans_format("log10", scales::math_format(10^.x))
+  ) +
+  annotation_logticks(side="l")+
+  geom_smooth(method="lm", color = "dodgerblue") +
+  scale_x_continuous(limits=c(2004.5, 2024), expand = c(0.01,0.01)) +
+  labs(y="Dataset Size (GB)") +
+  theme_minimal() +
+  theme(axis.line = element_line(),
+        axis.ticks.x = element_line())
+p
+ggsave("images/data_trend.png", p, width = 150, height = 80, units = "mm")
+
+p <- df |>
+  tidyr::drop_na(Dataset.Hours) |> 
+  #filter(Year >= 2008) |>
+  ggplot(aes(Year, Dataset.Hours)) + 
+  geom_point() + 
+  scale_y_log10(
+    limits = c(1e-4, 1e6),
+    breaks = scales::trans_breaks("log10", function(x) 10^x),
+    labels = scales::trans_format("log10", scales::math_format(10^.x))
+  ) +
+  annotation_logticks(side="l")+
+  geom_smooth(method="lm", color = "dodgerblue") +
+  scale_x_continuous(limits=c(2004.5, 2024), expand = c(0.01,0.01)) +
+  labs(y="Dataset Size (hours)") +
+  theme_minimal() +
+  theme(axis.line = element_line(),
+        axis.ticks.x = element_line())
+p
+ggsave("images/hours_trend.png", p, width = 220, height = 110, units = "mm")
+```
+```{r}
+fit <- lm(log(Dataset.GB)~Year, data=df)
+confint(fit, level = 0.95)
+```
+
+```{r}
+# Sample data
+#coords <- c("-0.356251N,12.940863E;-0.078775N,15.127076E", "-0.078775N,15.1270777E")
+
+# Function to convert coordinates to numeric values
+convert_to_numeric <- function(coord_string) {
+  # Split the string by comma
+  parts <- strsplit(coord_string, ",")[[1]]
+  #remove leading or trailing space
+  
+  # Extract latitude and longitude, handle direction
+  lat <- as.numeric(gsub("[A-Z]", "", parts[1]))
+  lon <- as.numeric(gsub("[A-Z]", "", parts[2]))
+  
+  # Check direction for latitude
+  if (grepl("S", parts[1])) {
+    lat <- -lat
+  }
+  
+  # Check direction for longitude
+  if (grepl("W", parts[2])) {
+    lon <- -lon
+  }
+  
+  return(paste0(c(lat, lon), collapse = ","))
+}
+
+Latlong_df <- df |>
+  select(Latlong, Ecosystem) |>
+  mutate(Latlong = strsplit(Latlong, ";")) |>
+  tidyr::unnest(Latlong) |>
+  mutate(Ecosystem = strsplit(Ecosystem, ", ")) |>
+  tidyr::unnest(Ecosystem) |>
+  mutate(Latlong = sapply(Latlong, convert_to_numeric),
+         lat = sapply(strsplit(Latlong, ","), function(x) as.numeric(x[1])),
+         long = sapply(strsplit(Latlong, ","), function(x) as.numeric(x[2]))
+)
+
+# Create the world map
+world <- map_data("world")
+
+ecosystem_colors <- c(
+  "Tropical Forest" = "#32CD32",
+  "Marine Aquatic" = "#00B7EB",
+  "Various" = "#a0a0a0",
+  "Tropical Rainforest" = "#006400",
+  "Freshwater" = "#66EEEB",
+  "Temperate Forest" = "#6B8E23",
+  "Farm" = "#FFD700",
+  "Cave" = "#8B4513",
+  "Urban" = "#FF4500"
+)
+
+# Plotting
+p <- ggplot() +
+  # Add world map with light grey fill and dark grey borders
+  geom_polygon(data = world, aes(x = long, y = lat, group = group), 
+               fill = "grey90", color = "grey50") +
+  # Add jittered points for different tags
+  geom_jitter(data = Latlong_df, aes(x = long, y = lat, fill = Ecosystem), colour="black", size = 2.5, shape=21) +
+  # Set coordinate system to map projection
+  coord_fixed(ratio = 1, xlim = c(-180, 180), ylim = c(-60, 90), expand = FALSE) +
+  # Custom breaks and labels for x (longitude) and y (latitude)
+  scale_x_continuous(breaks = seq(-180, 180, by = 60),
+                     labels = c("180°", "120°W", "60°W", "0°", "60°E", "120°E", "180°")) +
+  scale_y_continuous(breaks = seq(-90, 90, by = 30),
+                     labels = c("90°", "60°S", "30°S", "0°", "30°N", "60°N", "90°")) +
+  scale_fill_manual(values = ecosystem_colors) +
+  # Theme settings
+  labs(x="",y="")+
+  theme_minimal() +
+  theme(
+    axis.ticks = element_line(),
+    panel.grid.major = element_line(color = "grey80"),    # Light grey grid lines
+    panel.grid.minor = element_blank(),                   # No minor grid lines
+    panel.border = element_rect(color = "black", fill = NA, linewidth=1.5),  # Black panel border
+    axis.text.x = element_text(angle = 0, hjust = 0.5),   # Horizontal x-axis text
+    legend.position = "right"                             # Legend on right
+  )
+p
+ggsave("images/ecosystem_map.png", p, width = 240, height = 90, units = "mm")
+```
+
+```{r}
+bar_theme_x <- theme(panel.grid.major.x = element_blank(),
+                   panel.grid.major.y = element_line(colour = "grey80"),
+                   axis.line.x = element_line(colour="black"),
+                   axis.ticks.x=element_line())
+bar_theme_y <- theme(panel.grid.major.y = element_blank(),
+                   panel.grid.major.x = element_line(colour = "grey80"),
+                   axis.line.y = element_line(colour="black"),
+                   axis.ticks.y=element_line())
+
+include_missing_zero <- function(df, col){
+  missing_years <- 2005:2024  # This creates c(2025, 2024)
+
+  new_rows <- expand.grid(
+    Year  = missing_years,  
+    a     = df |> pull({{col}}) |> unique(), 
+    Count = 0
+  )
+  
+  colnames(new_rows)[2] <- col
+
+  df <- df |>
+    bind_rows(new_rows) |>
+    distinct() 
+  return(df)
+}
+
+keep_gt1 <- function(df, col, gt_n=1){
+  total_counts <- df |>
+    group_by(.data[[col]]) |>
+    summarise(Total_Count = n(), .groups = 'drop') |>
+    na.omit()
+
+  methods_to_keep <- total_counts |>
+    filter(Total_Count > gt_n) |>
+    pull({{ col }})
+    
+  df[,col] <- ifelse(df[[col]] %in% methods_to_keep, df[[col]], "Other Methods")
+  return(df)
+}
+
+barplot_counts <- function(df, col, col_title=col, prop=FALSE, year=TRUE, decade=FALSE, bar_col="dodgerblue"){
+  if(decade){
+    df <- df |>
+      mutate(Year = case_when(
+        Year >= 2000 & Year < 2010 ~ "2000s",
+        Year >= 2010 & Year < 2020 ~ "2010s",
+        Year >= 2020 & Year < 2030 ~ "2020s",
+        TRUE ~ NA_character_  # Handle years outside these ranges
+      ))
+  }
+  count_data <- df |>
+    group_by(Year, .data[[col]], .drop=FALSE) |>
+    summarise(Count = n(), .groups = 'drop') |>
+    na.omit()
+  
+  total_count_per_year <- count_data |>
+    group_by(Year, .drop=FALSE) |>
+    summarise(Total = sum(Count), .groups = 'drop')
+  
+  count_data <- left_join(count_data, total_count_per_year, by = "Year") |>
+    mutate(Percentage = (Count / Total) * 100) |>
+    arrange(Year, .data[[col]])
+  
+  if(!decade){
+    count_data <- count_data |>
+    include_missing_zero(col)
+  }
+  
+  if(!year){
+    df <- df[df[,col] != "Other Methods",]
+    p <- df |>
+      ggplot(aes(y = reorder(.data[[col]], .data[[col]], FUN = length, decreasing = FALSE))) +
+      geom_bar(stat = "count", fill = bar_col) +  # Fill bars with dodgerblue
+      labs(x = "Count", y = col_title) +
+      scale_x_continuous(expand = c(0,0))
+  } else {
+    if(prop){
+      p <- count_data |> 
+        ggplot(aes(x = factor(Year), y = Percentage, fill = .data[[col]], label=Count)) +
+        geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
+        geom_label(
+          aes(group = .data[[col]]),
+          size = 3,
+          position = position_stack(vjust = 0.5), 
+          fill = "white",                # Optional: black background for contrast
+          hjust = ifelse((count_data$Count <= 3) & count_data[[col]] %in% c("Log Magnitude", "Mel", "Data Augmentation", "Downsampling"), (1:nrow(count_data) - 1) %% 2, 0.5)
+        ) +
+        labs(x = ifelse(decade, "Decade", "Year"), y = "Percentage", fill = col_title) +
+        scale_y_continuous(limits=c(0,102), expand=c(0,0)) #+ 
+        #guides(fill = guide_legend(override.aes = list(colour = NA)))
+    } else {
+      p <- count_data |> 
+        ggplot(aes(x = factor(Year), y = Count, fill = .data[[col]])) +
+        geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
+        labs(x = ifelse(decade, "Decade", "Year"), y = "Count", fill = col_title) +
+        scale_y_continuous(expand=c(0,0))
+    }
+  }
+  p <- p + 
+    #scale_fill_viridis_d()+
+    theme_minimal() +
+    guides(fill = guide_legend(override.aes = list(colour = "black")))+
+    bar_theme_x
+  return(p)
+}
+```
+
+```{r}
+# Convert 'NA' to R's NA
+df$Analysis[df$Analysis == "NA"] <- NA
+
+p <- barplot_counts(df, "Analysis")
+ggsave("images/analysis_year.png", p, width = 220, height = 80, units = "mm")
+```
+```{r}
+p <- df |>
+  filter((Reported.Value != "") & (!is.na(Reported.Value))) |>
+  mutate(Reported.Value = as.numeric(Reported.Value)) |>
+  tidyr::drop_na(Reported.Value) |>
+  ggplot(aes(x = Analysis, y = Reported.Value)) +
+  geom_boxplot() +
+  theme_minimal() +
+  bar_theme_x
+p
+ggsave("images/analysis_reportedvalue.png", p, width = 240, height = 100, units = "mm")
+```
+
+```{r}
+p <- df |>
+  filter((Reported.Value != "") & (!is.na(Reported.Value))) |>
+  mutate(Reported.Value = as.numeric(Reported.Value)) |>
+  tidyr::drop_na(Reported.Value) |>
+  mutate(Decade = case_when(
+    Year >= 2000 & Year < 2010 ~ "2000s",
+    Year >= 2010 & Year < 2020 ~ "2010s",
+    Year >= 2020 & Year < 2030 ~ "2020s",
+    TRUE ~ NA_character_  # Handle years outside these ranges
+  )) |>
+  ggplot(aes(x = Decade, y = Reported.Value)) +
+  geom_boxplot() +
+  theme_minimal() +
+  bar_theme_x
+p
+ggsave("images/decade_reportedvalue.png", p, width = 240, height = 100, units = "mm")
+```
+
+```{r}
+p <- df |>
+  filter((Reported.Value != "") & (!is.na(Reported.Value))) |>
+  mutate(Reported.Value = as.numeric(Reported.Value)) |>
+  tidyr::drop_na(Reported.Value) |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa) |>
+  ggplot(aes(y = Reported.Value)) +
+  geom_boxplot() +
+  theme_minimal() +
+  bar_theme_x +
+  facet_wrap(~Taxa)
+p
+ggsave("images/taxa_reportedvalue.png", p, width = 240, height = 100, units = "mm")
+```
+
+
+```{r}
+# Convert 'NA' to R's NA
+df$Programming.Language[df$Programming.Language == "NA"] <- NA
+
+# Split languages where there are multiple
+df_lang <- df |>
+  mutate(ProgLanguage = strsplit(as.character(Programming.Language), ", ")) |>
+  tidyr::unnest(ProgLanguage)
+
+df_lang |> 
+  filter(Year >= 2020) |>
+  group_by(ProgLanguage) |> 
+  summarise(Count = n(), .groups = 'drop') |> 
+  arrange(desc(Count))
+
+p <- barplot_counts(df_lang, "ProgLanguage", "Programming\nLanguage")
+p
+ggsave("images/programminglanguage_year.png", p, width = 240, height = 100, units = "mm")
+```
+
+```{r}
+df_taxa <- df |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa)
+
+spectral_15 <- c(
+  "#9E0142",  # Deep red
+  "#D53E4F",  # Bright red
+  "#F46D43",  # Red-orange
+  "#FDAE61",  # Orange
+  "#FEE08B",  # Light orange-yellow
+  "#FFFFBF",  # Pale yellow (midpoint)
+  "#E6F598",  # Light yellow-green
+  "#ABDFA1",  # Greenish
+  "#66C2A5",  # Teal
+  "#3288BD",  # Light blue
+  "#5E4FA2",  # Blue-purple
+  "#404788",  # Darker blue-purple
+  "#2D2D66",  # Deep blue
+  "#1A1A4C",  # Very deep blue
+  "#0D0833"   # Near-black blue
+)
+
+p <- barplot_counts(df_taxa, "Taxa")
+p <- p + scale_fill_manual(values = spectral_15)
+ggsave("images/taxa_year.png", p, width = 240, height = 100, units = "mm")
+```
+```{r}
+df_analysis <- df |>
+  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
+  tidyr::unnest(Analysis.Methods)
+
+df_analysis <- keep_gt1(df_analysis, "Analysis.Methods")
+  #filter(Analysis.Methods %in% methods_to_keep)
+p <- barplot_counts(df_analysis, "Analysis.Methods")
+p
+ggsave("images/analysismethods_year.png", p, width = 240, height = 100, units = "mm")
+p <- barplot_counts(df_analysis, "Analysis.Methods", year=FALSE)
+p
+ggsave("images/analysismethods_total.png", p, width = 240, height = 100, units = "mm")
+```
+```{r}
+df_tools <- df |>
+  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
+  tidyr::unnest(Automation.Tools)
+
+df_tools <- keep_gt1(df_tools, "Automation.Tools")
+
+#filter(Analysis.Methods %in% methods_to_keep)
+p <- barplot_counts(df_tools, "Automation.Tools", "Automation Tools")
+p
+ggsave("images/automationtools_year.png", p, width = 240, height = 120, units = "mm")
+p <- barplot_counts(df_tools, "Automation.Tools", "Automation Tools", year = FALSE, bar_col="darkmagenta")
+p
+ggsave("images/automationtools_total.png", p, width = 240, height = 120, units = "mm")
+```
+
+```{r}
+df_code_available <- df |>
+  mutate(Code.Availability = strsplit(as.character(Code.Availability), ", ")) |>
+  tidyr::unnest(Code.Availability)
+
+p <- barplot_counts(df_code_available, "Code.Availability", "Code\nAvailability")
+#increase font size of axes text and labels
+p <- p + 
+  scale_x_discrete(labels = function(x) ifelse(as.numeric(x) %% 2 == 0, "", x)) +
+  theme(axis.text.x = element_text(size=16),
+        axis.text.y = element_text(size=16),
+        axis.title.x = element_text(size=18),
+        axis.title.y = element_text(size=18),
+        legend.text = element_text(size=16),
+        legend.title = element_text(size=18),
+  )
+p
+ggsave("images/codeavailable_year.png", p, width = 240, height = 100, units = "mm")
+```
+
+```{r}
+df_data_available <- df |>
+  mutate(Data.Availability = strsplit(as.character(Data.Availability), ", ")) |>
+  tidyr::unnest(Data.Availability)
+
+p <- barplot_counts(df_data_available, "Data.Availability", "Data\nAvailability")
+p <- p + 
+  scale_x_discrete(labels = function(x) ifelse(as.numeric(x) %% 2 == 0, "", x)) +
+  theme(axis.text.x = element_text(size=16),
+        axis.text.y = element_text(size=16),
+        axis.title.x = element_text(size=18),
+        axis.title.y = element_text(size=18),
+        legend.text = element_text(size=16),
+        legend.title = element_text(size=18),
+  )
+p
+ggsave("images/dataavailable_year.png", p, width = 240, height = 100, units = "mm")
+```
+```{r}
+#df |>
+#  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
+#  tidyr::unnest(Automation.Tools) |>
+#  pull(Automation.Tools) |> sort() |> unique()
+```
+```{r}
+#df |>
+#  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
+#  tidyr::unnest(Analysis.Methods) |>
+#  pull(Analysis.Methods) |> sort() |> unique()
+```
+```{r}
+df_eval <- df |>
+  mutate(Evaluation.Method = strsplit(as.character(Evaluation.Method), ", ")) |>
+  tidyr::unnest(Evaluation.Method)
+
+df_eval <- keep_gt1(df_eval, "Evaluation.Method")
+  #filter(Analysis.Methods %in% methods_to_keep)
+p <- barplot_counts(df_eval, "Evaluation.Method", "Evaluation Method")
+p <- p + scale_fill_brewer(palette = "Spectral")
+ggsave("images/evaluationmethod_year.png", p, width = 240, height = 100, units = "mm")
+```
+```{r}
+#df |>
+#  mutate(Preprocessing = strsplit(as.character(Preprocessing), ", ")) |>
+#  tidyr::unnest(Preprocessing) |>
+#  pull(Preprocessing) |> sort() |> unique()
+```
+```{r}
+df_pre <- df |>
+  mutate(Preprocessing = strsplit(as.character(Preprocessing), ", ")) |>
+  tidyr::unnest(Preprocessing)
+
+df_pre <- keep_gt1(df_pre, "Preprocessing")
+p <- barplot_counts(df_pre, "Preprocessing")
+p
+ggsave("images/preprocessing_year.png", p, width = 240, height = 100, units = "mm")
+p <- barplot_counts(df_pre, "Preprocessing", prop=TRUE)
+p
+ggsave("images/preprocessing_prop_year.png", p, width = 240, height = 100, units = "mm")
+p <- barplot_counts(df_pre, "Preprocessing", prop=TRUE, decade=TRUE)
+p <- p + scale_fill_brewer(palette = "Spectral")
+ggsave("images/preprocessing_prop_decade.png", p, width = 200, height = 80, units = "mm")
+```
+```{r}
+count_data <- df_lang |>
+    group_by(Year, ProgLanguage, .drop=FALSE) |>
+    summarise(Count = n(), .groups = 'drop') |>
+    na.omit()
+  
+total_count_per_year <- count_data |>
+  group_by(Year, .drop=FALSE) |>
+  summarise(Total = sum(Count), .groups = 'drop')
+
+count_data <- left_join(count_data, total_count_per_year, by = "Year") |>
+  mutate(Percentage = (Count / Total) * 100) |>
+  include_missing_zero('ProgLanguage')
+
+count_data |> 
+  ggplot(aes(x = factor(Year), y = Count, fill = ProgLanguage)) +
+  geom_bar(stat = "identity", colour=ifelse(count_data$Count > 0, "black", NA)) +
+  labs(x = "Year", y = "Count", fill = 'Language') +
+  scale_y_continuous(expand=c(0,0))+
+  theme_minimal() +
+  guides(fill = guide_legend(override.aes = list(colour = "black")))+
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(colour = "grey80"),
+        axis.line.x = element_line(colour="black"),
+        #panel.grid = element_line(colour="lightgrey"),
+        axis.ticks.x=element_line())
+```
+```{r}
+df_tools <- df |>
+  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
+  tidyr::unnest(Automation.Tools) |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa)
+
+df_tools <- keep_gt1(df_tools, "Automation.Tools")
+p <- df_tools |>
+  filter(Automation.Tools != "Other Methods") |>
+      ggplot(aes(y = reorder(Automation.Tools, Automation.Tools, FUN = length, decreasing = FALSE), fill = Taxa)) +
+      geom_bar(stat = "count", colour="black") +  # Fill bars with dodgerblue
+      labs(x = "Count", y = "Automation Tools") +
+      scale_x_continuous(expand = c(0,0)) +
+  theme_minimal() +
+  bar_theme_y
+p
+ggsave("images/automationtools_taxa.png", p, width = 240, height = 120, units = "mm")
+```
+```{r}
+df_analysis <- df |>
+  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
+  tidyr::unnest(Analysis.Methods) |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa)
+
+df_analysis <- keep_gt1(df_analysis, "Analysis.Methods")
+p <- df_analysis |>
+  filter(Analysis.Methods != "Other Methods") |>
+      ggplot(aes(y = reorder(Analysis.Methods, Analysis.Methods, FUN = length, decreasing = FALSE), fill = Taxa)) +
+      geom_bar(stat = "count", colour="black") +  # Fill bars with dodgerblue
+      labs(x = "Count", y = "Analysis Methods") +
+      scale_x_continuous(expand = c(0,0)) +
+  theme_minimal() +
+  bar_theme_y
+p
+ggsave("images/analysismethods_taxa.png", p, width = 240, height = 120, units = "mm")
+```
+```{r}
+df_analysis <- df |>
+  # Unnest Analysis.Methods
+  mutate(Analysis.Methods = strsplit(as.character(Analysis.Methods), ", ")) |>
+  tidyr::unnest(Analysis.Methods) |>
+  keep_gt1("Analysis.Methods") |>
+  #filter(Analysis.Methods != "Other Methods") |>
+  # Unnest Automation.Tools (assuming it exists in df)
+  mutate(Automation.Tools = strsplit(as.character(Automation.Tools), ", ")) |>
+  tidyr::unnest(Automation.Tools) |>
+  keep_gt1("Automation.Tools", gt_n=2) |>
+  #filter(Automation.Tools != "Other Methods") |>
+  # Unnest Taxa
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa) |>
+  # Pivot to long format for faceting
+  tidyr::pivot_longer(
+    cols = c("Analysis.Methods", "Automation.Tools"),
+    names_to = "Category",
+    values_to = "Method.Tool"
+  ) |>
+  mutate(Category = stringr::str_replace(Category, "\\.", " "))
+  # Filter out "Other Methods" equivalent
+
+# Plot with facet_grid
+p <- df_analysis |>
+  ggplot(aes(y = reorder(Method.Tool, Method.Tool, FUN = length, decreasing = FALSE), fill = Taxa)) +
+  geom_bar(stat = "count", colour = "black") +
+  labs(x = "Count", y = NULL) +  # Remove y-axis label since facets will label it
+  scale_x_continuous(expand = c(0, 0)) +
+  facet_wrap(~Category, scales = "free_y", ncol = 2) +  # Facet by Category
+  theme_minimal() +
+  bar_theme_y +  # Assuming this is a custom theme defined elsewhere
+  #increase size of panel titles
+  theme(strip.text.x = element_text(size=12))
+
+# Display and save
+p <- p + scale_fill_manual(values=spectral_15)
+ggsave("images/analysismethods_automation_taxa.png", p, width = 300, height = 130, units = "mm")
+#df_analysis |> filter(Category == "Analysis.Methods") |> pull(Method.Tool) |> unique() |> sort()
+```
+
+```{r}
+df_analysis <- df |>
+  mutate(Taxa = strsplit(as.character(Taxa), ", ")) |>
+  tidyr::unnest(Taxa) |>
+  mutate(Analysis = strsplit(as.character(Analysis), ", ")) |>
+  tidyr::unnest(Analysis)
+
+df_analysis <- keep_gt1(df_analysis, "Taxa")
+p <- df_analysis |>
+  filter(Taxa != "Other Methods") |>
+      ggplot(aes(y = reorder(Taxa, Taxa, FUN = length, decreasing = FALSE), fill = Analysis)) +
+      geom_bar(stat = "count", colour="black") +  # Fill bars with dodgerblue
+      labs(x = "Count", y = "Taxa") +
+      scale_x_continuous(expand = c(0,0)) +
+  theme_minimal() +
+  bar_theme_y
+p
+ggsave("images/analysis_taxa.png", p, width = 240, height = 120, units = "mm")
+```
+
+```{r}
+#x axis-year, y-axcis, manual.automatic.semiautomatic
+
+# Assuming your dataframe is called 'df'
+# First, preprocess the Monitoring.Year column
+df_expandyear <- df |>
+  filter(!is.na(Monitoring.Year)) |>
+  #select(Monitoring.Year) |>
+  # Separate comma-separated values into rows
+  tidyr::separate_rows(Monitoring.Year, sep = ",") |>
+  # Clean up any whitespace
+  mutate(Monitoring.Year = trimws(Monitoring.Year)) |>
+  # Create a new column that expands hyphenated years
+  mutate(Expanded_Years = purrr::map(Monitoring.Year, function(x) {
+    if (stringr::str_detect(x, "-")) {
+      range <- stringr::str_split(x, "-")[[1]] |> as.numeric()
+      return(seq(range[1], range[2]))
+    } else {
+      return(as.numeric(x))
+    }
+  })) |>
+  # Unnest the list column into individual rows
+  tidyr::unnest(Expanded_Years) # Create the boxplot
+  
+df |>
+  ggplot(aes(x=Year, fill=Analysis)) +
+  geom_bar(stat="count", colour="black") +
+  #ggplot(aes(x = Analysis, y = Expanded_Years)) +
+  #geom_boxplot() +
+  # Customize the plot
+  #make breaks pretty
+  scale_y_continuous(expand = c(0,0), breaks = pretty) +
+  scale_x_continuous(expand = c(0,0), breaks = pretty) +
+  labs(title = "Analysis Type by Year",
+       x = "Monitoring Year",
+       y = "Count") +
+  # Rotate x-axis labels if needed
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(colour = "grey80"),
+        axis.line.x = element_line(colour="black"),
+        axis.ticks.x=element_line())+
+  # Ensure proper spacing
+  theme_minimal() +
+  bar_theme_x
+```
+
+```{r}
+#correlation plot between monitoring year and publication year
+ggplot(df_expandyear, aes(x=Expanded_Years, y=Year, colour=Title)) +
+  geom_point() +
+  geom_smooth(method="lm", color = "dodgerblue") +
+  labs(title = "Correlation between Monitoring Year and Publication Year",
+       x = "Monitoring Year",
+       y = "Publication Year") +
+  theme_minimal() + 
+  #hide legend
+  theme(legend.position="none")
+```
+```{r}
+# install.packages("devtools")
+#devtools::install_github("davidsjoberg/ggsankey")
+#library(ggsankey)
+```
+
+```{r}
+df |>
+  tidyr::separate_rows(Taxa, sep = ",") |>
+  ggplot(aes(x = Taxa, y = Reported.Value)) +
+  geom_point(size = 3) +  # Scatter plot; adjust geom as needed (e.g., geom_bar)
+  facet_wrap(~ Reported.Metric, scales = "free") +  # Facet by Taxa, free scales for flexibility
+  labs(x = "Reported Metric", y = "Reported Value", title = "Reported Metrics by Taxa") +
+  theme_minimal() +  # Clean theme
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels for readability
+```
+```{r}
+df %>%
+  group_by(Reported.Metric) %>%
+  summarise(
+    Mean_Value = mean(Reported.Value, na.rm = TRUE),
+    N = n()
+  ) %>%
+  mutate(
+    Formatted = sprintf("%s (%.3f%%, n=%d)", Reported.Metric, Mean_Value, N)
+  ) %>%
+  pull(Formatted) %>%
+  paste(collapse = ", ")
+```
+```{r}
+df$Dataset.Hours %>% median(na.rm = TRUE)
+calc_year_length <- function(year_str) {
+  if (is.na(year_str)) {
+    return(NA)
+  } else if (grepl("–|-", year_str)) {  # Check for range with en-dash or hyphen
+    years <- strsplit(year_str, "–|-")[[1]]  # Split on either – or -
+    start <- as.numeric(years[1])
+    end <- as.numeric(years[2])
+    return(end - start + 1)  # Inclusive range
+  } else {
+    return(1)  # Single year
+  }
+}
+
+# Apply function to vector
+sapply(df$Monitoring.Year, calc_year_length) |> mean(na.rm = TRUE)
+```
+
+```{r}
+# Create data frame with flows between stages
+# Create the data frame for ggsankey
+```
+```{r}
+df |>
+  mutate(Gaps = strsplit(as.character(Gaps), ", |; ")) |>
+  tidyr::unnest(Gaps) |>
+  mutate(Gaps = trimws(Gaps)) |>
+  pull(Gaps) |> sort() |> unique()
+```
+
