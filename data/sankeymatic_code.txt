@@ -6,23 +6,20 @@ Web of\nScience [50] Literature\nSearch
 Literature\nSearch [341] Unique
 Literature\nSearch [31] Duplicates
 
-Unique [340] English
-Unique [1] Not in\nEnglish
+Unique [336] Sufficient\nInformation
+Unique [5] Missing\nInformation
 
-English [335] Sufficient\nInformation
-English [5] Missing\nInformation
-
-Sufficient\nInformation [279] Research\nArticles
+Sufficient\nInformation [280] Research\nArticles
 Sufficient\nInformation [56] Review\nPapers
 
-Research\nArticles [149] Relevant
+Research\nArticles [150] Relevant
 Research\nArticles [130] Off-topic
 
-Relevant [125] Journal\nArticles
+Relevant [126] Journal\nArticles
 Relevant [24] Conference/\nWorkshop
 
 Journal\nArticles [79] Final Literature
-Journal\nArticles [1] Not in English
+Journal\nArticles [2] Not in English
 Journal\nArticles [6] Review Papers/Chapters
 Journal\nArticles [11] Not Peer-reviewed
 Journal\nArticles [20] Theses
@@ -36,7 +33,6 @@ Journal\nArticles [6] Unavailable
 // Profit - blue
 :Literature\nSearch #48e <<
 :Unique #48e <<
-:English #48e <<
 :Sufficient\nInformation #48e <<
 :Research\nArticles #48e <<
 :Relevant #48e <<
@@ -50,7 +46,6 @@ Journal\nArticles [6] Unavailable
 :Review\nPapers #d74 <<
 :Off-topic #d74 <<
 :Conference/\nWorkshop #d74 <<
-:Not in\nEnglish #d74 <<
 :Review Papers/Chapters #d74 <<
 :Not Peer-reviewed #d74 <<
 :Theses #d74 <<
